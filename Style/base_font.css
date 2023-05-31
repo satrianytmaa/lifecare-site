@@ -1,0 +1,109 @@
+/* Import TTF Fonts, Roobert and Inter */
+
+/* Roobert Typeface */
+
+@font-face {
+    font-family: Roobert-Bold;
+    src: url('../Assets/Fonts/Roobert/Roobert-Bold.otf') format("opentype");
+}
+
+@font-face {
+    font-family: Roobert-SemiBold;
+    src: url('../Assets/Fonts/Roobert/Roobert-SemiBold.otf') format("opentype");
+}
+
+@font-face {
+    font-family: Roobert-Medium;
+    src: url('../Assets/Fonts/Roobert/Roobert-Medium.otf') format("opentype");
+}
+
+@font-face {
+    font-family: Roobert-Regular;
+    src: url('../Assets/Fonts/Roobert/Roobert-Regular.otf') format("opentype");
+}
+
+@font-face {
+    font-family: Roobert;
+    src: url('../Assets/Fonts/Roobert/Roobert-Regular.otf') format("opentype");
+}
+
+
+/* Inter Typeface */
+
+@font-face {
+    font-family: Inter-Medium;
+    src: url('../Assets/Fonts/Inter/Inter-Medium.ttf');
+}
+
+@font-face {
+    font-family: Inter-Regular;
+    src: url('../Assets/Fonts/Inter/Inter-Regular.ttf');
+}
+
+/* Default Typography */
+h1 {
+	font-family: 'Roobert-SemiBold', sans-serif; /* Title / 80PX */
+	font-size: var(--ft-title);
+	color: var(--cl-title);
+	letter-spacing: -2px;
+	line-height: 80px;
+}
+
+h2 {
+	font-family: 'Roobert-SemiBold', sans-serif; /* Header / 48PX */
+	font-size: var(--ft-header);
+	color: var(--cl-header);
+	letter-spacing: -2px;
+	line-height: 64px;
+}
+
+h3 {
+	font-family: 'Roobert', sans-serif; /* Header Alt / 24PX*/
+	font-size: var(--ft-header-alt);
+	letter-spacing: -0.75px;
+	font-weight: 600;
+	color: var(--cl-medium);
+	line-height: 48px;
+}
+
+h4 {
+	font-family: 'Roobert', sans-serif; /* Username / 21PX*/
+	font-size: var(--ft-title-body);
+	color: var(--cl-medium);
+}
+
+h5 {
+	font-family: 'Inter', sans-serif; /* Title Body / 20PX */
+	font-size: var(--ft-title-body);
+	color: var(--cl-body);
+	letter-spacing: -0.75px;
+	font-weight: 500;
+	line-height: 32px;
+}
+
+h6 {
+	font-family: 'Inter', sans-serif; /* Header Body / 18PX */
+	font-size: var(--ft-header-body);
+	color: var(--cl-body);
+	letter-spacing: -0.5px;
+	font-weight: 500;
+	line-height: 28px;
+}
+
+p {
+	font-family: 'Inter', sans-serif; /* Header Body / 16PX */
+	font-size: var(--ft-body);
+	color: var(--cl-body);
+	font-weight: 500;
+	line-height: 28px;
+}
+
+body{
+	font-family: 'Inter-Regular', sans-serif; /* Header Body / 18PX */
+	font-size: var(--ft-body);
+	color: var(--cl-body);
+	letter-spacing: -0.5px;
+	font-weight: 500;
+	line-height: 28px;
+	overflow-x: hidden;
+}

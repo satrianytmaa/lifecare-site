@@ -1,0 +1,50 @@
+/* Variables of Style */
+
+:root{
+
+	/* Colour based on Personal Preference */
+	/* Typograph Colour */
+	--cl-title: #1D354F;
+	--cl-header: #1D354F;
+	--cl-medium: #1D354F;
+	--cl-body: #5C6A78;
+	--cl-white: #FCFCFC;
+	--cl-brand: #6A55EA;
+	--cl-link: #777E90;
+	--cl-button: #6A55EA;
+	--cl-button-hover: #4b34e4;
+
+	/* Conditions Colour */
+	--st-success: #58BD7D;
+	--st-error: #EC6D62;
+
+	/* Components Colour */
+	--cm-calm-01: #EAE9F0;
+	--cm-calm-02: #DFE9ED;
+	--cm-calm-03: #E7EEFA;
+	--cm-calm-99: #e7f0f0;
+	--cm-purple: #9D6AD5;
+	--cm-green: #68AFAF;
+	--cm-orange: #FDB86B;
+	--cm-blue: #7FBCE8;
+
+	/* Gradient */
+	--gd-blue: #ACC3F0;
+	--gd-green: #CFF4E4;
+
+
+	/* Typography based with 1.250 Major Third Scale from Typescale.com */
+	/* Typography Scale */
+	--ft-title: 72px;
+	--ft-header: 56px;
+	--ft-header-alt: 48px;
+	--ft-medium: 24px;
+	--ft-title-body: 20px;
+	--ft-header-body: 18px;
+	--ft-body: 16px;
+	--ft-toolbox: 14px;
+	--ft-label: 12px;
+	--ft-dunno-bro: 10px;
+
+}
+
