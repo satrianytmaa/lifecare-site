@@ -27,6 +27,7 @@
       <!-- Responsive -->
       <link rel="stylesheet" href="" />
 
+
       <!-- Google Font -->
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,31 +69,39 @@
 
         <div class="vaccine-form container-enable">
             <div class="vaccine-form-content">
+               <img src="./Assets/Images/Content/Badge Data.svg" alt="" />
                 <h3>Let's chat. <br> Tell us about your problem</h3>
-                
                 <p>Holaa! Feel free to use the contact form to the right to reach out to us  </p>
             </div>
 
-                <div class="component-form">
-                    <div class="from-wrap">
-                        <h4>Send us a message🚀</h4>
-                    </div>
-                    <div class="form-wrap">
-                        <input type="text" placeholder="Enter your Fullname." />
-                    </div>
-                    <div class="form-wrap">
-                        <input type="email" placeholder="Enter your Email" />
-                    </div>
-                    <div class="form-wrap">
-                        <input type="password" placeholder="Enter Subject" />
-                    </div>
-                    <div class="form-wrap">
-                        <label for="name">Tell us about your problem !</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <button class="button-primary"><a href="#">Send</a></button>
-                </div>
+            <div class="component-form">
+               <div class="from-wrap">
+                     <h4>Send us a message 🚀</h4>
+               </div>
+               <div class="form-wrap">
+                     <input type="text" id="fullName" placeholder="Enter your Fullname." />
+               </div>
+               <div class="form-wrap">
+                     <input type="email" id="email" placeholder="Enter your Email" />
+               </div>
+               <div class="form-wrap">
+                     <input type="text" id="subject" placeholder="Enter Subject" />
+               </div>
+               <div class="form-wrap">
+                     <label for="message">Tell us about your problem!</label>
+                     <textarea id="message" cols="30" rows="10"></textarea>
+               </div>
+               <button id="buttonAlert" class="button-primary">Send</button>
+            </div>
         </div>
+
+        <!-- CONTENT => Modal Pop-Up -->
+         <div id="myModal" class="modal">
+            <div class="modal-content">
+               <span class="close">&times;</span>
+               <div id="output"></div>
+              </div>
+         </div>
         
          <!-- CONTENT => Footer -->
          <div class="footer-foot">
@@ -146,5 +155,9 @@
             </div>
          </div>
       </footer>
+
+
+      <!-- JavaScript -->
+      <script src="./JavaScript/alert.js"></script>
     </body>
 </html>
