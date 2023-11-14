@@ -1,0 +1,67 @@
+/* RESPONSIVE => Laptop Large */
+@media screen and (max-width: 1180px) {
+    .container-enable {
+        max-width: 1080px;
+    }
+}
+
+/* RESPONSIVE => Laptop Small */
+@media screen and (max-width: 1024px) {
+    .container-enable {
+        max-width: 980px;
+        margin: 24px;
+    }
+
+    .vaccine-header-content h1 {
+        width: 100%;
+        font-size: 56px;
+        line-height: 64px;
+        text-align: left;
+    }
+
+    .vaccine-header-content h5 {
+        width: 100%;
+        text-align: left;
+    }
+
+    .vaccine-header-call > .small-text {
+        text-align: center;
+    }
+
+    .vaccine-header-data {
+        flex-direction: column;
+    }
+
+    .component-data {
+        width: 100%;
+    }
+
+    .vaccine-form-content h3 {
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .vaccine-form-content p {
+        width: 100%;
+    }
+
+    .vaccine-form-form {
+        width: 100%;
+    }
+
+    .vaccine-reason-content h2 {
+        width: 100%;
+    }
+
+    .vaccine-reason-wrap {
+        flex-direction: column;
+    }
+}
+
+/* RESPONSIVE => Tablet */
+@media screen and (max-width: 768px) {
+}
+
+/* RESPONSIVE => Handphone */
+@media screen and (max-width: 425px) {
+}
