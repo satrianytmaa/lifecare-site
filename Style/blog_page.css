@@ -1,0 +1,48 @@
+/* COMPONENTS => Blog Header */
+
+
+.blog-header-img{
+    margin: 2em 0;
+}
+
+.blog-header-img img{
+    width: 100%;
+}
+
+.blog-header-content > *{
+    padding: 0.25em 0;
+}
+
+.blog-content > *{
+    margin: 4em 0;
+}
+
+.blog-content-1 > *{
+    margin-bottom: 1em;
+}
+
+.blog-content-1 h3{
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.blog-content-1 h4{
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.blog-content-1 p{
+    font-size: 21px;
+    line-height: 48px;
+}
+
+.blog-content-1 ul li{
+    font-size: 21px;
+    list-style: disc;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.blog-content-1 ul{
+    margin: 2em;
+}

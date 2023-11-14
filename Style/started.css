@@ -1,0 +1,10 @@
+
+
+body{
+    background-image: url(../Assets/Images/Content/Background.svg);
+}
+
+.vaccine-form-form{
+    background-color: #fff;
+    border-radius: 16px;
+}
