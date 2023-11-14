@@ -1,0 +1,72 @@
+.vaccine-form {
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.vaccine-form-content h3 {
+    width: 72%;
+    text-align: center;
+}
+
+.vaccine-form-content p {
+    width: 72%;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.vaccine-form-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px;
+    width: 50%;
+    box-shadow: 0px 80px 80px -24px rgba(76, 83, 92, 0.24);
+}
+
+.component-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-wrap label {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: var(--cl-title);
+}
+
+.form-wrap input,
+textarea {
+    margin-top: 8px;
+    padding: 16px 16px;
+    border: none;
+    background-color: #f1effb;
+
+    border-radius: 8px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #b7bac7;
+}
+
+.component-form button {
+    margin-top: 24px;
+}
+
+::placeholder {
+    color: #b7bac7;
+    opacity: 1; /* Firefox */
+}
