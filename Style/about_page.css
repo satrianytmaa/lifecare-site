@@ -1,0 +1,108 @@
+/* About => Header */
+
+.about-header{
+	display: flex;
+	flex-direction: column;
+	margin-top: 80px;
+	position: relative;
+}
+
+.about-header-content{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-header-content h1{
+	width: 72%;
+	text-align: center;
+}
+
+.about-header-content h5{
+	width: 56%;
+	text-align: center;
+	margin-top: 24px;
+}
+.img-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.about-header-call{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 40px;
+	gap: 12px;
+}
+
+.about-reason{
+	margin-bottom: 80px;
+}
+
+.about-reason-content{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	margin-top: 80px;
+}
+
+.about-reason-content h2{
+	width: 64%;
+	text-align: center;
+}
+
+.about-reason-wrap{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+	margin-top: 80px;
+
+}
+
+.component-res h4{
+	margin-top: 32px;
+	margin-bottom: 16px;
+}
+
+.team-header{
+    padding: 4em 0 0 0;
+    border-top: 2px solid var(--cm-calm-02);
+}
+
+.team-header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.team-header h5{
+    width: 40%;
+}
+
+.team-header-member {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.team-header-member img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em; 
+    border-radius: 2em;
+    transition: all 250ms ease-in-out;
+}
+
+.team-header-member img:hover{
+    box-shadow: 0px 80px 80px -24px rgba(98, 102, 108, 0.16);
+}

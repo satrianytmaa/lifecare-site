@@ -330,10 +330,6 @@
 
 /* LANDING PAGE => Blogs */
 
-.landing-blog{
-	margin-top: 160px;
-}
-
 .landing-blog-content{
 	display: flex;
 	justify-content: space-between;

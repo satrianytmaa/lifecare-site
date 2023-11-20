@@ -1,0 +1,62 @@
+/* RESPONSIVE => Laptop Large */
+@media screen and (max-width: 1180px) {
+
+	.container-enable{
+		max-width: 1080px;
+	}
+}
+
+/* RESPONSIVE => Laptop Small */
+@media screen and (max-width: 1024px) {
+	.container-enable{
+		max-width: 980px;
+		margin: 24px;
+	}
+
+	.about-header-content h1{
+		width: 100%;
+		font-size: 56px;
+		line-height: 64px;
+		text-align: left;
+	}
+
+	.about-header-content h5{
+		width: 100%;
+		text-align: left;
+	}
+
+	.about-header-call > .small-text{
+		text-align: center;
+	}
+
+	.about-header-call{
+		align-items: normal;
+	}
+
+	.about-reason-content h2{
+		width: 100%;
+	}
+
+	.about-reason-wrap{
+		flex-direction: column;
+	}
+
+	.team-header-content{
+		flex-direction: column;
+	}
+
+	.team-header-content h5{
+		width: 100%;
+		margin-top: 1em;
+	}
+
+
+}
+
+/* RESPONSIVE => Tablet */
+@media screen and (max-width: 768px) {
+}
+
+/* RESPONSIVE => Handphone */
+@media screen and (max-width: 425px) {
+}
