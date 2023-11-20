@@ -64,11 +64,12 @@ img{
 	padding: 16px 24px;
 	border-radius: 8px;
 	border: 2.5px solid var(--cl-brand);
-	transition: all 120ms ease-in-out;
+	transition: all 320ms ease-in-out;
+	background: #fff;
 }
 
 a .button-secondary{
-	font-family: 'Roobert', sans-serif;
+	font-family: 'Roobert-Medium', sans-serif;
 	font-size: 18px;
 	color: var(--cl-brand);
 	font-weight: 600;
@@ -79,15 +80,36 @@ a .button-secondary:hover{
 	color: var(--cl-white);
 }
 
+.button-secondary-white{
+	padding: 16px 24px;
+	border-radius: 8px;
+	border: 2.5px solid var(--cl-brand);
+	transition: all 320ms ease-in-out;
+	background: #fff;
+}
+
+a .button-secondary-white{
+	font-family: 'Roobert-Medium', sans-serif;
+	font-size: 18px;
+	color: var(--cl-brand);
+	font-weight: 600;
+}
+
+a .button-secondary-white:hover{
+	background-color: var(--cl-brand);
+	color: var(--cl-white);
+	border: 2.5px solid var(--cl-white);
+}
+
 .button-third{
 	padding: 8px 16px;
 	border-radius: 8px;
-	background-color: none;
+	background-color: #fff;
 	border: 2.5px solid var(--cl-title);
 }
 
 .button-third a{
-	font-family: 'Roobert', sans-serif;
+	font-family: 'Roobert-Medium', sans-serif;
 	font-size: 18px;
 	color: var(--cl-title);
 	font-weight: 600;
@@ -108,7 +130,7 @@ a .button-secondary:hover{
 
 
 a .button-nav{
-	font-family: 'Roobert', sans-serif;
+	font-family: 'Roobert-Medium', sans-serif;
 	font-size: 18px;
 	color: var(--cl-brand);
 	font-weight: 600;

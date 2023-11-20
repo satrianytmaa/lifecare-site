@@ -37,8 +37,33 @@ nav ul li a{
 
 nav ul li a:hover{
 	color: var(--cl-title);
-	font-weight: 600;
+	font-weight: 500;
 }
+
+
+.nav-item a {
+	position: relative; /* Position relative for absolute positioning of the pseudo-element */
+	text-decoration: none; /* Remove default underline */
+	padding: 0.5em 0;
+  }
+  
+.nav-item a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--cl-title);
+	border-radius: 10px;
+	transition: width 0.3s ease;
+}
+
+.nav-item a:hover:after {
+	width: 100%;
+}
+  
+
 
 
 
