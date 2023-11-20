@@ -1,0 +1,25 @@
+/* RESPONSIVE => Laptop Large */
+/* @media screen and (max-width: 1180px) {
+
+	.container-enable{
+		max-width: 1080px;
+	}
+} */
+
+/* RESPONSIVE => Tablet */
+@media screen and (max-width: 768px) {
+
+    .container-enable-blog{
+		max-width: 980px;
+		margin: 24px;
+	}
+
+    .blog-header-content h3{
+        text-align: left;
+        margin: 0.4em 0;
+    }
+}
+
+/* RESPONSIVE => Handphone */
+@media screen and (max-width: 425px) {
+}
