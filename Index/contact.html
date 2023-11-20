@@ -79,19 +79,19 @@
                      <h4>Send us a message 🚀</h4>
                </div>
                <div class="form-wrap">
-                     <input type="text" id="fullName" placeholder="Enter your Fullname." />
+                     <input type="text" id="fullName" placeholder="Enter your Full Name." required/>
                </div>
                <div class="form-wrap">
-                     <input type="email" id="email" placeholder="Enter your Email" />
+                     <input type="email" id="email" placeholder="Enter your Email" required/>
                </div>
                <div class="form-wrap">
-                     <input type="text" id="subject" placeholder="Enter Subject" />
+                     <input type="text" id="subject" placeholder="Enter Subject" required/>
                </div>
                <div class="form-wrap">
                      <label for="message">Tell us about your problem!</label>
-                     <textarea id="message" cols="30" rows="10"></textarea>
+                     <textarea id="message" cols="30" rows="10" required></textarea>
                </div>
-               <button id="buttonAlert" class="button-primary">Send</button>
+               <button id="buttonAlert" class="button-primary" disabled><a href="">Send</a></button>
             </div>
         </div>
 
@@ -99,7 +99,10 @@
          <div id="myModal" class="modal">
             <div class="modal-content">
                <span class="close">&times;</span>
-               <div id="output"></div>
+               <div id="contact_name"></div>
+               <p>Thank you for your message. Our team is working to address your concern and will respond shortly. We appreciate your patience.</p>
+               <div id="contact_issue"></div>
+               <button id="buttonAlert" class="button-primary"><a href="../index.html">Gotcha!</a></button>
               </div>
          </div>
         

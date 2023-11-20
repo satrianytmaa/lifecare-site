@@ -1,12 +1,11 @@
 .vaccine-form {
-    margin-top: 160px;
     display: flex;
     justify-content: center;
     gap: 24px;
 }
 
 .vaccine-form-content h3 {
-    font-size: 64px;
+    font-size: 56px;
     line-height: 64px;
 }
 
@@ -50,7 +49,8 @@ textarea {
     margin-top: 8px;
     padding: 16px 16px;
     border: none;
-    background-color: #f1effb;
+    background-color: #f9f9f9;
+    border: 1px solid #F2F2F2;
 
     border-radius: 8px;
 
@@ -88,6 +88,10 @@ textarea {
     border: 1px solid #888;
     width: 40%;
     border-radius: 16px;
+}
+
+.modal-content p{
+    margin: 1em 0;
 }
 
 .close {
