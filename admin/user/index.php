@@ -11,7 +11,7 @@ require('/laragon/www/lifecare-site-main/process/db.php');
 
     <script>
         function confirmDelete() {
-            return confirm("Are you sure you want to delete this clinic?");
+            return confirm("Are you sure you want to delete this user?");
         }
     </script>
 </head>
