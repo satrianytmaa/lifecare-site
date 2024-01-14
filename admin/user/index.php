@@ -7,7 +7,7 @@ require('/laragon/www/lifecare-site-main/process/db.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinic</title>
+    <title>User</title>
 
     <script>
         function confirmDelete() {
@@ -18,29 +18,29 @@ require('/laragon/www/lifecare-site-main/process/db.php');
 
 <body>
     <?php
-    $query = "SELECT * FROM clinic";
+    $query = "SELECT * FROM user";
     $res = $DB->query($query);
     ?>
     <table>
         <thead>
             <tr>
                 <th>id</th>
-                <th>name</th>
-                <th>address</th>
-                <th>email</th>
+                <th>Full Name</th>
+                <th>Phone Number</th>
+                <th>Password</th>
             </tr>
         </thead>
         <tbody>
             <?php while ($data = $res->fetch_object()) { ?>
                 <tr>
-                    <td><?php echo $data->id_clinic ?></td>
-                    <td><?php echo $data->name_clinic ?></td>
-                    <td><?php echo $data->address ?></td>
-                    <td><?php echo $data->email_clinic ?></td>
+                    <td><?php echo $data->id_user ?></td>
+                    <td><?php echo $data->full_name ?></td>
+                    <td><?php echo $data->phone_number ?></td>
+                    <td><?php echo $data->password ?></td>
                     <td>
-                        <a href="show.php?id=<?php echo $data->id_clinic; ?>">Show</a>
-                        <a href="update.php?id=<?php echo $data->id_clinic; ?>">Edit</a>
-                        <button onclick="return confirmDelete()"><a href="/lifecare-site-main/process/delete_clinic.php?id=<?php echo $data->id_clinic; ?>">Delete</a></button>
+                        <a href="show.php?id=<?php echo $data->id_user; ?>">Show</a>
+                        <a href="update.php?id=<?php echo $data->id_user; ?>">Edit</a>
+                        <button onclick="return confirmDelete()"> <a href="/lifecare-site-main/process/delete_user.php?id=<?php echo $data->id_user; ?>">Delete</a></button>
 
                     </td>
                 </tr>

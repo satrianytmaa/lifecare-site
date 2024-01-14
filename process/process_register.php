@@ -11,5 +11,6 @@ $query = "INSERT INTO user(full_name,phone_number,password,role) VALUES ('" . $f
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/index.html');
+    $id = $DB->insert_id;
+    header('location: /lifecare-site-main/admin/user/show.php?id=' . $id);
 }

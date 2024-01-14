@@ -52,7 +52,7 @@
                <label for="password">Password</label>
                <input type="password" name="password" placeholder="Enter your Password" />
             </div>
-            <button type="submit" class="button-primary"><a href="../index.html">Register now</a></button>
+            <button type="submit" class="button-primary">Register Now</button>
          </div>
       </form>
 
