@@ -37,8 +37,7 @@
          <p>Fill the form with the required information in order to join with us</p>
 
       </div>
-
-      <form class="vaccine-form-form" method="POST" action="/lifecare-site-main/process/process_register.php">
+      <form class="vaccine-form-form" method="POST" action="/lifecare-site-main/process/process_started.php">
          <div class="component-form">
             <div class="form-wrap">
                <label for="full_name">Full Name</label>
