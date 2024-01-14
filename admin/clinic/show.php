@@ -1,6 +1,5 @@
 <?php
 require('/laragon/www/lifecare-site-main/process/db.php');
-session_start();
 $id = $_GET['id'];
 ?>
 <!DOCTYPE html>

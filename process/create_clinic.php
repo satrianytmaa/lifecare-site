@@ -10,5 +10,6 @@ $query = "INSERT INTO clinic(name_clinic,address,email_clinic) VALUES ('" . $nam
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/index.html');
+    $id = $DB->insert_id;
+    header('location: /lifecare-site-main/admin/clinic/show.php?id=' . $id);
 }

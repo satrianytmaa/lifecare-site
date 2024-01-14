@@ -11,5 +11,5 @@ $query = "UPDATE clinic SET `name_clinic`='$name', `address`='$address', `email_
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/index.html');
+    header('location: /lifecare-site-main/admin/clinic/show.php?id=' . $id);
 }
