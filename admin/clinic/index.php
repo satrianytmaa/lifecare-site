@@ -17,6 +17,8 @@ require('/laragon/www/lifecare-site-main/process/db.php');
 </head>
 
 <body>
+    <button><a href="create.php">Create Clinic</a></button>
+
     <?php
     $query = "SELECT * FROM clinic";
     $res = $DB->query($query);
