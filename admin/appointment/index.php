@@ -29,6 +29,7 @@ require('/laragon/www/lifecare-site-main/process/db.php');
             <tr>
                 <th>id</th>
                 <th>Patient Name</th>
+                <th>Number</th>
                 <th>Clinic</th>
                 <th>Status</th>
                 <th>Date</th>
@@ -49,6 +50,7 @@ require('/laragon/www/lifecare-site-main/process/db.php');
                 <tr>
                     <td><?php echo $data->id_appointment ?></td>
                     <td><?php echo $patient->name_patient ?></td>
+                    <td><?php echo $data->number ?></td>
                     <td><?php echo $clinic->name_clinic ?></td>
                     <td><?php echo $data->status ?></td>
                     <td><?php echo $data->date_and_time ?></td>

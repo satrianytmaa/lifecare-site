@@ -120,15 +120,19 @@
                 <div class="component-form">
                     <div class="form-wrap">
                         <label for="name">Full Name</label>
-                        <input type="text" placeholder="Enter your fullname..." />
+                        <input type="text" name="name" placeholder="Enter your fullname..." />
                     </div>
                     <div class="form-wrap">
-                        <label for="name">ID Card</label>
-                        <input type="text" placeholder="Enter your id card..." />
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" placeholder="Enter your fullname..." />
                     </div>
                     <div class="form-wrap">
-                        <label for="name">Mobile Number</label>
-                        <input type="number" placeholder="Enter your number..." />
+                        <label for="id_card">ID Card</label>
+                        <input type="text" name="id_card" placeholder="Enter your id card..." />
+                    </div>
+                    <div class="form-wrap">
+                        <label for="number">Mobile Number</label>
+                        <input type="number" name="number" placeholder="Enter your number..." />
                     </div>
                     <button class="button-primary"><a href="#">Register now</a></button>
                 </div>

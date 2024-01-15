@@ -31,6 +31,7 @@ $id = $_GET['id'];
     ?>
     <p>Id : <?php echo $data->id_patient ?></p>
     <p>Patient Name : <?php echo $patient->name_patient ?></p>
+    <p>Status : <?php echo $data->number ?></p>
     <p>Clinic : <?php echo $clinic->name_clinic ?></p>
     <p>Status : <?php echo $data->status ?></p>
     <p>Date : <?php echo $data->date_and_time ?></p>

@@ -19,12 +19,8 @@
     ?>
     <form method="POST" action="/lifecare-site-main/process/create_appointment.php">
         <div>
-            <label for="patient">Patient</label>
-            <select name="patient" id="patient">
-                <?php while ($data = $patient->fetch_object()) {
-                    echo '<option value="' . $data->id_patient . '">' . $data->name_patient . '</option>';
-                } ?>
-            </select>
+            <label for="full_name">Full Name</label>
+            <input type="text" name="full_name" id="full_name" placeholder="Enter full_name...">
         </div>
         <div>
             <label for="clinic">Clinic</label>
