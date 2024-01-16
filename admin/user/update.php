@@ -1,5 +1,6 @@
 <?php
-require('/laragon/www/lifecare-site-main/process/db.php');
+require '../../process/db.php';
+
 session_start();
 $id = $_GET['id'];
 // Store the ID in the session

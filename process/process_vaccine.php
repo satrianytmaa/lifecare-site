@@ -1,15 +1,20 @@
 <?php
 require('db.php');
 
-// $full_name = $_POST['full_name'];
-// $phone_number = $_POST['phone_number'];
-// // $role = $_POST['phone_number']; role pasti admin
-// $password = $_POST['password'];
+// $name = $_POST['name'];
+// $role = $_POST['phone_number']; role pasti admin
+$app = ['app'];
+$select_appointmet = $DB->query("SELECT * FROM appointment WHERE LOWER(number) LIKE LOWER('%$app%')");
+$data = $select_appointmet->fetch_object();
+$appointment = $data->id_appointment;
 
-// $query = "INSERT INTO user(full_name,phone_number,password,role) VALUES ('" . $full_name . "','" . $phone_number . "','" . $password . "','admin')";
+$phone_number = $_POST['phone_number'];
+$id_card = $_POST['id_card'];
 
-// $res = $DB->query($query);
+$query = "INSERT INTO vaccine(id_appointment,name_vaccine,manufacturer,age,dose_vaccine) VALUES ('" . $full_name . "','" . $phone_number . "','" . $password . "','admin')";
 
-// if ($res) {
-//     header('location: /lifecare-site-main/index.html');
-// }
+$res = $DB->query($query);
+
+if ($res) {
+    header('location: /lifecare-site-main/index.html');
+}

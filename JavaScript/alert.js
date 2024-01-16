@@ -1,7 +1,7 @@
-// // script.js
+// script.js
 
 
-// // Modal script
+// Modal script
 // var modal = document.getElementById("myModal");
 // var contactName = document.getElementById("contact_name");
 // var contactIssue = document.getElementById("contact_issue");
@@ -16,18 +16,6 @@
     
 //     // Show the modal
 //     modal.style.display = "block";
-// });
-// document.getElementById("buttonAlert").addEventListener("click", function() {
-//     // ...
-
-//     // Redirect ke halaman form setelah menampilkan modal
-//     window.location.href = "/lifecare-site-main/Index/contact.html";
-// });
-
-// // Event listener untuk buttonAlert di modal
-// document.getElementById("buttonAlertModal").addEventListener("click", function() {
-//     // Redirect ke halaman form setelah menutup modal
-//     window.location.href = "/lifecare-site-main/Index/contact.html";
 // });
 
 // document.getElementsByClassName("close")[0].addEventListener("click", function() {
@@ -62,6 +50,7 @@
 //     });
 // });
 
+
     // Modal script
     var modal = document.getElementById("myModal");
     var contactName = document.getElementById("contact_name");
@@ -78,13 +67,13 @@
         modal.style.display = "block";
 
         // Redirect ke halaman form setelah menampilkan modal
-        window.location.href = "/lifecare-site-main/Index/contact.html";
+        window.location.href = "/lifecare-site-main/Index/contact.php";
     });
 
     // Event listener untuk buttonAlert di modal
     document.getElementById("buttonAlertModal").addEventListener("click", function() {
         // Redirect ke halaman form setelah menutup modal
-        window.location.href = "/lifecare-site-main/Index/contact.html";
+        window.location.href = "/lifecare-site-main/Index/contact.php";
     });
 
     document.getElementsByClassName("close")[0].addEventListener("click", function() {

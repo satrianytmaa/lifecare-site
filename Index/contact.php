@@ -54,7 +54,7 @@
             <li class="nav-item"><a href="../Index/vaccine.html">Vaccine</a></li>
             <li class="nav-item"><a href="../Index/blog.html">Blog</a></li>
             <li class="nav-item"><a href="../Index/about.html">About</a></li>
-            <li class="nav-item"><a href="../Index/contact.html">Contact</a></li>
+            <li class="nav-item"><a href="../Index/contact">Contact</a></li>
             <a href="../Index/started.html">
                <button class="button-nav">Get started</button>
             </a>

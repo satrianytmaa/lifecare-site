@@ -1,5 +1,7 @@
 <?php
-require('/laragon/www/lifecare-site-main/process/db.php');
+
+require '../../process/db.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +19,7 @@ require('/laragon/www/lifecare-site-main/process/db.php');
 </head>
 
 <body>
-    <button><a href="create.php">Create Appointment</a></button>
+    <button><a href="../../Index/create_appointment.php">Create Appointment</a></button>
 
     <?php
     $query = "SELECT * FROM appointment";

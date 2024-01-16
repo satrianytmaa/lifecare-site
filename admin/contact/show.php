@@ -1,5 +1,6 @@
 <?php
-require('/laragon/www/lifecare-site-main/process/db.php');
+require '../../process/db.php';
+
 $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
