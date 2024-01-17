@@ -1,20 +1,20 @@
 <?php
 require('db.php');
+session_start(); // Start the session
 
-// $name = $_POST['name'];
-// $role = $_POST['phone_number']; role pasti admin
+$id = $_SESSION['id_vaccine'];
 $app = $_POST['appointment'];
 $select_appointment = $DB->query("SELECT * FROM appointment WHERE LOWER(number) LIKE LOWER('%$app%') ORDER BY id_appointment DESC LIMIT 1 ");
 // $select_appointmet = $DB->query("SELECT * FROM appointment WHERE LOWER(number) LIKE LOWER('AP001')");
 $data = $select_appointment->fetch_object();
 $appointment = $data->id_appointment;
-$age = $_POST['number'];
+$age = $_POST['age'];
 $vaccine = $_POST['vaccine'];
 
-$query = "INSERT INTO vaccine(id_appointment,name_vaccine,age) VALUES ('" . $appointment . "','" . $vaccine . "','" . $age . "')";
-
+$query = "UPDATE vaccine SET `id_appointment`='$appointment', `name_vaccine`='$vaccine', `age`='$age' WHERE `id_vaccine`='$id'";
 $res = $DB->query($query);
 
+
 if ($res) {
-    header('location: /lifecare-site-main/index.html');
+    header('location: /lifecare-site-main/admin/vaccine/show.php?id=' . $id);
 }

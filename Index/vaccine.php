@@ -123,15 +123,15 @@
                         <input type="text" name="name" placeholder="Enter your fullname..." />
                     </div> -->
                     <div class="form-wrap">
-                        <label for="app">Appointment Number</label>
-                        <input type="text" name="app" placeholder="Enter your fullname..." />
+                        <label for="appointment">Appointment Number</label>
+                        <input type="text" name="appointment" placeholder="Enter your appointment number..." />
                     </div>
                     <div class="form-wrap">
-                        <label for="id_card">ID Card</label>
-                        <input type="text" name="id_card" placeholder="Enter your id card..." />
+                        <label for="vaccine">Vaccine Type</label>
+                        <input type="text" name="vaccine" placeholder="Enter vaccine type..." />
                     </div>
                     <div class="form-wrap">
-                        <label for="number">Mobile Number</label>
+                        <label for="number">age</label>
                         <input type="number" name="number" placeholder="Enter your number..." />
                     </div>
                     <button class="button-primary"><a href="#">Register now</a></button>
