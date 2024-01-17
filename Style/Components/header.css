@@ -21,7 +21,7 @@ nav .nav-logo p {
 
 nav ul {
   display: flex;
-  width: 48%;
+  width: 32%;
   justify-content: space-between;
   align-items: center;
 }
@@ -111,12 +111,18 @@ nav ul li a:hover {
 .user-profile{
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 1em;
 }
 
 
 .user-profile img{
   width: 48px;
+}
+
+.pfp-profile{
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 /* HEADER => Responsive */

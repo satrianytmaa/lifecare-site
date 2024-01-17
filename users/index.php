@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +17,9 @@
     <link rel="stylesheet" href=".././style/components/support.css" />
     <link rel="stylesheet" href=".././style/components/blog.css" />
     <link rel="stylesheet" href=".././style/components/footer.css" />
+
+    <!-- Users Styling -->
+    <link rel="stylesheet" href="../style/users/header.css">
 
     <!-- Base Config -->
     <link rel="stylesheet" href=".././style/base_font.css" />
@@ -36,7 +42,10 @@
       rel="stylesheet"
     />
   </head>
+  
   <body>
+
+  
     <!-- COMPONENT / Header -->
     <header>
       <!-- HEADER / Navigation -->
@@ -54,18 +63,29 @@
           <li class="nav-item"><a href=".././index/blog.html">Blog</a></li>
           <li class="nav-item"><a href=".././index/about.html">About</a></li>
           <li class="nav-item"><a href=".././index/contact.php">Contact</a></li>
-
-          <li class="nav-item"><a href="#">
-            <!-- Profile -->
-
-            <div class="user-profile">
-              <img src=".././assets/default/Pfp-1.png" alt="Profile" />
-              <div class="profile-name">
-                <p>Username</p>
-              </div>
-            </div>
-          </a></li>
         </ul>
+        <div class="user-profile">
+          <img src=".././assets/default/Pfp-1.png" alt="Profile" />
+          <div class="profile-name">
+            <p>
+
+            <?php
+            session_start(); // Start the session
+
+            // Check if the full_name is set in the session
+            if (isset($_SESSION['full_name'])) {
+                $full_name = $_SESSION['full_name'];
+                // Display the full_name in your HTML
+                echo '<p>Welcome, ' . htmlspecialchars($full_name) . '!</p>';
+            } else {
+                echo '<p>No user information available.</p>';
+            }
+            ?>
+
+            </p>
+
+          </div>
+        </div>
 
         <!-- NAV-Toggle | Pending -->
         <div class="menu-toggle">
@@ -75,6 +95,7 @@
         </div>
       </nav>
     </header>
+    
 
     <!-- COMPONENT / Landing Page -->
     <main>
