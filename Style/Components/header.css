@@ -111,7 +111,7 @@ nav ul li a:hover {
 .user-profile{
   display: flex;
   align-items: center;
-  gap: 1;
+  gap: 24px;
 }
 
 
