@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form method="POST" action="/lifecare-site-main/process/create_clinic.php">
+    <form method="POST" action="/lifecare-site/process/create_clinic.php">
         <div>
             <label for="name">Name</label>
             <input type="text" name="name" id="name" placeholder="Enter Name...">

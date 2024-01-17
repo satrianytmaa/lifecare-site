@@ -40,7 +40,7 @@ require '../../process/db.php';
                     <td>
                         <a href="show.php?id=<?php echo $data->id_user; ?>">Show</a>
                         <a href="update.php?id=<?php echo $data->id_user; ?>">Edit</a>
-                        <button onclick="return confirmDelete()"> <a href="/lifecare-site-main/process/delete_user.php?id=<?php echo $data->id_user; ?>">Delete</a></button>
+                        <button onclick="return confirmDelete()"> <a href="/lifecare-site/process/delete_user.php?id=<?php echo $data->id_user; ?>">Delete</a></button>
 
                     </td>
                 </tr>

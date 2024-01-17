@@ -13,5 +13,5 @@ $query = "INSERT INTO user(full_name,phone_number,password,role) VALUES ('" . $f
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/index.html');
+    header('location: /lifecare-site/index.html');
 }

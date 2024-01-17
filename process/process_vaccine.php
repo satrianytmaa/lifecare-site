@@ -16,5 +16,5 @@ $query = "INSERT INTO vaccine(id_appointment,name_vaccine,manufacturer,age,dose_
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/index.html');
+    header('location: /lifecare-site/index.html');
 }

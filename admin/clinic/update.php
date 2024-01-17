@@ -23,7 +23,7 @@ $_SESSION['clinic_id'] = $id;
     $data = $res->fetch_object();
     ?>
 
-    <form method="POST" action="/lifecare-site-main/process/update_clinic.php">
+    <form method="POST" action="/lifecare-site/process/update_clinic.php">
         <div>
             <label for="name">Name</label>
             <input type="text" name="name" id="name" value="<?php echo $data->name_clinic; ?>">

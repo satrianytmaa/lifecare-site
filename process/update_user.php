@@ -11,5 +11,5 @@ $query = "UPDATE user SET `full_name`='$name', `phone_number`='$phone', `passwor
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/admin/user/show.php?id=' . $id);
+    header('location: /lifecare-site/admin/user/show.php?id=' . $id);
 }

@@ -13,7 +13,7 @@
     $query = "SELECT * FROM user";
     $res = $DB->query($query);
     ?>
-    <form method="POST" action="/lifecare-site-main/process/create_patient.php">
+    <form method="POST" action="/lifecare-site/process/create_patient.php">
         <div>
             <label for="user">Name</label>
             <select name="user" id="user">

@@ -14,5 +14,5 @@ $res = $DB->query($query);
 
 
 if ($res) {
-    header('location: /lifecare-site-main/admin/contact/show.php?id=' . $id);
+    header('location: /lifecare-site/admin/contact/show.php?id=' . $id);
 }

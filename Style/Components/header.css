@@ -1,98 +1,93 @@
 /* HEADER => Navigation */
-header{
-	max-width: 1140px;
-	margin-left: auto;
-	margin-right: auto;
+header {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav {
-	display: flex;
-	justify-content: space-between;
-	/* background-color: var(--cm-calm-01); */
-	height: 80px;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: var(--cm-calm-01); */
+  height: 80px;
+  align-items: center;
 }
 
-nav .nav-logo p{
-	font-weight: 600;
-	color: var(--cl-brand);
-	font-size: var(--ft-medium);
+nav .nav-logo p {
+  font-weight: 600;
+  color: var(--cl-brand);
+  font-size: var(--ft-medium);
 }
 
-nav ul{
-	display: flex;
-	width: 48%;
-	justify-content: space-between;
-	align-items: center;
+nav ul {
+  display: flex;
+  width: 48%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul li a{
-	font-family: 'Roobert-Regular', sans-serif;
-	color: var(--cl-link);
-	font-weight: 500;
-	font-size: 17px;
-	letter-spacing: -0.25px;
-	transition: all 100ms ease-in-out;
+nav ul li a {
+  font-family: "Roobert-Regular", sans-serif;
+  color: var(--cl-link);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.25px;
+  transition: all 100ms ease-in-out;
 }
 
-nav ul li a:hover{
-	color: var(--cl-title);
-	font-weight: 500;
+nav ul li a:hover {
+  color: var(--cl-title);
+  font-weight: 500;
 }
-
 
 .nav-item a {
-	position: relative; /* Position relative for absolute positioning of the pseudo-element */
-	text-decoration: none; /* Remove default underline */
-	padding: 0.5em 0;
-  }
-  
+  position: relative; /* Position relative for absolute positioning of the pseudo-element */
+  text-decoration: none; /* Remove default underline */
+  padding: 0.5em 0;
+}
+
 .nav-item a:after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 0;
-	height: 2px;
-	background-color: var(--cl-title);
-	border-radius: 10px;
-	transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--cl-title);
+  border-radius: 10px;
+  transition: width 0.3s ease;
 }
 
 .nav-item a:hover:after {
-	width: 100%;
+  width: 100%;
 }
-  
-
-
-
 
 /* HEADER => Travis Scott Burger */
-.menu-toggle{
-	display: none;
-	flex-direction: column;
-	height: 12px;
-	justify-content: space-between;
-	position: relative;
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 12px;
+  justify-content: space-between;
+  position: relative;
 }
 
-.menu-toggle input{
-	position: absolute;
-	width: 32px;
-	height: 32px;
-	opacity: 0;
-	top: -10px;
-	cursor: pointer;
-	z-index: 8;
+.menu-toggle input {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  top: -10px;
+  cursor: pointer;
+  z-index: 8;
 }
 
 /* HEADER => Menu Animation */
-.menu-toggle span:nth-child(2){
-	transform-origin: 0 0;
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
 }
 
-.menu-toggle span:last-child{
-	transform-origin: 0 100%;
+.menu-toggle span:last-child {
+  transform-origin: 0 100%;
 }
 
 /* .menu-toggle input:checked ~ span:nth-child(2){
@@ -103,33 +98,44 @@ nav ul li a:hover{
 	transform: rotate(-45deg);
 } */
 
-.menu-toggle span{
-	display: block;
-	width: 32px;
-	height: 4px;
-	background-color: var(--cl-title);
-	border-radius: 8px;
+.menu-toggle span {
+  display: block;
+  width: 32px;
+  height: 4px;
+  background-color: var(--cl-title);
+  border-radius: 8px;
+}
+
+/* HEADER => Users */
+
+.user-profile{
+  display: flex;
+  align-items: center;
+  gap: 1;
 }
 
 
+.user-profile img{
+  width: 48px;
+}
 
 /* HEADER => Responsive */
 
 /* RESPONSIVE => Laptop Small */
 @media screen and (max-width: 1024px) {
-	nav ul{
-		width: 56%;
-	}
+  nav ul {
+    width: 56%;
+  }
 
-	nav{
-		margin: 0 24px;
-	}
+  nav {
+    margin: 0 24px;
+  }
 }
 
 /* RESPONSIVE => Tablet */
 @media screen and (max-width: 768px) {
-	nav ul{
-		/* position: absolute;
+  nav ul {
+    /* position: absolute;
 		right: -100%;
 		top: 0;
 		flex-direction: column;
@@ -140,18 +146,14 @@ nav ul li a:hover{
 		width: 100%;
 		z-index: -4; */
 
-		display: none;
-	}
+    display: none;
+  }
 
-	.menu-toggle{
-		display: flex;
-	}
-
-
+  .menu-toggle {
+    display: flex;
+  }
 }
 
 /* RESPONSIVE => Handphone */
 @media screen and (max-width: 425px) {
 }
-
-

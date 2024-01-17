@@ -5,18 +5,18 @@
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <!-- Browser Logo -->
-   <link rel="icon" href="../Assets/Icons/Logo.svg" />
+   <link rel="icon" href="../assets/icons/Logo.svg" />
 
    <!-- Base Config -->
-   <link rel="stylesheet" href="../Style/base_font.css" />
-   <link rel="stylesheet" href="../Style/base_config.css" />
-   <link rel="stylesheet" href="../Style/base_root.css" />
-   <link rel="stylesheet" href="../Style/base_component.css" />
+   <link rel="stylesheet" href="../style/base_font.css" />
+   <link rel="stylesheet" href="../style/base_config.css" />
+   <link rel="stylesheet" href="../style/base_root.css" />
+   <link rel="stylesheet" href="../style/base_component.css" />
 
    <!-- Initial -->
-   <link rel="stylesheet" href="../Style/landing_page.css" />
-   <link rel="stylesheet" href="../Style/landing_responsive.css" />
-   <link rel="stylesheet" href="../Style/started.css">
+   <link rel="stylesheet" href="../style/landing_page.css" />
+   <link rel="stylesheet" href="../style/landing_responsive.css" />
+   <link rel="stylesheet" href="../style/started.css">
 
    <!-- Google Font -->
    <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,8 +24,8 @@
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
    <!-- CSS IMPORT -->
-   <link rel="stylesheet" href="../Style/vaccine_page.css" />
-   <link rel="stylesheet" href="../Style/vaccine_responsive.css" />
+   <link rel="stylesheet" href="../style/vaccine_page.css" />
+   <link rel="stylesheet" href="../style/vaccine_responsive.css" />
 
    <title>Get Started</title>
 </head>
@@ -37,7 +37,7 @@
          <p>Fill the form with the required information in order to join with us</p>
 
       </div>
-      <form class="vaccine-form-form" method="POST" action="/lifecare-site-main/process/process_started.php">
+      <form class="vaccine-form-form" method="POST" action="/lifecare-site/process/process_started.php">
          <div class="component-form">
             <div class="form-wrap">
                <label for="full_name">Full Name</label>

@@ -5,5 +5,5 @@ $query = "DELETE from patient where id_patient='$id'";
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/admin/patient/index.php');
+    header('location: /lifecare-site/admin/patient/index.php');
 }

@@ -132,11 +132,11 @@ CREATE TABLE `vaccine` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Indexes for dumped tables
+-- indexes for dumped tables
 --
 
 --
--- Indexes for table `appointment`
+-- indexes for table `appointment`
 --
 ALTER TABLE `appointment`
   ADD PRIMARY KEY (`id_appointment`),
@@ -144,47 +144,47 @@ ALTER TABLE `appointment`
   ADD KEY `clinic_appointment` (`id_clinic`);
 
 --
--- Indexes for table `blog`
+-- indexes for table `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`id_blog`),
   ADD KEY `user_blog` (`user_id`);
 
 --
--- Indexes for table `clinic`
+-- indexes for table `clinic`
 --
 ALTER TABLE `clinic`
   ADD PRIMARY KEY (`id_clinic`);
 
 --
--- Indexes for table `contact`
+-- indexes for table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id_contact`) USING BTREE,
   ADD KEY `user_contact` (`user_id`);
 
 --
--- Indexes for table `patient`
+-- indexes for table `patient`
 --
 ALTER TABLE `patient`
   ADD PRIMARY KEY (`id_patient`),
   ADD KEY `user_patient` (`id_user`);
 
 --
--- Indexes for table `session`
+-- indexes for table `session`
 --
 ALTER TABLE `session`
   ADD PRIMARY KEY (`id_session`) USING BTREE,
   ADD KEY `user_session` (`id_user`);
 
 --
--- Indexes for table `user`
+-- indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`) USING BTREE;
 
 --
--- Indexes for table `vaccine`
+-- indexes for table `vaccine`
 --
 ALTER TABLE `vaccine`
   ADD PRIMARY KEY (`id_vaccine`),

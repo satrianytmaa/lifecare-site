@@ -16,5 +16,5 @@ $res = $DB->query($query);
 
 if ($res) {
     $id = $DB->insert_id;
-    header('location: /lifecare-site-main/admin/patient/show.php?id=' . $id);
+    header('location: /lifecare-site/admin/patient/show.php?id=' . $id);
 }

@@ -30,5 +30,5 @@ $res = $DB->query($query);
 
 if ($res) {
     $id = $DB->insert_id;
-    header('location: /lifecare-site-main/admin/appointment/show.php?id=' . $id);
+    header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
 }
