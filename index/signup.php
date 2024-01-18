@@ -168,10 +168,14 @@
             </div> -->
 
             <!-- Form Sign Up -->
-            <form action="../lifecare-site/process/process_started.php" class="signup-form" method="POST" onsubmit="return validateForm()">
+            <form action="../process/process_started.php" class="signup-form" method="POST" onsubmit="return validateForm()">
+                 <!-- <div class="form-wrap">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Enter your Username" required />
+                </div> -->
                 <div class="form-wrap">
                     <label for="full_name">Full Name</label>
-                    <input type="text" name="full_name" placeholder="Enter your Fullname." required />
+                    <input type="text" name="full_name" placeholder="Enter your Fullname" required />
                 </div>
                 <div class="form-wrap">
                     <label for="phone_number">Phone Number</label>
@@ -189,7 +193,7 @@
                     </div>
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter your Password" required oninput="checkPasswordMatch()" />
                 </div>
-                <button type="submit" class="button-primary button-signup"><a href="../users/index.html">Create an Account</a></button>
+                <button type="submit" class="button-primary button-signup"><a href="../users/index.php">Create an Account</a></button>
             </form>
 
 

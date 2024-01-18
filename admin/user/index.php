@@ -32,6 +32,9 @@ require '../../process/db.php';
     <!-- Responsive -->
     <link rel="stylesheet" href="" />
 
+    <!-- Admin Stylesheet -->
+    <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,205 +50,61 @@ require '../../process/db.php';
     </script>
 
     <style>
-
-        body{
-            background: #F3F4F6;
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .users-database .header{
-            margin-bottom: 2em;
-        }
-
-        .users-database .header h4{
-            font-size: 2em;
-            font-weight: 600;
-            margin-bottom: 0.5em;
-        }
-
-        .users-database .header p{
-            font-size: 1em;
-            font-weight: 400;
-        }
-
-        .users-database .table{
-            overflow-x: auto;
-            border-radius: 1em;
-            border: 2px solid #D9DADC;
-        }
-
-        .users-database .table table{
-            width: 100%;
-            border-collapse: collapse;
-            
-            border-radius: 1em;
-        }
-
-        .users-database .table table thead{
-            background-color: #F9FAFB;
-            border-radius: 1em;
-            color: #111827;
-        }
-
-        .users-database .table table thead th{
-            padding: 2em;
-            font-size: 1em;
-            font-weight: 700;
-            text-align: left;
-            border-bottom: 2px solid #D9DADC;
-        }
-
-        .users-database .table table tbody tr{
-            border-bottom: 1px solid #D9DADC;
-            background-color: #FFF;
-        }
-
-        .users-database .table table tbody tr td{
-            padding: 2em;
-            font-size: 1em;
-            font-weight: 400;
-            text-align: left;
-        }
-
-        .btn-normal a{
-            text-decoration: none;
-            color: #000;
-            font-size: 1em;
-            font-weight: 500;
-        }
-
-        .btn-normal a:hover{
-            color: #000;
-        }
-
-        .btn-normal{
-            background-color: #FFF;
+        .btn-add{
+            background-color: #6A55EA;
             border: 1.5px solid #D8DBDC;
             outline: none;
             cursor: pointer;
-            padding: 0.6em 2em;
+            padding: 1em 3em;
             border-radius: 0.4em;
+
+            color: #FFFFFF;
+            font-weight: 500;
         }
 
-
-        .btn-delete{
-            background-color: #DF4939;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 0.6em 2em;
-            border-radius: 0.4em;
-            margin-right: 1em;
+        .btn-add:hover{
+            background-color: #5C4CE3;
         }
 
-        .btn-delete a{
-            color: #F9FAFB;
-        }
-
-        .action-btn{
-            display: flex;
-            align-items: center;
-            gap: 1em;
-        }
-
-
-        /* Customize the action button */
-
-        /* Responsive Media */
-
-        @media screen and (max-width: 1024px){
-            .users-database{
-                padding: 2em;
-            }
-
-            .users-database .header h4{
-                font-size: 1.5em;
-            }
-
-            .users-database .header p{
-                font-size: 0.8em;
-            }
-
-            .users-database .table table thead th{
-                font-size: 0.8em;
-            }
-
-            .users-database .table table tbody tr td{
-                font-size: 0.8em;
-            }
-
-            .users-database .table table tbody tr td a{
-                font-size: 0.6em;
-            }
-
-            .users-database .table table tbody tr td button a{
-                font-size: 0.6em;
-            }
-        }
+        /* Responsive */
 
         @media screen and (max-width: 768px){
             .users-database{
-                padding: 2em;
+                padding: 0 1em;
             }
 
-            .users-database .header h4{
-                font-size: 1.5em;
+            .header{
+                flex-direction: column;
+                gap: 1em;
             }
 
-            .users-database .header p{
-                font-size: 0.8em;
+            .header-content{
+                text-align: center;
             }
 
-            .users-database .table table thead th{
-                font-size: 0.8em;
+            .header-action{
+                width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
-            .users-database .table table tbody tr td{
-                font-size: 0.8em;
+            .btn-add{
+                width: 100%;
             }
 
-            .users-database .table table tbody tr td a{
-                font-size: 0.6em;
-            }
-
-            .users-database .table table tbody tr td button a{
-                font-size: 0.6em;
-            }
-        }
-
-        @media screen and (max-width: 425px){
-            .users-database{
-                padding: 2em;
-            }
-
-            .users-database .header h4{
-                font-size: 1.5em;
-            }
-
-            .users-database .header p{
-                font-size: 0.8em;
-            }
-
-            .users-database .table table thead th{
-                font-size: 0.8em;
-            }
-
-            .users-database .table table tbody tr td{
-                font-size: 0.8em;
-            }
-
-            .users-database .table table tbody tr td a{
-                font-size: 0.6em;
-            }
-
-            .users-database .table table tbody tr td button a{
-                font-size: 0.6em;
+            .table{
+                overflow-x: scroll;
             }
         }
-        
-
-        
-
     </style>
+
+    
 </head>
 
 <body>
@@ -260,8 +119,16 @@ require '../../process/db.php';
 
         <!-- Header -->
         <div class="header">
-            <h4>Users Database</h4>
-            <p>A list of all the users in your account including their name, title, email and role.</p>
+            <div class="header-content">
+                <h4>Users Database</h4>
+                <p>A list of all the users in your account including their name, title, email and role.</p>
+            </div>
+
+            <div class="header-action">
+                <a href="../register.php">
+                    <button class="btn-add">Add User</button>
+                </a>
+            </div>
         </div>
 
         <!-- Table -->
@@ -271,9 +138,9 @@ require '../../process/db.php';
                 <tr>
                     <th>ID User</th>
                     <th>Full Name</th>
+                    <!-- <th>Username</th>
+                    <th>Register</th> -->
                     <th>Phone Number</th>
-                    <th>Password</th>
-                    <th>Role</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -281,10 +148,8 @@ require '../../process/db.php';
                 <?php while ($data = $res->fetch_object()) { ?>
                     <tr>
                         <td><?php echo $data->id_user ?></td>
-                        <td><?php echo $data->full_name ?></td>
+                        <td class="table-full-name"><?php echo $data->full_name ?></td>
                         <td><?php echo $data->phone_number ?></td>
-                        <td><?php echo $data->password ?></td>
-                        <td><?php echo $data->role ?></td>
                         <td class="action-btn">
                             <a href="show.php?id=<?php echo $data->id_user; ?>">
                                 <button class="btn-normal">
