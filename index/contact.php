@@ -35,6 +35,52 @@
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
    <title>Get Started</title>
+
+   <style>
+      /* Dropdown select */
+
+      .component-form select{
+      margin-top: 0.4em;
+      padding: 1em;
+      border-radius: 0.4em;
+      border: 1px solid #F2F2F2;
+      background-color: #F9F9F9 ;
+      outline: none;
+      cursor: pointer;
+      font-size: 1em;
+      }
+
+      .component-form select:hover{
+      border: 1px solid #6A55EA;
+      }
+
+      .component-form select:focus{
+      border: 1px solid #6A55EA;
+      }
+
+      .component-form select option{
+      padding: 1em;
+      border-radius: 0.4em;
+      border: 1px solid #D8DBDC;
+      outline: none;
+      cursor: pointer;
+      }
+
+      .component-form select option:hover{
+      border: 1px solid #6A55EA;
+      }
+
+      .component-form select option:focus{
+      border: 1px solid #6A55EA;
+      }
+
+      button{
+         color: #F2F2F2;
+      }
+
+
+   </style>
+
 </head>
 
 <body>
@@ -76,7 +122,7 @@
          <p>Holaa! Feel free to use the contact form to the right to reach out to us </p>
       </div>
 
-      <form class="component-form" method="POST" action="../lifecare-site/process/create_contact.php" target="hidden_iframe">
+      <form class="component-form" method="POST" action="../process/create_contact.php" target="hidden_iframe">
          <div class="from-wrap">
             <h4>Send us a message 🚀</h4>
          </div>
@@ -87,7 +133,11 @@
             <input type="email" id="email" name="email" placeholder="Enter your Email" required />
          </div>
          <div class="form-wrap">
-            <input type="text" id="subject" name="subject" placeholder="Enter Subject" required />
+            <select name="subject" id="subject">
+               <option value="healthcare">Healthcare</option>
+               <option value="consultation">Consultation</option>
+               <option value="other">Others</option>
+            </select>
          </div>
          <div class="form-wrap">
             <label for="message">Tell us about your problem!</label>
