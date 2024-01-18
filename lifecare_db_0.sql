@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 11:21 AM
+-- Host: localhost
+-- Generation Time: Jan 16, 2024 at 05:00 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,18 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `appointment` (
   `id_appointment` int(11) NOT NULL,
   `date_and_time` datetime NOT NULL,
-  `id_user` int(10) NOT NULL,
+  `id_patient` int(11) NOT NULL DEFAULT 0,
   `id_clinic` int(11) NOT NULL DEFAULT 0,
-  `status` varchar(100) NOT NULL DEFAULT '0',
-  `number` varchar(50) NOT NULL
+  `status` varchar(100) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `appointment`
---
-
-INSERT INTO `appointment` (`id_appointment`, `date_and_time`, `id_user`, `id_clinic`, `status`, `number`) VALUES
-(8, '2024-01-17 17:15:16', 13, 4, 'daftar', 'AP001');
 
 -- --------------------------------------------------------
 
@@ -69,14 +61,6 @@ CREATE TABLE `clinic` (
   `email_clinic` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `clinic`
---
-
-INSERT INTO `clinic` (`id_clinic`, `name_clinic`, `address`, `email_clinic`) VALUES
-(3, 'rs wangaya ', 'dalung', 'nina@gmail.com'),
-(4, 'nina', 'dalung', 'putusri2334@gmail.com');
-
 -- --------------------------------------------------------
 
 --
@@ -89,6 +73,21 @@ CREATE TABLE `contact` (
   `subject` varchar(255) NOT NULL DEFAULT '',
   `problem` varchar(255) NOT NULL DEFAULT '',
   `user_id` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient`
+--
+
+CREATE TABLE `patient` (
+  `id_patient` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `name_patient` varchar(225) NOT NULL DEFAULT '',
+  `phone_number` varchar(100) NOT NULL DEFAULT '',
+  `email_patient` varchar(100) NOT NULL DEFAULT '',
+  `address` varchar(225) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -112,21 +111,10 @@ CREATE TABLE `session` (
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `full_name` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `address` varchar(225) NOT NULL,
   `phone_number` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id_user`, `full_name`, `email`, `address`, `phone_number`, `password`, `role`) VALUES
-(13, 'angel cantik', 'sriangel.p@gmail.com', 'dalung p', '0982341234', '123', 'admin'),
-(14, 'angel cantik banget', 'dalung@mail.com', 'dalung permai', '0982341234', '123', 'user'),
-(15, 'angel cantik bgt', 'angell@mail.com', 'mengwi', '0982341234', '123', 'user');
 
 -- --------------------------------------------------------
 
@@ -138,7 +126,9 @@ CREATE TABLE `vaccine` (
   `id_vaccine` int(11) NOT NULL,
   `id_appointment` int(11) NOT NULL,
   `name_vaccine` varchar(225) NOT NULL DEFAULT '',
-  `age` int(11) NOT NULL DEFAULT 0
+  `manufacturer` varchar(100) NOT NULL DEFAULT '',
+  `age` int(11) NOT NULL DEFAULT 0,
+  `dose_vaccine` varchar(100) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -150,8 +140,8 @@ CREATE TABLE `vaccine` (
 --
 ALTER TABLE `appointment`
   ADD PRIMARY KEY (`id_appointment`),
-  ADD KEY `clinic_appointment` (`id_clinic`),
-  ADD KEY `user_appointment` (`id_user`);
+  ADD KEY `patient_appointment` (`id_patient`),
+  ADD KEY `clinic_appointment` (`id_clinic`);
 
 --
 -- Indexes for table `blog`
@@ -172,6 +162,13 @@ ALTER TABLE `clinic`
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id_contact`) USING BTREE,
   ADD KEY `user_contact` (`user_id`);
+
+--
+-- Indexes for table `patient`
+--
+ALTER TABLE `patient`
+  ADD PRIMARY KEY (`id_patient`),
+  ADD KEY `user_patient` (`id_user`);
 
 --
 -- Indexes for table `session`
@@ -201,7 +198,7 @@ ALTER TABLE `vaccine`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `blog`
@@ -213,13 +210,19 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `clinic`
 --
 ALTER TABLE `clinic`
-  MODIFY `id_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_clinic` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `patient`
+--
+ALTER TABLE `patient`
+  MODIFY `id_patient` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `session`
@@ -231,13 +234,13 @@ ALTER TABLE `session`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `vaccine`
 --
 ALTER TABLE `vaccine`
-  MODIFY `id_vaccine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_vaccine` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -248,7 +251,7 @@ ALTER TABLE `vaccine`
 --
 ALTER TABLE `appointment`
   ADD CONSTRAINT `clinic_appointment` FOREIGN KEY (`id_clinic`) REFERENCES `clinic` (`id_clinic`),
-  ADD CONSTRAINT `user_appointment` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `patient_appointment` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id_patient`);
 
 --
 -- Constraints for table `blog`
@@ -261,6 +264,12 @@ ALTER TABLE `blog`
 --
 ALTER TABLE `contact`
   ADD CONSTRAINT `user_contact` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`);
+
+--
+-- Constraints for table `patient`
+--
+ALTER TABLE `patient`
+  ADD CONSTRAINT `user_patient` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `session`

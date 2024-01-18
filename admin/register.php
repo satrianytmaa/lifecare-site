@@ -42,15 +42,23 @@
          <div class="component-form">
             <div class="form-wrap">
                <label for="full_name">Full Name</label>
-               <input type="text" name="full_name" placeholder="Enter your Fullname." />
+               <input type="text" name="full_name" placeholder="Enter your Fullname...." />
+            </div>
+            <div class="form-wrap">
+               <label for="address">Address</label>
+               <input type="text" name="address" placeholder="Enter your Address..." />
+            </div>
+            <div class="form-wrap">
+               <label for="email">Email </label>
+               <input type="text" name="email" placeholder="Enter your Phone Email..." />
             </div>
             <div class="form-wrap">
                <label for="phone_number">Phone Number</label>
-               <input type="text" name="phone_number" placeholder="Enter your Phone Number" />
+               <input type="text" name="phone_number" placeholder="Enter your Phone Number..." />
             </div>
             <div class="form-wrap">
                <label for="password">Password</label>
-               <input type="password" name="password" placeholder="Enter your Password" />
+               <input type="password" name="password" placeholder="Enter your Password..." />
             </div>
             <button type="submit" class="button-primary">Register Now</button>
          </div>

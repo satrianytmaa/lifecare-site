@@ -1,3 +1,6 @@
+<!-- tampilkan data user isi btn edit dan hapus jg -->
+<!-- http://localhost/lifecare-site-main/Index/user/show.php?id=id -->
+
 <?php
 require '../../process/db.php';
 
@@ -10,6 +13,12 @@ $id = $_GET['id'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show User</title>
+
+    <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this user?");
+        }
+    </script>
 </head>
 
 <body>
@@ -25,7 +34,7 @@ $id = $_GET['id'];
     <p>Phone Number : <?php echo $data->phone_number ?></p>
     <p>Password : <?php echo $data->password ?></p>
 
-
+    <button><a href="update.php?id=<?php echo $data->id_user ?>">Update User</a></button>
 </body>
 
 </html>
