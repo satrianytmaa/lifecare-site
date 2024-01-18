@@ -8,25 +8,25 @@
     <title>🥗 Lifecare.io — Register Vaccine</title>
 
     <!-- Browser Logo -->
-    <link rel="icon" href="../Assets/Icons/Logo.svg" />
+    <link rel="icon" href="../assets/icons/Logo.svg" />
 
-    <!-- Components -->
-    <link rel="stylesheet" href="../Style/Components/header.css" />
-    <link rel="stylesheet" href="../Style/Components/support.css" />
-    <link rel="stylesheet" href="../Style/Components/blog.css" />
-    <link rel="stylesheet" href="../Style/Components/footer.css" />
+    <!-- components -->
+    <link rel="stylesheet" href="../style/components/header.css" />
+    <link rel="stylesheet" href="../style/components/support.css" />
+    <link rel="stylesheet" href="../style/components/blog.css" />
+    <link rel="stylesheet" href="../style/components/footer.css" />
 
     <!-- Base Config -->
-    <link rel="stylesheet" href="../Style/base_font.css" />
-    <link rel="stylesheet" href="../Style/base_config.css" />
-    <link rel="stylesheet" href="../Style/base_root.css" />
-    <link rel="stylesheet" href="../Style/base_component.css" />
+    <link rel="stylesheet" href="../style/base_font.css" />
+    <link rel="stylesheet" href="../style/base_config.css" />
+    <link rel="stylesheet" href="../style/base_root.css" />
+    <link rel="stylesheet" href="../style/base_component.css" />
 
     <!-- Initial -->
-    <link rel="stylesheet" href="../Style/landing_page.css" />
-    <link rel="stylesheet" href="../Style/landing_responsive.css" />
-    <link rel="stylesheet" href="../Style/vaccine_page.css" />
-    <link rel="stylesheet" href="../Style/vaccine_responsive.css" />
+    <link rel="stylesheet" href="../style/landing_page.css" />
+    <link rel="stylesheet" href="../style/landing_responsive.css" />
+    <link rel="stylesheet" href="../style/vaccine_page.css" />
+    <link rel="stylesheet" href="../style/vaccine_responsive.css" />
 
     <!-- Responsive -->
     <link rel="stylesheet" href="" />
@@ -45,17 +45,17 @@
             <!-- NAV-Logo -->
             <div class="nav-logo">
                 <a href="../index.html">
-                    <img src="../Assets/Icons/Logo Typeface.svg" alt="" />
+                    <img src="../assets/icons/Logo Typeface.svg" alt="" />
                 </a>
             </div>
 
             <!-- NAV-Items -->
             <ul class="nav-list">
-                <li class="nav-item"><a href="../Index/vaccine.html">Vaccine</a></li>
-                <li class="nav-item"><a href="../Index/blog.html">Blog</a></li>
-                <li class="nav-item"><a href="../Index/about.html">About</a></li>
-                <li class="nav-item"><a href="../Index/contact.html">Contact</a></li>
-                <a href="../Index/started.html">
+                <li class="nav-item"><a href="../index/vaccine.html">Vaccine</a></li>
+                <li class="nav-item"><a href="../index/blog.html">Blog</a></li>
+                <li class="nav-item"><a href="../index/about.html">About</a></li>
+                <li class="nav-item"><a href="../index/contact.html">Contact</a></li>
+                <a href="../index/started.html">
                     <button class="button-nav">Get started</button>
                 </a>
             </ul>
@@ -78,7 +78,7 @@
                 <h5>Fill the necessary form and you are good to go.</h5>
             </div>
 
-            <img class="component-pattern-vaccine" src="../Assets/Images/Items/Pattern.svg" alt="" />
+            <img class="component-pattern-vaccine" src="../assets/images/Items/Pattern.svg" alt="" />
             <div class="vaccine-header-data">
                 <div class="component-data">
                     <div class="label-rate">↗ 14.2 %</div>
@@ -102,13 +102,13 @@
             <div class="vaccine-header-call">
                 <button class="button-primary"><a href="#">Register now</a></button>
                 <div class="small-text">
-                    <img src="../Assets/Icons/Health Company.svg" alt="" /><span>Verified and supported by <u>Ministry of Health Indonesia</u></span>
+                    <img src="../assets/icons/Health Company.svg" alt="" /><span>Verified and supported by <u>Ministry of Health Indonesia</u></span>
                 </div>
             </div>
         </div>
 
         <!-- CONTENT => Form -->
-        <form class="vaccine-form container-enable" method="POST" action="/lifecare-site-main/process/process_vaccine.php">
+        <form class="vaccine-form container-enable" method="POST" action="/lifecare-site/process/process_vaccine.php">
             <div class="vaccine-form-content">
                 <h3>Register online for your vaccinitation</h3>
                 <p>
@@ -147,7 +147,7 @@
 
             <div class="vaccine-reason-wrap">
                 <div class="component-res">
-                    <img src="../Assets/Icons/Reason 01.svg" alt="Icon Reason" />
+                    <img src="../assets/icons/Reason 01.svg" alt="Icon Reason" />
                     <h4>Stop the spreading</h4>
                     <p>
                         Your 1Earth tokens are your ticket to a decentralized community of
@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="component-res">
-                    <img src="../Assets/Icons/Reason 03.svg" alt="Icon Reason" />
+                    <img src="../assets/icons/Reason 03.svg" alt="Icon Reason" />
                     <h4>Protect you and people</h4>
                     <p>
                         Your 1Earth tokens are your ticket to a decentralized community of
@@ -165,7 +165,7 @@
                 </div>
 
                 <div class="component-res">
-                    <img src="../Assets/Icons/Reason 04.svg" alt="Icon Reason" />
+                    <img src="../assets/icons/Reason 04.svg" alt="Icon Reason" />
                     <h4>Create immunity body</h4>
                     <p>
                         Your 1Earth tokens are your ticket to a decentralized community of
@@ -174,7 +174,7 @@
                 </div>
 
                 <div class="component-res">
-                    <img src="../Assets/Icons/Reason 02.svg" alt="Icon Reason" />
+                    <img src="../assets/icons/Reason 02.svg" alt="Icon Reason" />
                     <h4>It's safe and free</h4>
                     <p>
                         Your 1Earth tokens are your ticket to a decentralized community of
@@ -188,13 +188,13 @@
             <div class="landing-testimonial-content">
                 <h2>"Great platform to improve our life and health"</h2>
                 <div class="single-stars">
-                    <img src="../Assets/Icons/Star.svg" alt="Stars" />Rated 4.8/5.0 from over
+                    <img src="../assets/icons/Star.svg" alt="Stars" />Rated 4.8/5.0 from over
                     400+ reviews
                 </div>
             </div>
             <div class="landing-testimonial-session">
                 <div class="component-testimonial">
-                    <img src="../Assets/Images/Content/Testimonial.svg" alt="Happy People" />
+                    <img src="../assets/images/Content/Testimonial.svg" alt="Happy People" />
                     <div class="testimonial-content">
                         <div class="person">
                             <h4>Annabella Porter</h4>
@@ -206,32 +206,32 @@
                             productive after your consultation with their Doctor.”
                         </div>
                         <div class="multi-stars">
-                            <img src="../Assets/Icons/Star.svg" alt="Star" />
-                            <img src="../Assets/Icons/Star.svg" alt="Star" />
-                            <img src="../Assets/Icons/Star.svg" alt="Star" />
-                            <img src="../Assets/Icons/Star.svg" alt="Star" />
-                            <img src="../Assets/Icons/Star.svg" alt="Star" />
+                            <img src="../assets/icons/Star.svg" alt="Star" />
+                            <img src="../assets/icons/Star.svg" alt="Star" />
+                            <img src="../assets/icons/Star.svg" alt="Star" />
+                            <img src="../assets/icons/Star.svg" alt="Star" />
+                            <img src="../assets/icons/Star.svg" alt="Star" />
                         </div>
                     </div>
                 </div>
 
                 <div class="multi-component-testimonial">
                     <div class="component-review">
-                        <img src="../Assets/Icons/Image-1.svg" alt="Person" />
+                        <img src="../assets/icons/Image-1.svg" alt="Person" />
                         <div class="person">
                             <h4>Ezio Auditore</h4>
                             <p>Consultation @LifeConsult</p>
                         </div>
                     </div>
                     <div class="component-review">
-                        <img src="../Assets/Icons/Image-2.svg" alt="Person" />
+                        <img src="../assets/icons/Image-2.svg" alt="Person" />
                         <div class="person">
                             <h4>Olivia Grace</h4>
                             <p>Consultation @LifeConsult</p>
                         </div>
                     </div>
                     <div class="component-review">
-                        <img src="../Assets/Icons/Image.svg" alt="Person" />
+                        <img src="../assets/icons/Image.svg" alt="Person" />
                         <div class="person">
                             <h4>Wattson</h4>
                             <p>Vaccine Card @LifeVaccine</p>
@@ -252,7 +252,7 @@
 
             <div class="landing-blog-session">
                 <div class="component-blog blog-01">
-                    <img src="../Assets/Images/Content/Blogs Nutrition.svg" alt="" />
+                    <img src="../assets/images/Content/Blogs Nutrition.svg" alt="" />
                     <div class="label">
                         <span class="label-name purple-label">Health</span><span class="label-time"> 12 min read</span>
                     </div>
@@ -263,7 +263,7 @@
                 </div>
 
                 <div class="component-blog blog-01">
-                    <img src="../Assets/Images/Content/Blogs Cooking.svg" alt="" />
+                    <img src="../assets/images/Content/Blogs Cooking.svg" alt="" />
                     <div class="label">
                         <span class="label-name yellow-label">Cooking</span><span class="label-time">12 min read</span>
                     </div>
@@ -272,7 +272,7 @@
                 </div>
 
                 <div class="component-blog blog-01">
-                    <img src="../Assets/Images/Content/Blogs Honey.svg" alt="" />
+                    <img src="../assets/images/Content/Blogs Honey.svg" alt="" />
                     <div class="label">
                         <span class="label-name green-label">Did You Know</span><span class="label-time">12 min read</span>
                     </div>
@@ -303,28 +303,28 @@
             <div class="footer-foot-session container-enable">
                 <div class="footer-foot-content">
                     <div class="content-left">
-                        <img src="../Assets/Icons/Logo New.svg" alt="Logo" />
+                        <img src="../assets/icons/Logo New.svg" alt="Logo" />
                         <p>
                             Lifecare, is a non-profit company that provides you tons of features
                             around health and pandemic. Let’s build a better life, together.
                         </p>
                         <button class="button-third"><a href="#">Make a donation</a></button>
                         <div class="social">
-                            <img src="../Assets/Icons/Social Media/Facebook.svg" alt="Facebook" />
-                            <img src="../Assets/Icons/Social Media/Instagram.svg" alt="Instagram" />
-                            <img src="../Assets/Icons/Social Media/Discord.svg" alt="Discord" />
-                            <img src="../Assets/Icons/Social Media/Reddit.svg" alt="Reddit" />
-                            <img src="../Assets/Icons/Social Media/YouTube.svg" alt="YouTube" />
+                            <img src="../assets/icons/Social Media/Facebook.svg" alt="Facebook" />
+                            <img src="../assets/icons/Social Media/Instagram.svg" alt="Instagram" />
+                            <img src="../assets/icons/Social Media/Discord.svg" alt="Discord" />
+                            <img src="../assets/icons/Social Media/Reddit.svg" alt="Reddit" />
+                            <img src="../assets/icons/Social Media/YouTube.svg" alt="YouTube" />
                         </div>
                     </div>
                     <div class="content-right">
                         <div class="list list-01">
                             <h4>Explore</h4>
                             <ul>
-                                <li><a href="../Index/vaccine.html">Vaccine</a></li>
-                                <li><a href="../Index/blog.html">Blog</a></li>
-                                <li><a href="../Index/about.html">About</a></li>
-                                <li><a href="../Index/contact.html">Contact</a></li>
+                                <li><a href="../index/vaccine.html">Vaccine</a></li>
+                                <li><a href="../index/blog.html">Blog</a></li>
+                                <li><a href="../index/about.html">About</a></li>
+                                <li><a href="../index/contact.html">Contact</a></li>
                             </ul>
                         </div>
                         <div class="list list-02">

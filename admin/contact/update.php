@@ -28,7 +28,7 @@ $_SESSION['id_contact'] = $id;
     $res_user = $DB->query($query_user);
     ?>
 
-    <form method="POST" action="/lifecare-site-main/process/update_contact.php">
+    <form method="POST" action="/lifecare-site/process/update_contact.php">
         <div>
             <label for="user"> Name</label>
             <select name="user" id="user">

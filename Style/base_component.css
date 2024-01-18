@@ -1,18 +1,17 @@
-/* COMPONENTS => LOL */
+/* components => LOL */
 
-.component-line{
-	position: absolute;
-	top: 20px;
-	z-index: -24;
+.component-line {
+  position: absolute;
+  top: 20px;
+  z-index: -24;
 }
 
-.landing-us{
-	position: relative;
+.landing-us {
+  position: relative;
 }
-.component-pattern{
-	position: absolute;
-	z-index: -8;
-	right: 77px;
-    top: 67px;
+.component-pattern {
+  position: absolute;
+  z-index: -8;
+  right: 77px;
+  top: 67px;
 }
-

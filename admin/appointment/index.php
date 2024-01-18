@@ -19,7 +19,7 @@ require '../../process/db.php';
 </head>
 
 <body>
-    <button><a href="../../Index/create_appointment.php">Create Appointment</a></button>
+    <button><a href="../../index/create_appointment.php">Create Appointment</a></button>
 
     <?php
     $query = "SELECT * FROM appointment";
@@ -59,7 +59,7 @@ require '../../process/db.php';
                     <td>
                         <a href="show.php?id=<?php echo $data->id_appointment; ?>">Show</a>
                         <a href="update.php?id=<?php echo $data->id_appointment; ?>">Edit</a>
-                        <button onclick="return confirmDelete()"><a href="/lifecare-site-main/process/delete_appointment.php?id=<?php echo $data->id_appointment; ?>">Delete</a></button>
+                        <button onclick="return confirmDelete()"><a href="/lifecare-site/process/delete_appointment.php?id=<?php echo $data->id_appointment; ?>">Delete</a></button>
                     </td>
                 </tr>
             <?php } ?>

@@ -20,8 +20,8 @@ if ($res) {
     $data = $res->fetch_object();
 
     if ($data->role === 'admin') {
-        header('location: /lifecare-site-main/admin/user/show.php?id=' . $id);
+        header('location: /lifecare-site/admin/user/show.php?id=' . $id);
     } else {
-        header('location: /lifecare-site-main/Index/user/show.php?id=' . $id);
+        header('location: /lifecare-site/Index/user/show.php?id=' . $id);
     }
 }

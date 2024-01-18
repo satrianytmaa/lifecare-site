@@ -13,7 +13,7 @@
     $query = "SELECT * FROM clinic";
     $clinic = $DB->query($query);
     ?>
-    <form method="POST" action="/lifecare-site-main/process/create_appointment.php">
+    <form method="POST" action="/lifecare-site/process/create_appointment.php">
         <div>
             <label for="name">Full Name</label>
             <input type="text" name="name" id="name" placeholder="Enter full_name...">

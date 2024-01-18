@@ -12,12 +12,10 @@ if ($res) {
     // $data = $res->fetch_object();
 
     // if (session role === 'admin') {
-    //     header('location: /lifecare-site-main/admin/user/index.php');
+    //     header('location: /lifecare-site/admin/user/index.php');
     // } else {
-    //     header('location: /lifecare-site-main/index.html');
+    //     header('location: /lifecare-site/index.html');
     // }
 
-    //     header('location: /lifecare-site-main/admin/user/index.php');
-
-
+    header('location: /lifecare-site/admin/user/index.php');
 }

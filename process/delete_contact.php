@@ -5,5 +5,5 @@ $query = "DELETE from contact where id_contact='$id'";
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site-main/admin/contact/index.php');
+    header('location: /lifecare-site/admin/contact/index.php');
 }

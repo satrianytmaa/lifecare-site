@@ -35,7 +35,7 @@ $_SESSION['id_appointment'] = $id;
     // $clinic = $res->fetch_object();
     ?>
 
-    <form method="POST" action="/lifecare-site-main/process/update_appointment.php">
+    <form method="POST" action="/lifecare-site/process/update_appointment.php">
         <div>
             <div>
                 <label for="name">Full Name</label>
