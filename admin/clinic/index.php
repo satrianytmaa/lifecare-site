@@ -50,13 +50,13 @@ require '../../process/db.php';
     </script>
 
     <style>
-        .header{
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .btn-add{
+        .btn-add {
             background-color: #6A55EA;
             border: 1.5px solid #D8DBDC;
             outline: none;
@@ -68,43 +68,43 @@ require '../../process/db.php';
             font-weight: 500;
         }
 
-        .btn-add:hover{
+        .btn-add:hover {
             background-color: #5C4CE3;
         }
 
         /* Responsive */
 
-        @media screen and (max-width: 768px){
-            .users-database{
+        @media screen and (max-width: 768px) {
+            .users-database {
                 padding: 0 1em;
             }
 
-            .header{
+            .header {
                 flex-direction: column;
                 gap: 1em;
             }
 
-            .header-content{
+            .header-content {
                 text-align: center;
             }
 
-            .header-action{
+            .header-action {
                 width: 100%;
                 display: flex;
                 justify-content: center;
             }
 
-            .btn-add{
+            .btn-add {
                 width: 100%;
             }
 
-            .table{
+            .table {
                 overflow-x: scroll;
             }
         }
     </style>
 
-    
+
 </head>
 
 <body>
@@ -112,10 +112,10 @@ require '../../process/db.php';
     $query = "SELECT * FROM clinic";
     $res = $DB->query($query);
     ?>
-    
+
 
     <!-- Users Database -->
-     <div class="users-database container-enable">
+    <div class="users-database container-enable">
 
         <!-- Header -->
         <div class="header">
@@ -125,7 +125,7 @@ require '../../process/db.php';
             </div>
 
             <div class="header-action">
-                <a href="create .php">
+                <a href="create.php">
                     <button class="btn-add">Add Clinic</button>
                 </a>
             </div>
@@ -133,43 +133,43 @@ require '../../process/db.php';
 
         <!-- Table -->
         <div class="table">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Clinic Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($data = $res->fetch_object()) { ?>
+            <table>
+                <thead>
                     <tr>
-                        <td><?php echo $data->id_clinic ?></td>
-                        <td class="table-full-name"><?php echo $data->name_clinic ?></td>
-                        <td><?php echo $data->address ?></td>
-                        <td><?php echo $data->email_clinic ?></td>
-                        <td class="action-btn">
-                            <a href="show.php?id=<?php echo $data->id_clinic; ?>">
-                                <button class="btn-normal">
-                                    Show
-                                </button>
-                             </a>
-                             <a href="update.php?id=<?php echo $data->id_clinic; ?>">
-                                <button class="btn-normal">
-                                    Edit
-                                </button>
-                            </a>
-                            <button class="btn-delete" onclick="return confirmDelete()">
-                              <a href="/lifecare-site/process/delete_user.php?id=<?php echo $data->id_clinic; ?>">Delete</a>
-                            </button>
-
-                        </td>
+                        <th>ID</th>
+                        <th>Clinic Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Action</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php while ($data = $res->fetch_object()) { ?>
+                        <tr>
+                            <td><?php echo $data->id_clinic ?></td>
+                            <td class="table-full-name"><?php echo $data->name_clinic ?></td>
+                            <td><?php echo $data->address ?></td>
+                            <td><?php echo $data->email_clinic ?></td>
+                            <td class="action-btn">
+                                <a href="show.php?id=<?php echo $data->id_clinic; ?>">
+                                    <button class="btn-normal">
+                                        Show
+                                    </button>
+                                </a>
+                                <a href="update.php?id=<?php echo $data->id_clinic; ?>">
+                                    <button class="btn-normal">
+                                        Edit
+                                    </button>
+                                </a>
+                                <button class="btn-delete" onclick="return confirmDelete()">
+                                    <a href="/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_clinic; ?>">Delete</a>
+                                </button>
+
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

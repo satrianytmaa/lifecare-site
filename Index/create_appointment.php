@@ -5,22 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create patient</title>
+    <title>Create appointment</title>
 </head>
 
 <body>
-    <?php
-    $query = "SELECT * FROM patient";
-    $patient = $DB->query($query);
-    ?>
     <?php
     $query = "SELECT * FROM clinic";
     $clinic = $DB->query($query);
     ?>
     <form method="POST" action="/lifecare-site/process/create_appointment.php">
         <div>
-            <label for="full_name">Full Name</label>
-            <input type="text" name="full_name" id="full_name" placeholder="Enter full_name...">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter full_name...">
         </div>
         <div>
             <label for="clinic">Clinic</label>

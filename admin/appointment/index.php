@@ -30,7 +30,7 @@ require '../../process/db.php';
         <thead>
             <tr>
                 <th>id</th>
-                <th>Patient Name</th>
+                <th>Full Name</th>
                 <th>Number</th>
                 <th>Clinic</th>
                 <th>Status</th>
@@ -40,7 +40,7 @@ require '../../process/db.php';
         <tbody>
             <?php while ($data = $res->fetch_object()) { ?>
                 <?php
-                $query_patient = "SELECT * FROM patient WHERE id_patient = $data->id_patient";
+                $query_patient = "SELECT * FROM user WHERE id_user = $data->id_user";
                 $res_patient = $DB->query($query_patient);
                 $patient = $res_patient->fetch_object();
                 ?>
@@ -51,7 +51,7 @@ require '../../process/db.php';
                 ?>
                 <tr>
                     <td><?php echo $data->id_appointment ?></td>
-                    <td><?php echo $patient->name_patient ?></td>
+                    <td><?php echo $patient->full_name ?></td>
                     <td><?php echo $data->number ?></td>
                     <td><?php echo $clinic->name_clinic ?></td>
                     <td><?php echo $data->status ?></td>

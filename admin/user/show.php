@@ -7,7 +7,7 @@ $id = $_GET['id'];
 <html lang="en">
 
 <head>
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Browser Logo -->
 
@@ -42,42 +42,39 @@ $id = $_GET['id'];
     <title>Users Tables - Detail</title>
 
     <style>
-
-        .user-show .header{
+        .user-show .header {
             margin-bottom: 2em;
         }
 
-        .user-show .header h4{
+        .user-show .header h4 {
             font-size: 1.5em;
             font-weight: 600;
             margin-bottom: 0.5em;
         }
 
-        .user-show .header p{
+        .user-show .header p {
             font-size: 1em;
             font-weight: 400;
             color: #6E7191;
         }
 
-        .user-show .user-data{
+        .user-show .user-data {
             background-color: #F6F8FB;
             padding: 1em;
             border-radius: 1em;
         }
 
-        .user-show .user-data h5{
+        .user-show .user-data h5 {
             font-size: 1em;
             font-weight: 600;
             margin-bottom: 0.5em;
         }
 
-        .user-show .user-data p{
+        .user-show .user-data p {
             font-size: 1em;
             font-weight: 400;
             color: #6E7191;
         }
-
-
     </style>
 
 </head>
@@ -99,15 +96,17 @@ $id = $_GET['id'];
         <div class="user-data">
             <h5>Id : <?php echo $data->id_user ?></h5>
             <h5>Full Name : <?php echo $data->full_name ?></h5>
+            <h5>Address : <?php echo $data->address ?></h5>
+            <h5>Email : <?php echo $data->email ?></h5>
             <h5>Phone Number : <?php echo $data->phone_number ?></h5>
             <h5>Role : <?php echo $data->role ?></h5>
         </div>
 
         <div class="action-button">
             <a href="update.php?id=<?php echo $data->id_user; ?>">
-            <button class="btn-normal">
-                Edit
-            </button>
+                <button class="btn-normal">
+                    Edit
+                </button>
             </a>
             <button class="btn-delete" onclick="return confirmDelete()">
                 <a href="/lifecare-site/process/delete_user.php?id=<?php echo $data->id_user; ?>">Delete</a>

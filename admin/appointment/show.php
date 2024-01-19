@@ -20,7 +20,7 @@ $id = $_GET['id'];
     ?>
 
     <?php
-    $query = "SELECT * FROM patient WHERE id_patient= $data->id_patient ";
+    $query = "SELECT * FROM user WHERE id_user = $data->id_user ";
     $res = $DB->query($query);
     $patient = $res->fetch_object();
     ?>
@@ -30,8 +30,8 @@ $id = $_GET['id'];
     $res = $DB->query($query);
     $clinic = $res->fetch_object();
     ?>
-    <p>Id : <?php echo $data->id_patient ?></p>
-    <p>Patient Name : <?php echo $patient->name_patient ?></p>
+    <p>Id : <?php echo $data->id_appointment ?></p>
+    <p>Full Name : <?php echo $patient->full_name ?></p>
     <p>Status : <?php echo $data->number ?></p>
     <p>Clinic : <?php echo $clinic->name_clinic ?></p>
     <p>Status : <?php echo $data->status ?></p>

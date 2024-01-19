@@ -3,15 +3,16 @@ session_start(); // Start the session
 
 require('db.php');
 
-$nameErr = $phoneErr = $passwordErr = "";
-
 $full_name = $_POST['full_name'];
+$address = $_POST['address'];
+$email = $_POST['email'];
 $phone_number = $_POST['phone_number'];
 $password = $_POST['password'];
 
-$query = "INSERT INTO user(full_name, phone_number, password, role) VALUES ('$full_name', '$phone_number', '$password', 'user')";
+$query = "INSERT INTO user(full_name,email,address,phone_number,password,role) VALUES ('" . $full_name . "','" . $email . "','" . $address . "','" . $phone_number . "','" . $password . "','user')";
 
 $res = $DB->query($query);
+
 
 if ($res) {
     // Store the full_name in the session
@@ -27,4 +28,3 @@ if ($res) {
 
 // Close the database connection
 $DB->close();
-?>

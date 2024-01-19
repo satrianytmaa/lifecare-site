@@ -4,7 +4,7 @@ require '../../process/db.php';
 session_start();
 $id = $_GET['id'];
 // Store the ID in the session
-$_SESSION['id_patient'] = $id;
+$_SESSION['id_appointment'] = $id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +24,9 @@ $_SESSION['id_patient'] = $id;
     ?>
 
     <?php
-    $query_patient = "SELECT * FROM patient";
+    $query_patient = "SELECT * FROM user WHERE id_user= $data->id_user";
     $res_patient = $DB->query($query_patient);
-    // $patient = $res->fetch_object();
+    $patient = $res_patient->fetch_object();
     ?>
 
     <?php
@@ -37,17 +37,10 @@ $_SESSION['id_patient'] = $id;
 
     <form method="POST" action="/lifecare-site/process/update_appointment.php">
         <div>
-            <label for="patient">Patient Name</label>
-            <select name="patient" id="patient">
-
-                <?php
-                while ($patient = $res_patient->fetch_object()) {
-                    $selected = ($data->id_patient == $patient->id_patient) ? 'selected' : '';
-                    echo '<option value="' . $patient->id_patient . '" ' . $selected . '>' . $patient->name_patient . '</option>';
-                }
-                ?>
-
-            </select>
+            <div>
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" value="<?php echo $patient->full_name; ?>">
+            </div>
         </div>
         <div>
             <label for="clinic">Clinic</label>
