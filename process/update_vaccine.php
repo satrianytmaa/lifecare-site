@@ -16,5 +16,15 @@ $res = $DB->query($query);
 
 
 if ($res) {
-    header('location: /lifecare-site-main/admin/vaccine/show.php?id=' . $id);
+    // cek role session user, jika rolenya admin location ke admin begitu juga user
+    // if(user_role === 'admin'){
+    // tambah location setelah update
+    // }else {
+    // tambah location setelah update
+
+    // }
+
+
+
+    header('location: /lifecare-site/admin/vaccine/show.php?id=' . $id);
 }

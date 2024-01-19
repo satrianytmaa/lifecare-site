@@ -29,6 +29,15 @@ $query = "INSERT INTO appointment(date_and_time,id_user,id_clinic,status,number)
 $res = $DB->query($query);
 
 if ($res) {
+    // tampilkan show berdasarkan role dari user yang sedang login 
+    // if(user_role === 'admin'){
+    //     $id = $DB->insert_id;
+    //     header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
+    // }else {
+    //     $id = $DB->insert_id;
+    // header('location: /lifecare-site/Index/appointment/show.php?id=' . $id);
+    // }
+
     $id = $DB->insert_id;
     header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
 }

@@ -18,5 +18,13 @@ $res = $DB->query($query);
 
 
 if ($res) {
+    // ambil role dari session yang login
+    // if(user_role === 'admin'){
+    // tambah location setelah update
+    // }else {
+    // tambah location setelah update
+
+    // }
+
     header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
 }

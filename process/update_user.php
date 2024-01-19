@@ -14,6 +14,13 @@ $res = $DB->query($query);
 
 if ($res) {
     // klo login udh bisa ini ganti sama role dari session yg sedang login 
+    // if(user_role === 'admin'){
+    // tambah location setelah update
+    // }else {
+    // tambah location setelah update
+
+    // }
+
 
     $get_role = "SELECT * FROM user WHERE id_user = $id";
     $res = $DB->query($get_role);

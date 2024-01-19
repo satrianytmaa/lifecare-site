@@ -122,7 +122,7 @@ require '../../process/db.php';
         <div class="header">
             <div class="header-content">
                 <h4>Users Database</h4>
-                <p>A list of all the users in your account including their name, title, email and role.</p>
+                <p>A list of all the users in your account including their name, address, email, phone number and role.</p>
             </div>
 
             <div class="header-action">

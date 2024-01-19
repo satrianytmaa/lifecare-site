@@ -30,6 +30,9 @@ $id = $_GET['id'];
     <p>Vaccine Type : <?php echo $data->name_vaccine ?></p>
     <p>Age : <?php echo $data->age ?></p>
 
+    <button><a href="update.php?id=<?php echo $data->id_vaccine ?>">Update Vaccine</a></button>
+    <button><a href="/../lifecare-site/process/delete_vaccine.php?id<?php echo $data->id_vaccine ?>">Delete Vaccine</a></button>
+
 
 </body>
 

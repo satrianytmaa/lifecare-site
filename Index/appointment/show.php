@@ -37,7 +37,8 @@ $id = $_GET['id'];
     <p>Status : <?php echo $data->status ?></p>
     <p>Date : <?php echo $data->date_and_time ?></p>
 
-
+    <button><a href="update.php?id=<?php echo $data->id_appointment ?>">Update Appointment</a></button>
+    <button><a href="/../lifecare-site/process/delete_appointment.php?id=<?php echo $data->id_appointment ?>">Delete Appointment</a></button>
 
 
 </body>
