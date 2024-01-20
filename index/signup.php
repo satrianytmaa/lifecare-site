@@ -164,11 +164,11 @@
             </div> -->
 
             <!-- Form Sign Up -->
-            <form action="../process/process_started.php" class="signup-form" method="POST" onsubmit="return validateForm()">
-                <!-- <div class="form-wrap">
+            <form action="../process/process_signup.php" class="signup-form" method="POST" onsubmit="return validateForm()">
+                <div class="form-wrap">
                     <label for="username">Username</label>
                     <input type="text" name="username" placeholder="Enter your Username" required />
-                </div> -->
+                </div>
                 <div class="form-wrap">
                     <label for="full_name">Full Name</label>
                     <input type="text" name="full_name" placeholder="Enter your Fullname" required />

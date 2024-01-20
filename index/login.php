@@ -166,7 +166,7 @@
             <!-- Form Sign Up -->
             <form action="../process/process_login.php" class="signup-form" method="POST">
                 <div class="form-wrap">
-                    <label for="username">username</label>
+                    <label for="username">Username</label>
                     <input type="text" name="username" placeholder="Enter your username." required />
                 </div>
                 <div class="form-wrap">

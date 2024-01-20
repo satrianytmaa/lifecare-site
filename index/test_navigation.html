@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Browser Logo -->
+
+    <!-- Browser Logo -->
+    <link rel="icon" href="../assets/icons/Logo.svg" />
+
+    <!-- components -->
+    <link rel="stylesheet" href="../style/components/header.css" />
+    <link rel="stylesheet" href="../style/components/support.css" />
+    <link rel="stylesheet" href="../style/components/blog.css" />
+    <link rel="stylesheet" href="../style/components/footer.css" />
+
+    <!-- Base Config -->
+    <link rel="stylesheet" href="../style/base_font.css" />
+    <link rel="stylesheet" href="../style/base_config.css" />
+    <link rel="stylesheet" href="../style/base_root.css" />
+    <link rel="stylesheet" href="../style/base_component.css" />
+
+    <!-- Initial -->
+    <link rel="stylesheet" href="../style/contact_page.css" />
+    <link rel="stylesheet" href="../style/contact_responsive.css" />
+
+    <!-- Responsive -->
+    <link rel="stylesheet" href="" />
+
+    <link rel="stylesheet" href="../style/components/new_header.css">
+    
+
+    <title>Get Started</title>
+
+    <style>
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <div class="new-header container-enable">
+
+        <div class="container-n">
+            <!-- Logo -->
+            <div class="n-logo">
+                Lifecare.IO
+            </div>
+    
+            <!-- Navigation -->
+            <nav class="n-bar">
+                <ul class="n-list">
+                    <li class="n-item">
+                        <a href="" class="n-link">Home</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="" class="n-link">Healthcare</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="" class="n-link">Blog</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="" class="n-link">About</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="" class="n-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Action Button -->
+                <div class="n-action">
+                    <a href="" class="n-btn-login">Log In</a>
+                    <a href="" class="n-btn-signup">Register Now</a>
+                </div>
+                
+                <button class="close-menu" onclick="closeMenu()">
+                    <img src="../assets/Icons/x-close.png" alt="" />
+                </button>
+            </nav>
+            
+        </div>
+
+
+
+        <button class="open-menu" onclick="toggleMenu()">
+            <img src="../assets/Icons/align-justify.png" alt="" />
+        </button>
+
+    </div>
+
+    <script>
+        // Update the toggleMenu function
+        function toggleMenu() {
+            var navbar = document.querySelector('.n-bar');
+            var close = document.querySelector('.close-menu');
+            navbar.classList.toggle('show');
+            close.classList.toggle('show');
+
+        }
+
+        // Add the closeMenu function
+        function closeMenu() {
+            var navbar = document.querySelector('.n-bar');
+            navbar.classList.remove('show');
+        }
+
+        // Add an event listener to close the menu when clicking outside or pressing the close button
+        document.addEventListener('click', function (event) {
+            var navbar = document.querySelector('.navbar');
+            var toggleButton = document.querySelector('.mobile-toggle');
+
+            if (event.target !== navbar && event.target !== toggleButton && !navbar.contains(event.target)) {
+                navbar.classList.remove('show');
+            }
+        });
+
+
+
+    </script>
+    
+</body>
+
+</html>
