@@ -1,12 +1,11 @@
 <?php
 
 session_start();
-if ($_SESSION['role'] !== 'admin') {
-  header("location: http://localhost/lifecare-site/users/index.php");
-  exit();
-}
-?>
+// if (!isset($_SESSION['role'])) {
+//   header('location: localhost/lifecare-site/admin/dashboard.php');
+// }
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +74,6 @@ if ($_SESSION['role'] !== 'admin') {
           <p>
 
             <?php
-            session_start(); // Start the session
 
             // Check if the full_name is set in the session
             if (isset($_SESSION['full_name'])) {
