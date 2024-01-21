@@ -6,9 +6,9 @@ require('db.php');
 $username = $_POST['username'];
 $full_name = $_POST['full_name'];
 $phone_number = $_POST['phone_number'];
-$password = md5($_POST['password']); // Hash the password using MD5
+$password = md5($_POST['password']);
 
-$query = "INSERT INTO user(username, full_name, password, role) VALUES ('" . $username . "','" . $full_name . "','" . $password . "','user')";
+$query = "INSERT INTO user(username, full_name, phone_number, password, role) VALUES ('" . $username . "','" . $full_name . "','" . $phone_number . "','" . $password . "','user')";
 
 $res = $DB->query($query);
 

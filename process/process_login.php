@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require 'db.php';
 
@@ -17,8 +18,9 @@ if (mysqli_num_rows($query) != 0) {
     if ($row['role'] == 'admin') {
         header("location: http://localhost/lifecare-site/admin/dashboard.php");
     } else if ($row['role'] == 'user') {
-        header("location: http://localhost/lifecare-site/users/index.php");
+        header("location: ../users/index.php");
     }
 } else {
     header("location: http://localhost/lifecare-site/index/login.php");
 }
+

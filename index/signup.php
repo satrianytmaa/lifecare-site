@@ -189,7 +189,7 @@
                     </div>
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter your Password" required oninput="checkPasswordMatch()" />
                 </div>
-                <button type="submit" class="button-primary button-signup"><a href="../users/index.php">Create an Account</a></button>
+                <button type="submit" class="button-primary button-signup">Create an Account</button>
             </form>
 
 
