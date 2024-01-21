@@ -25,6 +25,10 @@ $_SESSION['id_user'] = $id;
 
     <form method="POST" action="/lifecare-site-main/process/update_user.php">
         <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" value="<?php echo $data->username; ?>">
+        </div>
+        <div>
             <label for="name">Full Name</label>
             <input type="text" name="name" id="name" value="<?php echo $data->full_name; ?>">
         </div>

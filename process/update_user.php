@@ -3,13 +3,14 @@ require('db.php');
 session_start(); // Start the session
 
 $id = $_SESSION['id_user'];
-$name = $_POST['name'];
+$username = $_SESSION['username'];
+$fullname = $_POST['fullname'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $phone = $_POST['phone_number'];
 $password = $_POST['password'];
 
-$query = "UPDATE user SET `full_name`='$name', `email`='$email',`address`='$address', `phone_number`='$phone', `password`='$password' WHERE `id_user`='$id'";
+$query = "UPDATE user SET `username`='$username', `fullname`='$fullname' `email`='$email',`address`='$address', `phone_number`='$phone', `password`='$password' WHERE `id_user`='$id'";
 $res = $DB->query($query);
 
 if ($res) {

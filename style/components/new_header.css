@@ -1,13 +1,14 @@
 body{
-    font-family: 'Roobert', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container-enable{
-    margin-top: 40px;
+.new-header{
+    margin: 2em 4em;
 }
+
 
 .container-n{
     display: flex;
