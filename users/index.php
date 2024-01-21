@@ -1,12 +1,11 @@
 <?php
 
 session_start();
-if ($_SESSION['role'] !== 'admin') {
-  header("location: http://localhost/lifecare-site/users/index.php");
-  exit();
-}
-?>
+// if (!isset($_SESSION['role'])) {
+//   header('location: localhost/lifecare-site/admin/dashboard.php');
+// }
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
