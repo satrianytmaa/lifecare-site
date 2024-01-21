@@ -44,6 +44,10 @@
                <input type="text" name="full_name" placeholder="Enter your Fullname...." />
             </div>
             <div class="form-wrap">
+               <label for="name">Username</label>
+               <input type="text" name="name" placeholder="Enter your Username...." />
+            </div>
+            <div class="form-wrap">
                <label for="address">Address</label>
                <input type="text" name="address" placeholder="Enter your Address..." />
             </div>
