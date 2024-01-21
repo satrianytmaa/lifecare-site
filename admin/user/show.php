@@ -95,6 +95,7 @@ $id = $_GET['id'];
 
         <div class="user-data">
             <h5>Id : <?php echo $data->id_user ?></h5>
+            <h5>Username : <?php echo $data->username ?></h5>
             <h5>Full Name : <?php echo $data->full_name ?></h5>
             <h5>Address : <?php echo $data->address ?></h5>
             <h5>Email : <?php echo $data->email ?></h5>

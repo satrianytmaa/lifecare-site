@@ -73,17 +73,7 @@ session_start();
         <div class="profile-name">
           <p>
 
-            <?php
-
-            // Check if the full_name is set in the session
-            if (isset($_SESSION['full_name'])) {
-              $full_name = $_SESSION['full_name'];
-              // Display the full_name in your HTML
-              echo '<p>Welcome, ' . htmlspecialchars($full_name) . '!</p>';
-            } else {
-              echo '<p>No user information available.</p>';
-            }
-            ?>
+        User
 
           </p>
 

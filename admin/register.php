@@ -202,10 +202,10 @@
 
             <!-- Form Sign Up -->
             <form action="../process/process_register.php" class="signup-form" method="POST">
-                <!-- <div class="form-wrap">
+                <div class="form-wrap">
                     <label for="username">Username</label>
                     <input type="text" name="username" placeholder="Enter your Username" required />
-                </div> -->
+                </div>
                 <div class="form-wrap">
                     <label for="full_name">Full Name</label>
                     <input type="text" name="full_name" placeholder="Enter your Fullname" required />

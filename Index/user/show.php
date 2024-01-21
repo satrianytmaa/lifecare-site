@@ -28,6 +28,7 @@ $id = $_GET['id'];
     $data = $res->fetch_object();
     ?>
     <p>Id : <?php echo $data->id_user ?></p>
+    <p>Id : <?php echo $data->username ?></p>
     <p>Full Name : <?php echo $data->full_name ?></p>
     <p>Address : <?php echo $data->address ?></p>
     <p>Email : <?php echo $data->email ?></p>
