@@ -34,6 +34,9 @@ require '../../process/db.php';
 
     <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
+    <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
 
 
     <!-- Google Font -->
@@ -41,7 +44,7 @@ require '../../process/db.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <title>Users Tables</title>
+    <title>Clinics Tables</title>
 
     <script>
         function confirmDelete() {
@@ -108,26 +111,33 @@ require '../../process/db.php';
 </head>
 
 <body>
-    <!-- nampilin user role admin saja -->
     <?php
-    $query = "SELECT * FROM user WHERE role = 'admin'";
+    $query = "SELECT * FROM user";
     $res = $DB->query($query);
     ?>
 
 
     <!-- Users Database -->
     <div class="users-database container-enable">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <a class="bread" href="/lifecare-site/admin/clinic/index.php">User</a>
+            <p>/</p>
+            <a class="bread current" href="/lifecare-site/admin/clinic/create.php">Index</a>
+        </div>
 
         <!-- Header -->
         <div class="header">
             <div class="header-content">
                 <h4>Users Database</h4>
-                <p>A list of all the users in your account including their name, address, email, phone number and role.</p>
+                <p>A list of all the user in the database, including their name, address, and email.</p>
             </div>
 
             <div class="header-action">
-                <a href="../register.php">
-                    <button class="btn-add">Add User</button>
+                <a class="btn-create-a" href="../register.php">
+                    <button>Add User</button>
                 </a>
             </div>
         </div>
@@ -137,13 +147,9 @@ require '../../process/db.php';
             <table>
                 <thead>
                     <tr>
-                        <th>Id User</th>
+                        <th>No</th>
                         <th>Username</th>
                         <th>Full Name</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                        <th>Password</th>
                         <th>Role</th>
                         <th>Action</th>
                     </tr>
@@ -152,12 +158,8 @@ require '../../process/db.php';
                     <?php while ($data = $res->fetch_object()) { ?>
                         <tr>
                             <td><?php echo $data->id_user ?></td>
-                            <td><?php echo $data->username ?></td>
-                            <td><?php echo $data->full_name ?></td>
-                            <td><?php echo $data->address ?></td>
-                            <td><?php echo $data->email ?></td>
-                            <td><?php echo $data->phone_number ?></td>
-                            <td><?php echo $data->password ?></td>
+                            <td class="table-full-name"><?php echo $data->username ?></td>
+                            <td class="table-full-name"><?php echo $data->full_name ?></td>
                             <td><?php echo $data->role ?></td>
                             <td class="action-btn">
                                 <a href="show.php?id=<?php echo $data->id_user; ?>">

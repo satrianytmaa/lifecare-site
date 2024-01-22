@@ -9,9 +9,11 @@ $fullname = $_POST['name'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $phone = $_POST['phone_number'];
+$role = $_POST['role'];
 $password = md5($_POST['password']);
 
-$query = "UPDATE user SET `username`='$uname', `full_name`='$fullname', `email`='$email',`address`='$address', `phone_number`='$phone', `password`='$password' WHERE `id_user`='$id'";
+
+$query = "UPDATE user SET `username`='$uname', `full_name`='$fullname', `email`='$email',`address`='$address', `phone_number`='$phone', `password`='$password', `role`='$role' WHERE `id_user`='$id'";
 $res = $DB->query($query);
 
 if ($res) {
@@ -31,6 +33,6 @@ if ($res) {
     if ($data->role === 'admin') {
         header('location: /lifecare-site/admin/user/show.php?id=' . $id);
     } else {
-        header('location: /lifecare-site/Index/user/show.php?id=' . $id);
+        header('location: /lifecare-site/admin/user/show.php?id=' . $id);
     }
 }

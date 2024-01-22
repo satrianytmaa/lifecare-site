@@ -32,6 +32,10 @@ $id = $_GET['id'];
 
     <!-- Responsive -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
+    <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
+
 
 
     <!-- Google Font -->
@@ -41,78 +45,95 @@ $id = $_GET['id'];
 
     <title>Users Tables - Detail</title>
 
-    <style>
-        .user-show .header {
-            margin-bottom: 2em;
-        }
-
-        .user-show .header h4 {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-bottom: 0.5em;
-        }
-
-        .user-show .header p {
-            font-size: 1em;
-            font-weight: 400;
-            color: #6E7191;
-        }
-
-        .user-show .user-data {
-            background-color: #F6F8FB;
-            padding: 1em;
-            border-radius: 1em;
-        }
-
-        .user-show .user-data h5 {
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 0.5em;
-        }
-
-        .user-show .user-data p {
-            font-size: 1em;
-            font-weight: 400;
-            color: #6E7191;
-        }
-    </style>
-
 </head>
 
 <body>
-
     <?php
     $query = "SELECT * FROM user WHERE id_user= $id ";
     $res = $DB->query($query);
     $data = $res->fetch_object();
     ?>
-    <div class="user-database user-show container-enable">
+
+    
+
+
+    <div class="show-database user-show container-enable">
+
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <a class="bread" href="/lifecare-site/admin/user/index.php">User</a>
+            <p>/</p>
+            <a class="bread current" href="/lifecare-site/admin/user/create.php">Show</a>
+        </div>
+
         <!-- Header -->
         <div class="header">
-            <h4>Detail Information of <?php echo $data->full_name ?></h4>
-            <p>A list of all the users in your account including their name, title, email and role.</p>
+            <div class="header-content">
+                <h4>Detail of <?php echo $data->full_name ?></h4>
+                <p>Detail information of the user, including name, location, and email.</p>
+            </div>
         </div>
 
-        <div class="user-data">
-            <h5>Id : <?php echo $data->id_user ?></h5>
-            <h5>Username : <?php echo $data->username ?></h5>
-            <h5>Full Name : <?php echo $data->full_name ?></h5>
-            <h5>Address : <?php echo $data->address ?></h5>
-            <h5>Email : <?php echo $data->email ?></h5>
-            <h5>Phone Number : <?php echo $data->phone_number ?></h5>
-            <h5>Role : <?php echo $data->role ?></h5>
-        </div>
+        <!-- Form Show -->
+        <form method="POST" action="/lifecare-site/process/create_user.php">
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="id">No</label>
+                    <p>Number used by the user.</p>
+                </div>
+                <input type="text" name="id" id="id" value="<?php echo $data->id_user ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="username">Username</label>
+                    <p>Username used by the user.</p>
+                </div>
+                <input type="text" name="username" id="username" value="<?php echo $data->username ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="name">Name</label>
+                    <p>Name of the user.</p>
+                </div>
+                <input type="text" name="name" id="name" value="<?php echo $data->full_name ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="role">Role</label>
+                    <p>Role of the user.</p>
+                </div>
+                <input type="text" name="role" id="role" value="<?php echo $data->role ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headliner">
+                    <label for="address">Location</label>
+                    <p>Input the location of the user.</p>
+                </div>
+                <input type="text" name="address" id="address" value="<?php echo $data->address ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="email">Email</label>
+                    <p>Email of the user.</p>
+                </div>
+                <input type="text" name="email" id="email" value="<?php echo $data->email ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="email">Phone Number</label>
+                    <p>Phone number of the user.</p>
+                </div>
+                <input type="text" name="email" id="email" value="<?php echo $data->phone_number ?>" readonly>
+            </div>
+            
+            <div class="create-action">
+                <a class="btn-cancel-a" href="/lifecare-site/process/delete_user.php?id=<?php echo $data->id_user; ?>" onclick="return confirmDelete()">Delete</a>
+                <a href="update.php?id=<?php echo $data->id_user; ?>" class="btn-create-a">Edit</a>
 
-        <div class="action-button">
-            <a href="update.php?id=<?php echo $data->id_user; ?>">
-                <button class="btn-normal">
-                    Edit
-                </button>
-            </a>
-            <button class="btn-delete" onclick="return confirmDelete()">
-                <a href="/lifecare-site/process/delete_user.php?id=<?php echo $data->id_user; ?>">Delete</a>
-            </button>
-        </div>
+            </div>
+    </form>
     </div>
 
 

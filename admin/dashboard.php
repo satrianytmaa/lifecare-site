@@ -1,11 +1,18 @@
 <?php
-
-
 session_start();
-// if (!isset($_SESSION['role'])) {
-//     header('location: localhost/lifecare-site/admin/dashboard.php');
-// }
+
+// Check if the user is logged in
+if (!isset($_SESSION['id_user'])) {
+    header("location: http://localhost/lifecare-site/index/login.php");
+    exit();
+}
+
+// Access user information from the session
+$full_name = $_SESSION['full_name'];
+
+// Now you can use $full_name in your page
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +25,6 @@ session_start();
     <link rel="icon" href="../assets/icons/Logo.svg" />
 
     <!-- components -->
-    <link rel="stylesheet" href="../style/components/header.css" />
     <link rel="stylesheet" href="../style/components/support.css" />
     <link rel="stylesheet" href="../style/components/blog.css" />
     <link rel="stylesheet" href="../style/components/footer.css" />
@@ -34,108 +40,147 @@ session_start();
     <link rel="stylesheet" href="../style/contact_responsive.css" />
 
     <!-- Responsive -->
-    <link rel="stylesheet" href="../style/admin/admin_dashboard.css" />
+    <link rel="stylesheet" href="" />
 
+    <!-- New Header V2 -->
+    <link rel="stylesheet" href="../style/components/headerv2.css" />
+    
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-    <title>Admin Dashboard</title>
+    <title>Get Started</title>
 
     <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1em;
-            gap: 4em
+        body{
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .navbar {
+        .new-header{
+            padding: 2em 8em;
+            border-bottom: 2px solid rgba(228, 231, 235, 0.431)
+        }
+
+
+        .container-n{
             display: flex;
-            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+            gap: 3em;
+        }
+
+        .n-link, .n-btn-login, .n-btn-signup{
+            font-size: 18px;
+            color: #5c6a78;
+        }
+
+        .n-logo{
+            font-size: 21px;
+            color: #111826;
+        }
+
+        .n-bar{
+            display: flex;
             justify-content: space-between;
             align-items: center;
             text-align: center;
-            transition: transform 0.3s ease-in-out;
+            flex-grow: 1;
         }
 
-        .logo {
-            font-size: 1.6em;
-        }
-
-        .menu {
-            list-style: none;
-            gap: 1em;
-        }
-
-        .menu li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-
-        .profile {
+        .n-list{
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            gap: 3em;
         }
 
-        .profile img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
+        .n-action{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3em;
         }
 
-        .username {
-            font-size: 16px;
+        .n-btn-login{
+            color: #5c6a78;
         }
 
-        .logout-btn {
-            background-color: #555;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
+        .n-btn-signup{
+            color: #FFFFFF;
+            background-color: #6A55EA;
+            padding: 0.6em 1em;
+            border-radius: 1em;
         }
 
-        .mobile-toggle {
+        /* Menu Toggle */
+        .open-menu {
             display: none;
-            font-size: 24px;
-            cursor: pointer;
         }
 
-        @media only screen and (max-width: 768px) {
-            nav {
+        .close-menu{
+            display: none;
+            position: absolute;
+            top: 4%;
+            right: 4%;
+        }
+
+        @media only screen and (max-width: 1280px) {
+
+            .new-header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center ;
+            }
+            nav{
                 margin: 0;
             }
 
-            .navbar {
-                flex-direction: column;
+            .open-menu{
+                display: block;
+            }
+
+            .n-bar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 transform: translateX(100%);
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: #333;
+                background-color: #111826;
                 z-index: 1;
             }
 
-            .navbar.show {
+            .n-list{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .n-link, .n-btn-login, .n-btn-signup{
+                font-size: 18px;
+                color: #fff;
+            }
+
+            .n-action{
+                position: absolute;
+                bottom: 4%;
+                right: 4%;
+            }
+            
+            .n-bar.show {
                 transform: translateX(0);
             }
 
-            .menu li {
+            .close-menu.show {
                 display: block;
-                margin-bottom: 10px;
+            }
+
+            .n-list li {
+                display: block;
+                margin-bottom: 1.6em;
+                color: #fff;
             }
 
             .mobile-toggle {
@@ -143,76 +188,117 @@ session_start();
             }
         }
 
-        /* Add these styles to the existing styles.css */
-
-        .close-btn {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-            background: none;
-            color: #fff;
-            border: none;
-            cursor: pointer;
+        .n-logo img{
+            font-size: 2em;
         }
 
-        @media only screen and (max-width: 768px) {
-            .close-btn {
-                display: block;
-            }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff; /* Add a background color for the sticky navigation */
+            z-index: 100; /* Adjust the z-index as needed */
         }
+
+        .user-profile{
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            align-items: center;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="container">
-            <div class="logo">
-                <!-- <img src="../assets/Icons/Logo Typeface.svg" alt="Logo"> -->
-                Lifecare
+    <div class="new-header sticky-nav">
+
+        <div class="container-n">
+            <!-- Logo -->
+            <div class="n-logo">
+                <img src="../assets/Icons/logo/logo-new-md.svg" alt="">
             </div>
-            <nav class="navbar">
-                <ul class="menu">
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Users</a></li>
-                    <li><a href="#">Vaccine</a></li>
+    
+            <!-- Navigation -->
+            <nav class="n-bar">
+                <ul class="n-list">
+                    <li class="n-item">
+                        <a href="../index.html" class="n-link">Home</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./vaccine.php" class="n-link">Healthcare</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./blog.html" class="n-link">Blog</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./about.html" class="n-link">About</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./contact.php" class="n-link">Contact</a>
+                    </li>
                 </ul>
-                <div class="profile">
-                    <button class="logout-btn">Logout</button>
+                
+                <!-- Action Button -->
+                <div class="user-profile">
+                    <img src="../assets/default/Pfp-1.png" alt="Profile" width="40px" />
+                    <div class="profile-name">
+                        <p>
+            
+                        <?php echo $full_name; ?>
+     
+                        </p>
+                
+                    </div>
                 </div>
 
-                <button class="close-btn" onclick="closeMenu()">✖</button>
+                <button class="close-menu" onclick="closeMenu()">
+                    <img src="../assets/Icons/x-close.png" alt="" />
+                </button>
             </nav>
-            <div class="mobile-toggle" onclick="toggleMenu()">&#9776;</div>
+            
         </div>
-    </header>
+
+
+
+        <button class="open-menu" onclick="toggleMenu()">
+            <img src="../assets/Icons/align-justify.png" alt="" />
+        </button>
+
+    </div>
 
     <script>
-        // Add these lines to the existing script.js
         // Update the toggleMenu function
         function toggleMenu() {
-            var navbar = document.querySelector('.navbar');
+            var navbar = document.querySelector('.n-bar');
+            var close = document.querySelector('.close-menu');
             navbar.classList.toggle('show');
+            close.classList.toggle('show');
+
         }
 
         // Add the closeMenu function
         function closeMenu() {
-            var navbar = document.querySelector('.navbar');
+            var navbar = document.querySelector('.n-bar');
+            var close = document.querySelector('.close-menu');
             navbar.classList.remove('show');
+            close.classList.remove('show'); // Remove 'show' class from close button as well
         }
 
         // Add an event listener to close the menu when clicking outside or pressing the close button
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             var navbar = document.querySelector('.navbar');
             var toggleButton = document.querySelector('.mobile-toggle');
 
             if (event.target !== navbar && event.target !== toggleButton && !navbar.contains(event.target)) {
-                navbar.classList.remove('show');
+                closeMenu(); // Call closeMenu function instead of directly removing 'show' class
             }
         });
+
+
+
     </script>
+    
 </body>
 
 </html>
