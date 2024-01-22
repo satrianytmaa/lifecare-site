@@ -51,49 +51,70 @@ $full_name = $_SESSION['full_name'];
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- New Header V2 -->
+  <link rel="stylesheet" href="../style/components/headerv2.css" />
 </head>
 
 <body>
 
 
-  <!-- COMPONENT / Header -->
-  <header>
-    <!-- HEADER / Navigation -->
-    <nav>
-      <!-- NAV-Logo -->
-      <div class="nav-logo">
-        <a href=".././index.html">
-          <img src=".././assets/icons/Logo Typeface.svg" alt="" />
-        </a>
-      </div>
+  <!-- New Header V2 -->
+  <div class="new-header sticky-nav">
 
-      <!-- NAV-Items -->
-      <ul class="nav-list">
-        <li class="nav-item"><a href=".././index/vaccine.php">Vaccine</a></li>
-        <li class="nav-item"><a href=".././index/blog.html">Blog</a></li>
-        <li class="nav-item"><a href=".././index/about.html">About</a></li>
-        <li class="nav-item"><a href=".././index/contact.php">Contact</a></li>
-      </ul>
-      <div class="user-profile">
-        <img src=".././assets/default/Pfp-1.png" alt="Profile" />
-        <div class="profile-name">
-          <p>
+        <div class="container-n">
+            <!-- Logo -->
+            <div class="n-logo">
+                <img src="../assets/Icons/logo/logo-new-md.svg" alt="">
+            </div>
+    
+            <!-- Navigation -->
+            <nav class="n-bar">
+                <ul class="n-list">
+                    <li class="n-item">
+                        <a href="./index.php" class="n-link">Home</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./vaccine.php" class="n-link">Healthcare</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./blog.php" class="n-link">Blog</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./about.php" class="n-link">About</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./contact.php" class="n-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Action Button -->
+                <div class="user-profile">
+                    <img src=".././assets/default/Pfp-1.png" alt="Profile" />
+                    <div class="profile-name">
+                      <p>
+            
+                      <?php echo $full_name; ?>
+            
+                      </p>
+            
+                    </div>
+                  </div>
 
-          <?php echo $full_name; ?>
-
-          </p>
-
+                <button class="close-menu" onclick="closeMenu()">
+                    <img src="../assets/Icons/x-close.png" alt="" />
+                </button>
+            </nav>
+            
         </div>
-      </div>
 
-      <!-- NAV-Toggle | Pending -->
-      <div class="menu-toggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
-  </header>
+
+
+        <button class="open-menu" onclick="toggleMenu()">
+            <img src="../assets/Icons/align-justify.png" alt="" />
+        </button>
+
+    </div>
 
 
   <!-- COMPONENT / Landing Page -->

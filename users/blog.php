@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['id_user'])) {
+    header("location: http://localhost/lifecare-site/index/login.php");
+    exit();
+}
+
+// Access user information from the session
+$full_name = $_SESSION['full_name'];
+
+// Now you can use $full_name in your page
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,38 +54,67 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- New Header V2 -->
+    <link rel="stylesheet" href="../style/components/headerv2.css" />
   </head>
   <body>
-    <!-- COMPONENT / Header -->
-    <header>
-      <!-- HEADER / Navigation -->
-      <nav>
-        <!-- NAV-Logo -->
-        <div class="nav-logo">
-          <a href=".././index.html">
-            <img src=".././assets/icons/Logo Typeface.svg" alt="" />
-          </a>
+    <!-- New Header V2 -->
+  <div class="new-header sticky-nav">
+
+    <div class="container-n">
+        <!-- Logo -->
+        <div class="n-logo">
+            <img src="../assets/Icons/logo/logo-new-md.svg" alt="">
         </div>
 
-        <!-- NAV-Items -->
-        <ul class="nav-list">
-          <li class="nav-item"><a href=".././index/vaccine.html">Vaccine</a></li>
-          <li class="nav-item"><a href=".././index/blog.html">Blog</a></li>
-          <li class="nav-item"><a href=".././index/about.html">About</a></li>
-          <li class="nav-item"><a href=".././index/contact.html">Contact</a></li>
-          <a href=".././index/started.html">
-            <button class="button-nav">Get started</button>
-          </a>
-        </ul>
+        <!-- Navigation -->
+        <nav class="n-bar">
+            <ul class="n-list">
+                <li class="n-item">
+                    <a href="./index.php" class="n-link">Home</a>
+                </li>
+                <li class="n-item">
+                    <a href="./vaccine.php" class="n-link">Healthcare</a>
+                </li>
+                <li class="n-item">
+                    <a href="./blog.php" class="n-link">Blog</a>
+                </li>
+                <li class="n-item">
+                    <a href="./about.php" class="n-link">About</a>
+                </li>
+                <li class="n-item">
+                    <a href="./contact.php" class="n-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Action Button -->
+            <div class="user-profile">
+                <img src=".././assets/default/Pfp-1.png" alt="Profile" />
+                <div class="profile-name">
+                  <p>
+        
+                  <?php echo $full_name; ?>
+        
+                  </p>
+        
+                </div>
+              </div>
 
-        <!-- NAV-Toggle | Pending -->
-        <div class="menu-toggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
+            <button class="close-menu" onclick="closeMenu()">
+                <img src="../assets/Icons/x-close.png" alt="" />
+            </button>
+        </nav>
+        
+    </div>
+
+
+
+    <button class="open-menu" onclick="toggleMenu()">
+        <img src="../assets/Icons/align-justify.png" alt="" />
+    </button>
+
+</div>
 
     <!-- COMPONENT / Landing Page -->
     <main>
