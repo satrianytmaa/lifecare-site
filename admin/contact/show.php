@@ -32,6 +32,9 @@ $id = $_GET['id'];
 
     <!-- Responsive -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
+    <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
 
 
     <!-- Google Font -->
@@ -80,47 +83,90 @@ $id = $_GET['id'];
 </head>
 
 <body>
-    <?php
-    $query = "SELECT * FROM contact WHERE id_contact= $id ";
-    $res = $DB->query($query);
-    $data = $res->fetch_object();
-    ?>
 
     <?php
-    $query = "SELECT * FROM user WHERE id_user= $data->user_id ";
-    $res = $DB->query($query);
-    $user = $res->fetch_object();
+        $query = "SELECT contact.*, user.* FROM contact
+                JOIN user ON contact.user_id = user.id_user
+                WHERE contact.id_contact = $id";
+
+        $res = $DB->query($query);
+
+        if ($res->num_rows > 0) {
+            $row = $res->fetch_object();
+            $row->id_contact;
+            $row->full_name;
+        } else {
+            // Handle no results
+        }
     ?>
 
 
 
 
-    <div class="user-database user-show container-enable">
-        <!-- Header -->
-        <div class="header">
-            <h4>Detail Information of <?php echo $user->full_name ?></h4>
-            <p>A list of all the contacts in your account including their name, email, subject, and problem.</p>
-        </div>
 
-        <div class="user-data">
-            <h5>Id : <?php echo $data->id_contact ?></h5>
-            <h5>Name : <?php echo $user->full_name ?></h5>
-            <h5>Email : <?php echo $data->email ?></h5>
-            <h5>Subject : <?php echo $data->subject ?></h5>
-            <h5>Problem : <?php echo $data->problem ?></h5>
-        </div>
 
-        <div class="action-button">
-            <a href="update.php?id=<?php echo $data->id_contact; ?>">
-                <button class="btn-normal">
-                    Edit
-                </button>
-            </a>
-            <button class="btn-delete" onclick="return confirmDelete()">
-                <a href="/lifecare-site/process/delete_contact.php?id=<?php echo $data->id_contact; ?>">Delete</a>
-            </button>
+    <div class="show-database user-show container-enable">
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+        <p>/</p>
+        <a class="bread" href="/lifecare-site/admin/clinic/index.php">Contact</a>
+        <p>/</p>
+        <a class="bread current" href="/lifecare-site/admin/clinic/create.php">Show</a>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h4>Detail of <?php echo $row->full_name ?></h4>
+            <p>Detail information of the clinic, including name, location, and email.</p>
         </div>
     </div>
+
+    <!-- Form Show -->
+    <form method="POST" action="/lifecare-site/process/create_contact.php">
+        <div class="form-wrap">
+            <div class="form-headline">
+                <label for="id">No</label>
+                <p>Number of the contact data.</p>
+            </div>
+            <input type="text" name="id" id="id" value="<?php echo $row->id_contact ?>" readonly>
+        </div>
+        <div class="form-wrap">
+            <div class="form-headline">
+                <label for="name">Name</label>
+                <p>Name of the person.</p>
+            </div>
+            <input type="text" name="name" id="name" value="<?php echo $row->full_name ?>" readonly>
+        </div>
+        <div class="form-wrap">
+            <div class="form-headliner">
+                <label for="email">Email</label>
+                <p>Email used in contact form.</p>
+            </div>
+            <input type="text" name="email" id="email" value="<?php echo $row->email ?>" readonly>
+        </div>
+        <div class="form-wrap">
+            <div class="form-headline">
+                <label for="subject">Subject</label>
+                <p>Subject of the email.</p>
+            </div>
+            <input type="text" name="subject" id="subject" value="<?php echo $row->subject ?>" readonly>
+        </div>
+        <div class="form-wrap">
+            <div class="form-headline">
+                <label for="problem">Problem</label>
+                <p>User's problem in contact form.</p>
+            </div>
+            <input type="textarea" name="problem" id="problem" value="<?php echo $row->problem ?>" readonly>
+        </div>
+        <div class="create-action">
+            <a class="btn-cancel-a" href="/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_contact; ?>" onclick="return confirmDelete()">Delete</a>
+            <a href="update.php?id=<?php echo $row->id_contact; ?>" class="btn-create-a">Edit</a>
+
+        </div>
+    </form>
 
 
 </body>

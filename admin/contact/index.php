@@ -35,6 +35,9 @@ require '../../process/db.php';
 
     <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
+    <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
 
 
     <!-- Google Font -->
@@ -55,6 +58,10 @@ require '../../process/db.php';
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .table{
+            margin: 3em 0;
         }
 
         .btn-add{
@@ -117,6 +124,14 @@ require '../../process/db.php';
 
     <!-- Users Database -->
     <div class="users-database container-enable">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <a class="bread" href="/lifecare-site/admin/clinic/index.php">Contact</a>
+            <p>/</p>
+            <a class="bread current" href="/lifecare-site/admin/clinic/create.php">Index</a>
+        </div>
 
         <!-- Header -->
         <div class="header">
@@ -135,7 +150,6 @@ require '../../process/db.php';
                         <th>Full Name</th>
                         <th>Email</th>
                         <th>Subject</th>
-                        <th>Problem</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -148,10 +162,9 @@ require '../../process/db.php';
                         ?>
                         <tr>
                             <td><?php echo $data->id_contact ?></td>
-                            <td><?php echo $user->full_name ?></td>
+                            <td class="table-full-name"><?php echo $user->full_name ?></td>
                             <td><?php echo $data->email ?></td>
                             <td><?php echo $data->subject ?></td>
-                            <td><?php echo $data->problem ?></td>
                             <td class="action-btn">
                                 <a href="show.php?id=<?php echo $data->id_contact; ?>">
                                     <button class="btn-normal">
