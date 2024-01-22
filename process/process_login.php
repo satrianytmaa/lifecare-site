@@ -17,11 +17,10 @@ if (mysqli_num_rows($query) != 0) {
     $_SESSION['role'] = $row['role'];
 
     if ($row['role'] == 'admin') {
-        header("location: http://localhost/lifecare-site/admin/dashboard.php");
+        header("location: ../admin/dashboard.php");
     } else if ($row['role'] == 'user') {
         header("location: ../users/index.php");
     }
 } else {
     header("location: http://localhost/lifecare-site/index/login.php");
 }
-

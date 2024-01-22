@@ -123,7 +123,7 @@
         </div>
 
         <!-- CONTENT => Form -->
-        <form class="vaccine-form container-enable" method="POST" action="/lifecare-site/process/process_vaccine.php">
+        <div class="vaccine-form container-enable">
             <div class="vaccine-form-content">
                 <h3>Register online for your vaccinitation</h3>
                 <p>
@@ -131,12 +131,8 @@
                     your vaccine regis number
                 </p>
             </div>
-            <div class="vaccine-form-form">
+            <form class="vaccine-form-form" method="POST" action="/lifecare-site/process/process_vaccine.php">
                 <div class="component-form">
-                    <!-- <div class="form-wrap">
-                        <label for="name">Full Name</label>
-                        <input type="text" name="name" placeholder="Enter your fullname..." />
-                    </div> -->
                     <div class="form-wrap">
                         <label for="appointment">Appointment Number</label>
                         <input type="text" name="appointment" placeholder="Enter your appointment number..." />
@@ -149,10 +145,10 @@
                         <label for="number">age</label>
                         <input type="number" name="number" placeholder="Enter your number..." />
                     </div>
-                    <button class="button-primary"><a href="#">Register now</a></button>
+                    <button class="button-primary">Register now</button>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
 
         <!-- CONTENT => Reason -->
         <div class="vaccine-reason container-enable">

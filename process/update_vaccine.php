@@ -23,8 +23,14 @@ if ($res) {
     // tambah location setelah update
 
     // }
+    $user = $_SESSION['id_user'];
+    $get_role = "SELECT * FROM user WHERE id_user = $user ";
+    $res = $DB->query($get_role);
+    $data = $res->fetch_object();
 
-
-
-    header('location: /lifecare-site/admin/vaccine/show.php?id=' . $id);
+    if ($data->role === 'admin') {
+        header('location: /lifecare-site/admin/vaccine/show.php?id=' . $id);
+    } else {
+        header('location: /lifecare-site/Index/vaccine/show.php?id=' . $id);
+    }
 }

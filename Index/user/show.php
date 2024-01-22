@@ -33,7 +33,8 @@ $id = $_GET['id'];
     <p>Address : <?php echo $data->address ?></p>
     <p>Email : <?php echo $data->email ?></p>
     <p>Phone Number : <?php echo $data->phone_number ?></p>
-    <p>Password : <?php echo $data->password ?></p>
+    <!-- <p>Password : <?php //echo $data->password 
+                        ?></p> tidak perlu menapilkan password!-->
 
     <button><a href="update.php?id=<?php echo $data->id_user ?>">Update User</a></button>
 </body>

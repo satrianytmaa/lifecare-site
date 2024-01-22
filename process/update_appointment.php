@@ -26,5 +26,16 @@ if ($res) {
 
     // }
 
-    header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
+    $user = $_SESSION['id_user'];
+    $get_role = "SELECT * FROM user WHERE id_user = $user ";
+    $res = $DB->query($get_role);
+    $data = $res->fetch_object();
+
+    if ($data->role === 'admin') {
+        header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
+    } else {
+        header('location: /lifecare-site/Index/appointment/show.php?id=' . $id);
+    }
+
+    // header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
 }

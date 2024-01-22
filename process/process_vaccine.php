@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('db.php');
 
 // $name = $_POST['name'];
@@ -16,5 +17,17 @@ $query = "INSERT INTO vaccine(id_appointment,name_vaccine,age) VALUES ('" . $app
 $res = $DB->query($query);
 
 if ($res) {
-    header('location: /lifecare-site/index.html');
+    $id = $DB->insert_id;
+
+    $user = $_SESSION['id_user'];
+    $get_role = "SELECT * FROM user WHERE id_user = $user ";
+    $res = $DB->query($get_role);
+    $data = $res->fetch_object();
+
+    if ($data->role === 'admin') {
+        header('location: /lifecare-site/admin/vaccine/show.php?id=' . $id);
+    } else {
+        header('location: /lifecare-site/Index/vaccine/show.php?id=' . $id);
+    }
+    // header('location: /lifecare-site/index.html');
 }
