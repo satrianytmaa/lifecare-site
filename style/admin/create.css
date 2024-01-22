@@ -1,0 +1,155 @@
+body{
+    background: #FCFCFC;
+}
+
+/* .create-database{
+    padding: 0 4em;
+} */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E9E9E9;
+    padding: 3em 0;
+}
+
+.header-content h4{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    color: #1d354f;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5c6a78;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin: 3em 0
+}
+
+.form-wrap{
+    padding-bottom: 4em;
+    border-bottom: 2px solid #E9E9E9;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.flex-headline{
+    width: 40%;
+}
+
+input{
+    width: 60%;
+}
+
+.create-action{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+.btn-create{
+    padding: 1.4em;
+    border: none;
+    background-color: #6A55EA;
+    color: #FFFFFF;
+    border-radius: 1em;
+    width: 25%;
+    align-self: right;
+    font-family: "Roobert-Medium", sans-serif;
+    font-size: 0.9em;
+    transition: all 200ms ease-in-out;
+}
+
+
+.btn-cancel{
+    padding: 1.4em;
+    border: 2px solid #EC6D62;
+    background-color: #FFF;
+    color: #EC6D62;
+    border-radius: 1em;
+    width: 25%;
+    align-self: right;
+    font-family: "Roobert-Medium", sans-serif;
+    font-size: 0.9em;
+    transition: all 200ms ease-in-out;
+}
+
+
+
+.btn-create:hover{
+    background-color: #5A48CD;
+    color: #FFFFFF;
+}
+
+.btn-cancel:hover{
+    background-color: #EC6D62;
+    color: #FFFFFF;
+}
+
+.breadcrumbs{
+    display: flex;
+    gap: 1em;
+}
+
+.bread{
+    color: #5c6a78;
+}
+
+.current{
+    color: #6A55EA;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 1080px){
+    .create-database{
+        padding: 0 2em;
+    }
+
+    .header{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .header-content{
+        width: 100%;
+    }
+
+    .form-wrap{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .flex-headline{
+        width: 100%;
+    }
+
+    input{
+        width: 100%;
+    }
+
+    .create-action{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .btn-create{
+        width: 100%;
+    }
+
+    .btn-cancel{
+        width: 100%;
+    }
+}

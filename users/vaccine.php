@@ -162,10 +162,10 @@ $full_name = $_SESSION['full_name'];
             </div>
             <div class="vaccine-form-form">
                 <div class="component-form">
-                    <!-- <div class="form-wrap">
+                    <div class="form-wrap">
                         <label for="name">Full Name</label>
-                        <input type="text" name="name" placeholder="Enter your fullname..." />
-                    </div> -->
+                        <input type="text" name="name" placeholder="Enter your fullname..." value="<?php echo $full_name; ?>"/>
+                    </div>
                     <div class="form-wrap">
                         <label for="app">Appointment Number</label>
                         <input type="text" name="app" placeholder="Enter your fullname..." />

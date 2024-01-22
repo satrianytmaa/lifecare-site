@@ -1,0 +1,164 @@
+
+
+.users-database .table{
+    overflow-x: auto;
+    border-radius: 1em;
+    border: 2px solid #D9DADC;
+    margin: 3em 0;
+}
+
+.users-database .table table{
+    width: 100%;
+    border-collapse: collapse;
+    
+    border-radius: 1em;
+}
+
+.users-database .table table thead{
+    background-color: #F9FAFB;
+    border-radius: 1em;
+    color: #111827;
+}
+
+.users-database .table table thead th{
+    padding: 2em;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 2px solid #D9DADC;
+}
+
+.users-database .table table tbody tr{
+    border-bottom: 1px solid #D9DADC;
+    background-color: #FFF;
+}
+
+.users-database .table table tbody tr td{
+    padding: 2em;
+    font-size: 1em;
+    text-align: left;
+}
+
+.btn-normal a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.btn-normal a:hover{
+    color: #000;
+}
+
+.btn-normal{
+    background-color: #FFF;
+    border: 1.5px solid #D8DBDC;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em 2em;
+    border-radius: 0.4em;
+}
+
+
+.btn-delete{
+    background-color: #DF4939;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em 2em;
+    border-radius: 0.4em;
+    margin-right: 1em;
+}
+
+.btn-delete a{
+    color: #F9FAFB;
+}
+
+.action-btn{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.table-full-name{
+    color: #000;
+    font-weight: bold;
+}
+
+/* Customize the action button */
+
+/* Responsive Media */
+
+
+
+body{
+    background: #FCFCFC;
+}
+
+.header-content h4{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    color: #1d354f;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5c6a78;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.btn-add {
+    background-color: #6A55EA;
+    border: 1.5px solid #D8DBDC;
+    outline: none;
+    cursor: pointer;
+    padding: 1em 3em;
+    border-radius: 0.4em;
+
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.btn-add:hover {
+    background-color: #5C4CE3;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .users-database {
+        padding: 0 1em;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
+    .header-action {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .table {
+        overflow-x: scroll;
+    }
+}

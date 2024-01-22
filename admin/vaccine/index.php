@@ -34,6 +34,7 @@ require '../../process/db.php';
 
     <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/index.css">
 
 
     <!-- Google Font -->
@@ -50,58 +51,6 @@ require '../../process/db.php';
     </script>
 
     <style>
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .btn-add {
-            background-color: #6A55EA;
-            border: 1.5px solid #D8DBDC;
-            outline: none;
-            cursor: pointer;
-            padding: 1em 3em;
-            border-radius: 0.4em;
-
-            color: #FFFFFF;
-            font-weight: 500;
-        }
-
-        .btn-add:hover {
-            background-color: #5C4CE3;
-        }
-
-        /* Responsive */
-
-        @media screen and (max-width: 768px) {
-            .users-database {
-                padding: 0 1em;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 1em;
-            }
-
-            .header-content {
-                text-align: center;
-            }
-
-            .header-action {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-
-            .btn-add {
-                width: 100%;
-            }
-
-            .table {
-                overflow-x: scroll;
-            }
-        }
     </style>
 
 
@@ -132,25 +81,25 @@ require '../../process/db.php';
             <table>
                 <thead>
                     <tr>
-                        <th>Id Appointment</th>
-                        <th>Appointment Number</th>
-                        <th>vaccine Type</th>
-                        <th>Age</th>
+                        <th>No</th>
+                        <th>Name of the Vaccine</th>
+                        <th>Manufacture</th>
+                        <th>Dose</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while ($data = $res->fetch_object()) { ?>
                         <?php
-                        $query_app = "SELECT * FROM appointment WHERE id_appointment = $data->id_appointment";
+                        $query_app = "SELECT * FROM vaccine WHERE id_vaccine = $data->id_vaccine";
                         $res_app = $DB->query($query_app);
                         $appointment = $res_app->fetch_object();
                         ?>
                         <tr>
                             <td><?php echo $data->id_vaccine ?></td>
-                            <td><?php echo $appointment->number ?></td>
-                            <td><?php echo $data->name_vaccine ?></td>
-                            <td><?php echo $data->age ?></td>
+                            <td><?php echo $appointment->name_vaccine ?></td>
+                            <td><?php echo $data->manufacturer ?></td>
+                            <td><?php echo $data->dose_vaccine ?></td>
                             <td class="action-btn">
                                 <a href="show.php?id=<?php echo $data->id_vaccine; ?>">
                                     <button class="btn-normal">

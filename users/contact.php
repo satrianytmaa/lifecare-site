@@ -9,6 +9,7 @@ if (!isset($_SESSION['id_user'])) {
 
 // Access user information from the session
 $full_name = $_SESSION['full_name'];
+$email = $_SESSION['email'];
 
 // Now you can use $full_name in your page
 ?>
@@ -125,10 +126,10 @@ $full_name = $_SESSION['full_name'];
             <h4>Send us a message 🚀</h4>
          </div>
          <div class="form-wrap">
-            <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name." required />
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name." value="<?php echo $full_name; ?>" />
          </div>
          <div class="form-wrap">
-            <input type="email" id="email" name="email" placeholder="Enter your Email" required />
+            <input type="email" id="email" name="email" placeholder="Enter your Email" value="<?php echo $email; ?>" />
          </div>
          <div class="form-wrap">
             <input type="text" id="subject" name="subject" placeholder="Enter Subject" required />

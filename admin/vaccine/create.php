@@ -1,12 +1,11 @@
 <?php
 require '../../process/db.php';
-
-$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Browser Logo -->
@@ -31,11 +30,11 @@ $id = $_GET['id'];
     <link rel="stylesheet" href="../../style/contact_responsive.css" />
 
     <!-- Responsive -->
+    <link rel="stylesheet" href="" />
+
+    <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
     <link rel="stylesheet" href="../../style/admin/create.css">
-    <link rel="stylesheet" href="../../style/admin/index.css">
-    <link rel="stylesheet" href="../../style/admin/show.css">
-
 
 
     <!-- Google Font -->
@@ -43,84 +42,79 @@ $id = $_GET['id'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <title>Clinics Tables - Detail</title>
+    
+
+    <title>Vaccines Tables</title>
+
+    <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this vaccine?");
+        }
+    </script>
+
 
 </head>
 
 <body>
-    <?php
-    $query = "SELECT * FROM clinic WHERE id_clinic= $id ";
-    $res = $DB->query($query);
-    $data = $res->fetch_object();
-    ?>
 
+    <?php
+    $query = "SELECT * FROM vaccine";
+    $res = $DB->query($query);
+    ?>
     
 
 
-    <div class="show-database user-show container-enable">
+    <div class="create-database container-enable">
 
         <!-- Breadcrumbs -->
         <div class="breadcrumbs">
             <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
             <p>/</p>
-            <a class="bread" href="/lifecare-site/admin/clinic/index.php">Clinic</a>
+            <a class="bread" href="/lifecare-site/admin/vaccine/index.php">Vaccine</a>
             <p>/</p>
-            <a class="bread current" href="/lifecare-site/admin/clinic/create.php">Show</a>
+            <a class="bread current" href="/lifecare-site/admin/vaccine/create.php">Create</a>
         </div>
 
-        <!-- Header -->
+
+        <!-- Header Create -->
         <div class="header">
             <div class="header-content">
-                <h4>Detail of <?php echo $data->name_clinic ?></h4>
-                <p>Detail information of the clinic, including name, location, and email.</p>
+                <h4>Create</h4>
+                <p>A list of all the vaccines in your account including their appointment number, vaccine type, and age.</p>
             </div>
+
+
         </div>
 
-        <!-- Form Show -->
-        <form method="POST" action="/lifecare-site/process/create_clinic.php">
+        <!-- Form Create -->
+        <form method="POST" action="/lifecare-site/process/create_vaccine.php">
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="name">Name</label>
-                    <p>Name of the clinic.</p>
+                    <label for="name_vaccine">Name</label>
+                    <p>Name of the vaccine.</p>
                 </div>
-                <input type="text" name="name" id="name" value="<?php echo $data->name_clinic ?>" readonly>
+                <input type="text" name="name_vaccine" id="name_vaccine" placeholder="Enter the Name...">
             </div>
             <div class="form-wrap">
                 <div class="form-headliner">
-                    <label for="address">Location</label>
-                    <p>Input the location of the clinic.</p>
+                    <label for="manufacturer">Manufacture</label>
+                    <p>Manufacture of the vaccine.</p>
                 </div>
-                <input type="text" name="address" id="address" value="<?php echo $data->address ?>" readonly>
+                <input type="text" name="manufacturer" id="manufacturer" placeholder="Enter the Manufacture...">
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="email">Email</label>
-                    <p>Email of the clinic.</p>
+                    <label for="dose_vaccine">Dose</label>
+                    <p>Initial dose that recommended for the vaccine.</p>
                 </div>
-                <input type="text" name="email" id="email" value="<?php echo $data->email_clinic ?>" readonly>
+                <input type="text" name="dose_vaccine" id="dose_vaccine" placeholder="Enter the Dose...">
             </div>
             <div class="create-action">
-                <a class="btn-cancel-a" href="/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_clinic; ?>" onclick="return confirmDelete()">Delete</a>
-                <a href="update.php?id=<?php echo $data->id_clinic; ?>" class="btn-create-a">Edit</a>
-
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-create" type="submit">Save</button>
             </div>
     </form>
     </div>
-
-
 </body>
-
-<script>
-    function confirmDelete() {
-        var confirmation = confirm("Are you sure you want to delete this clinic?");
-
-        if (confirmation) {
-            // If the user confirms, redirect to the delete URL
-            window.location.href = "/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_clinic; ?>";
-        } else {
-            // If the user cancels, do nothing or handle accordingly
-        }
-    }
-</script>
 
 </html>

@@ -54,6 +54,19 @@ $full_name = $_SESSION['full_name'];
 
   <!-- New Header V2 -->
   <link rel="stylesheet" href="../style/components/headerv2.css" />
+
+  <style>
+
+    .landing-subscribe {
+      background-color: #F8F6FF;
+      padding: 2px;
+    }
+
+    .landing-support{
+      background-color: #F8F6FF;
+      padding: 3em 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -132,7 +145,7 @@ $full_name = $_SESSION['full_name'];
           healtier and meaningful life.
         </h5>
         <button class="button-primary">
-          <a href=".././index/started.php">Register now</a>
+          <a href=".././index/started.php">Explore more</a>
         </button>
         <div class="small-text">
           <img src=".././assets/icons/Health Company.svg" alt="" /><span>Verified and supported by
@@ -236,7 +249,7 @@ $full_name = $_SESSION['full_name'];
               </div>
             </div>
             <a href=".././index/vaccine.html">
-              <button class="button-secondary">Register now</button>
+              <button class="button-secondary">Get vaccinated</button>
             </a>
           </div>
         </div>
@@ -273,9 +286,9 @@ $full_name = $_SESSION['full_name'];
 					<input type="text" placeholder="yourmail@gmail.com">
 					<span>Submit</span>
 				</div> -->
-        <a href="#">
-          <button class="button-secondary">Subscribe now</button>
-        </a>
+        <button class="button-primary">
+          <a href=".././index/started.php">Subscribe now</a>
+        </button>
       </div>
     </div>
 

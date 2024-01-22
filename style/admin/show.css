@@ -1,0 +1,27 @@
+.btn-cancel-a{
+    padding: 1.05em;
+    border: 2px solid #EC6D62;
+    background-color: #FFF;
+    color: #EC6D62;
+    border-radius: 1em;
+    width: 25%;
+    align-self: right;
+    font-family: "Roobert-Medium", sans-serif;
+    font-size: 0.9em;
+    transition: all 200ms ease-in-out;
+    text-align: center;
+}
+
+.btn-create-a{
+    padding: 1.05em;
+    border: none;
+    background-color: #6A55EA;
+    color: #FFFFFF;
+    border-radius: 1em;
+    width: 25%;
+    align-self: right;
+    font-family: "Roobert-Medium", sans-serif;
+    font-size: 0.9em;
+    transition: all 200ms ease-in-out;
+    text-align: center;
+}

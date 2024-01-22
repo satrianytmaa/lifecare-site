@@ -34,6 +34,9 @@ require '../../process/db.php';
 
     <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
+    <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
 
 
     <!-- Google Font -->
@@ -116,6 +119,14 @@ require '../../process/db.php';
 
     <!-- Users Database -->
     <div class="users-database container-enable">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <a class="bread" href="/lifecare-site/admin/clinic/index.php">Clinic</a>
+            <p>/</p>
+            <a class="bread current" href="/lifecare-site/admin/clinic/create.php">Index</a>
+        </div>
 
         <!-- Header -->
         <div class="header">
@@ -136,9 +147,8 @@ require '../../process/db.php';
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>No</th>
                         <th>Clinic Name</th>
-                        <th>Address</th>
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
@@ -148,7 +158,6 @@ require '../../process/db.php';
                         <tr>
                             <td><?php echo $data->id_clinic ?></td>
                             <td class="table-full-name"><?php echo $data->name_clinic ?></td>
-                            <td><?php echo $data->address ?></td>
                             <td><?php echo $data->email_clinic ?></td>
                             <td class="action-btn">
                                 <a href="show.php?id=<?php echo $data->id_clinic; ?>">
