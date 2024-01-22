@@ -120,8 +120,8 @@ require '../../process/db.php';
         <!-- Header -->
         <div class="header">
             <div class="header-content">
-                <h4>Users Database</h4>
-                <p>A list of all the users in your account including their name, address, email, phone number and role.</p>
+                <h4>Vaccine Database</h4>
+                <p>A list of all the vaccines in your account including their appointment number, vaccine type, and age.</p>
             </div>
 
 
@@ -132,7 +132,7 @@ require '../../process/db.php';
             <table>
                 <thead>
                     <tr>
-                        <th>id</th>
+                        <th>Id Appointment</th>
                         <th>Appointment Number</th>
                         <th>vaccine Type</th>
                         <th>Age</th>
