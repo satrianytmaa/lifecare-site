@@ -158,7 +158,7 @@ require '../../process/db.php';
                             <td><?php echo $data->content ?></td>
                             <td><?php echo $data->category ?></td>
                             <td><?php echo $data->date ?></td>
-                            <td><?php echo $user->id_user ?></td>
+                            <td><?php echo $user->full_name ?></td>
                             <td>
                                 <a href="show.php?id=<?php echo $data->id_blog; ?>">
                                     <button class="btn-normal">
