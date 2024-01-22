@@ -49,7 +49,7 @@ img{
 .button-primary{
 	padding: 16px 24px;
 	background: var(--cl-brand);
-	border-radius: 8px;
+	border-radius: 1em;
 	border: none;
 	transition: all 120ms ease-in-out;
 }
@@ -65,7 +65,7 @@ img{
 	font-family: 'Roobert-Medium', sans-serif;
 	font-size: 18px;
 	color: var(--cl-white);
-	letter-spacing: 0.5px;
+	letter-spacing: 0.2px;
 }
 
 .button-secondary{

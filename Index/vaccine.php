@@ -35,39 +35,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- New Header V2 -->
+    <link rel="stylesheet" href="../style/components/headerv2.css" />
 </head>
 
 <body>
     <!-- COMPONENT / Header -->
-    <header>
-        <!-- HEADER / Navigation -->
-        <nav>
-            <!-- NAV-Logo -->
-            <div class="nav-logo">
-                <a href="../index.html">
-                    <img src="../assets/icons/Logo Typeface.svg" alt="" />
-                </a>
-            </div>
+    <div class="new-header sticky-nav">
 
-            <!-- NAV-Items -->
-            <ul class="nav-list">
-                <li class="nav-item"><a href="../index/vaccine.html">Vaccine</a></li>
-                <li class="nav-item"><a href="../index/blog.html">Blog</a></li>
-                <li class="nav-item"><a href="../index/about.html">About</a></li>
-                <li class="nav-item"><a href="../index/contact.html">Contact</a></li>
-                <a href="../index/started.html">
-                    <button class="button-nav">Get started</button>
-                </a>
-            </ul>
+      <div class="container-n">
+          <!-- Logo -->
+          <div class="n-logo">
+              <img src="../assets/Icons/logo/logo-new-md.svg" alt="">
+          </div>
+  
+          <!-- Navigation -->
+          <nav class="n-bar">
+              <ul class="n-list">
+                  <li class="n-item" id="home">
+                      <a href="../index.html" class="n-link">Home</a>
+                  </li>
+                  <li class="n-item" id="vaccine">
+                      <a href="./vaccine.php" class="n-link">Healthcare</a>
+                  </li>
+                  <li class="n-item" id="blog">
+                      <a href="./blog.html" class="n-link">Blog</a>
+                  </li>
+                  <li class="n-item" id="about">
+                      <a href="./about.html" class="n-link">About</a>
+                  </li>
+                  <li class="n-item" id="contact">
+                      <a href="./contact.php" class="n-link">Contact</a>
+                  </li>
+              </ul>
+              
+              <!-- Action Button -->
+              <div class="n-action">
+                  <a href="./login.php" class="n-btn-login">Log In</a>
+                  <a href="./signup.php" class="n-btn-signup">Create an Account</a>
+              </div>
 
-            <!-- NAV-Toggle | Pending -->
-            <div class="menu-toggle">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+              <button class="close-menu" onclick="closeMenu()">
+                  <img src="../assets/Icons/x-close.png" alt="" />
+              </button>
+          </nav>
+          
+      </div>
+    </div>
 
     <!-- COMPONENT / Landing Page -->
     <main>

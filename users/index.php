@@ -1,10 +1,16 @@
 <?php
-
 session_start();
-// if (!isset($_SESSION['role'])) {
-//   header('location: localhost/lifecare-site/admin/dashboard.php');
-// }
 
+// Check if the user is logged in
+if (!isset($_SESSION['id_user'])) {
+    header("location: http://localhost/lifecare-site/index/login.php");
+    exit();
+}
+
+// Access user information from the session
+$full_name = $_SESSION['full_name'];
+
+// Now you can use $full_name in your page
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +79,7 @@ session_start();
         <div class="profile-name">
           <p>
 
-        User
+          <?php echo $full_name; ?>
 
           </p>
 

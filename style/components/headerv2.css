@@ -1,0 +1,169 @@
+.new-header{
+    position: sticky;
+    top: 0;
+    padding: 1em 8em;
+    border-bottom: 2px solid rgba(228, 231, 235, 0.431);
+    z-index: 24;
+}
+
+
+.container-n{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.n-link, .n-btn-login, .n-btn-signup{
+    font-size: 18px;
+    color: #5c6a78;
+}
+
+.n-logo{
+    font-size: 21px;
+    color: #111826;
+}
+
+.n-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.n-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+}
+
+.n-item{
+    position: relative;
+}
+
+.n-action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+}
+
+.n-btn-login{
+    color: #5c6a78;
+    font-family: 'Roobert-Medium', sans-serif;
+}
+
+.n-btn-signup{
+    color: #FFFFFF;
+    background-color: #6A55EA;
+    padding: 0.6em 1em;
+    border-radius: 0.8em;
+    font-family: 'Roobert-Medium', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.button-primary{
+    border-radius: 1em;
+    letter-spacing: 0.2px;
+}
+
+.button-secondary{
+    border-radius: 1em;
+    letter-spacing: 0.2px;   
+}
+
+.button-secondary-white{
+    border-radius: 1em;
+    letter-spacing: 0.2px;   
+}
+
+/* Menu Toggle */
+.open-menu {
+    display: none;
+}
+
+.close-menu{
+    display: none;
+    position: absolute;
+    top: 4%;
+    right: 4%;
+}
+
+@media only screen and (max-width: 1280px) {
+
+    .new-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center ;
+        padding: 1em 2em;
+    }
+    nav{
+        margin: 0;
+    }
+
+    .open-menu{
+        display: block;
+    }
+
+    .n-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #111826;
+        z-index: 1;
+    }
+
+    .n-list{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .n-link, .n-btn-login, .n-btn-signup{
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .n-action{
+        position: absolute;
+        bottom: 4%;
+        right: 4%;
+    }
+    
+    .n-bar.show {
+        transform: translateX(0);
+    }
+
+    .close-menu.show {
+        display: block;
+    }
+
+    .n-list li {
+        display: block;
+        margin-bottom: 1.6em;
+        color: #fff;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+}
+
+.n-logo img{
+    font-size: 2em;
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Add a background color for the sticky navigation */
+    z-index: 100; /* Adjust the z-index as needed */
+}
