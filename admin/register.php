@@ -208,7 +208,11 @@
                 </div>
                 <div class="form-wrap">
                     <label for="full_name">Full Name</label>
-                    <input type="text" name="full_name" placeholder="Enter your Fullname" required />
+                    <input type="text" name="full_name" placeholder="Enter your Fullname..." required />
+                </div>
+                <div class="form-wrap">
+                    <label for="name"> Username</label>
+                    <input type="text" name="name" placeholder="Enter your Username..." required />
                 </div>
                 <div class="form-wrap">
                     <label for="address">Address</label>

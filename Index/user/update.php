@@ -23,7 +23,7 @@ $_SESSION['id_user'] = $id;
     $data = $res->fetch_object();
     ?>
 
-    <form method="POST" action="/lifecare-site-main/process/update_user.php">
+    <form method="POST" action="/lifecare-site/process/update_user.php">
         <div>
             <label for="username">Username</label>
             <input type="text" name="username" id="username" value="<?php echo $data->username; ?>">

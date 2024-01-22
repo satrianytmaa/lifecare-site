@@ -3,6 +3,7 @@ require('db.php');
 
 $username = $_POST['username'];
 $full_name = $_POST['full_name'];
+$name = $_POST['name'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $phone_number = $_POST['phone_number'];
@@ -14,5 +15,5 @@ $res = $DB->query($query);
 
 if ($res) {
     $id = $DB->insert_id;
-    header('location: /lifecare-site/admin/user/show.php?id=' . $id);
+    header('location: /lifecare-site/Index/login.php');
 }

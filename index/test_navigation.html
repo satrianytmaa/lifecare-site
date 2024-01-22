@@ -102,7 +102,9 @@
         // Add the closeMenu function
         function closeMenu() {
             var navbar = document.querySelector('.n-bar');
+            var close = document.querySelector('.close-menu');
             navbar.classList.remove('show');
+            close.classList.remove('show'); // Remove 'show' class from close button as well
         }
 
         // Add an event listener to close the menu when clicking outside or pressing the close button
@@ -111,7 +113,7 @@
             var toggleButton = document.querySelector('.mobile-toggle');
 
             if (event.target !== navbar && event.target !== toggleButton && !navbar.contains(event.target)) {
-                navbar.classList.remove('show');
+                closeMenu(); // Call closeMenu function instead of directly removing 'show' class
             }
         });
 

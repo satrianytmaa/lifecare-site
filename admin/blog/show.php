@@ -29,7 +29,7 @@ $id = $_GET['id'];
     <p>Content : <?php echo $data->content ?></p>
     <p>Category : <?php echo $data->category ?></p>
     <p>Date : <?php echo $data->date ?></p>
-    <p>User : <?php echo $user->id_user ?></p>
+    <p>User : <?php echo $user->full_name ?></p>
 
 
 

@@ -138,6 +138,7 @@ require '../../process/db.php';
                 <thead>
                     <tr>
                         <th>Id User</th>
+                        <th>Username</th>
                         <th>Full Name</th>
                         <th>Address</th>
                         <th>Email</th>
@@ -151,6 +152,7 @@ require '../../process/db.php';
                     <?php while ($data = $res->fetch_object()) { ?>
                         <tr>
                             <td><?php echo $data->id_user ?></td>
+                            <td><?php echo $data->username ?></td>
                             <td><?php echo $data->full_name ?></td>
                             <td><?php echo $data->address ?></td>
                             <td><?php echo $data->email ?></td>
