@@ -2,13 +2,13 @@
 
 
 session_start();
-if ($_SESSION['role'] !== 'admin') {
-    header("location: http://localhost/lifecare-site/users/index.php");
-    exit();
-}
+// if (!isset($_SESSION['role'])) {
+//     header('location: localhost/lifecare-site/admin/dashboard.php');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +45,6 @@ if ($_SESSION['role'] !== 'admin') {
     <title>Admin Dashboard</title>
 
     <style>
-
         .container {
             display: flex;
             justify-content: space-between;
@@ -63,7 +62,7 @@ if ($_SESSION['role'] !== 'admin') {
             transition: transform 0.3s ease-in-out;
         }
 
-        .logo{
+        .logo {
             font-size: 1.6em;
         }
 
@@ -114,9 +113,10 @@ if ($_SESSION['role'] !== 'admin') {
         }
 
         @media only screen and (max-width: 768px) {
-            nav{
+            nav {
                 margin: 0;
             }
+
             .navbar {
                 flex-direction: column;
                 transform: translateX(100%);
@@ -162,11 +162,9 @@ if ($_SESSION['role'] !== 'admin') {
                 display: block;
             }
         }
-
-
-
     </style>
 </head>
+
 <body>
 
     <header>
@@ -192,29 +190,29 @@ if ($_SESSION['role'] !== 'admin') {
     </header>
 
     <script>
-// Add these lines to the existing script.js
-// Update the toggleMenu function
-function toggleMenu() {
-    var navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('show');
-}
+        // Add these lines to the existing script.js
+        // Update the toggleMenu function
+        function toggleMenu() {
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('show');
+        }
 
-// Add the closeMenu function
-function closeMenu() {
-    var navbar = document.querySelector('.navbar');
-    navbar.classList.remove('show');
-}
+        // Add the closeMenu function
+        function closeMenu() {
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.remove('show');
+        }
 
-// Add an event listener to close the menu when clicking outside or pressing the close button
-document.addEventListener('click', function (event) {
-    var navbar = document.querySelector('.navbar');
-    var toggleButton = document.querySelector('.mobile-toggle');
+        // Add an event listener to close the menu when clicking outside or pressing the close button
+        document.addEventListener('click', function(event) {
+            var navbar = document.querySelector('.navbar');
+            var toggleButton = document.querySelector('.mobile-toggle');
 
-    if (event.target !== navbar && event.target !== toggleButton && !navbar.contains(event.target)) {
-        navbar.classList.remove('show');
-    }
-});
-
+            if (event.target !== navbar && event.target !== toggleButton && !navbar.contains(event.target)) {
+                navbar.classList.remove('show');
+            }
+        });
     </script>
 </body>
+
 </html>

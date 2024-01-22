@@ -49,7 +49,7 @@ $_SESSION['id_appointment'] = $id;
                 <?php
 
                 while ($clinic = $res_clinic->fetch_object()) {
-                    $selected = ($data->id_user == $clinic->id_clinic) ? 'selected' : '';
+                    $selected = ($data->id_clinic == $clinic->id_clinic) ? 'selected' : '';
                     echo '<option value="' . $clinic->id_clinic . '" ' . $selected . '>' . $clinic->name_clinic . '</option>';
                 }
                 ?>
