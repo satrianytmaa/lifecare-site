@@ -234,7 +234,7 @@
                         <option value="user">User</option>
                     </select>
                 </div>
-                <button type="submit" class="button-primary button-signup"><a href="../users/index.php">Create</a></button>
+                <button type="submit" class="button-primary button-signup">Create</button>
             </form>
 
         </div>

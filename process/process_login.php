@@ -13,6 +13,7 @@ if (mysqli_num_rows($query) != 0) {
 
     session_start();
     $_SESSION['id_user'] = $row['id_user'];
+    $_SESSION['full_name'] = $row['full_name'];
     $_SESSION['role'] = $row['role'];
 
     if ($row['role'] == 'admin') {

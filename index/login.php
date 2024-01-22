@@ -134,6 +134,14 @@
 
         /* Responsive Media */
         @media screen and (max-width: 425px) {}
+
+        .button-signup{
+            border-radius: 0.6em;
+            letter-spacing: 0.2px;
+            font-family: 'Roobert-Medium', sans-serif;
+            font-size: 16px;
+            color: #FFF;
+        }
     </style>
 </head>
 
@@ -178,7 +186,7 @@
             </form>
 
 
-            <p>Already have an account? <a href="#">Log In</a></p>
+            <p>Already have an account? <a href="login.php">Log In</a></p>
         </div>
 
         <!-- Sign Up Image -->

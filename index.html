@@ -35,38 +35,59 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="./style/components/headerv2.css">
   </head>
   <body>
     <!-- COMPONENT / Header -->
-    <header>
-      <!-- HEADER / Navigation -->
-      <nav>
-        <!-- NAV-Logo -->
-        <div class="nav-logo">
-          <a href="./index.html">
-            <img src="./assets/icons/Logo Typeface.svg" alt="" />
-          </a>
-        </div>
+    <div class="new-header sticky-nav">
 
-        <!-- NAV-Items -->
-        <ul class="nav-list">
-          <li class="nav-item"><a href="./index/vaccine.php">Vaccine</a></li>
-          <li class="nav-item"><a href="./index/blog.html">Blog</a></li>
-          <li class="nav-item"><a href="./index/about.html">About</a></li>
-          <li class="nav-item"><a href="./index/contact.php">Contact</a></li>
-        </ul>
-        <a href="./index/started.php">
-          <button class="button-nav">Get started</button>
-        </a>
+      <div class="container-n">
+          <!-- Logo -->
+          <div class="n-logo">
+              <img src="assets/Icons/logo/logo-new-md.svg" alt="">
+          </div>
+  
+          <!-- Navigation -->
+          <nav class="n-bar">
+              <ul class="n-list">
+                  <li class="n-item">
+                      <a href="index.html" class="n-link">Home</a>
+                  </li>
+                  <li class="n-item">
+                      <a href="index/vaccine.php" class="n-link">Healthcare</a>
+                  </li>
+                  <li class="n-item">
+                      <a href="index/blog.html" class="n-link">Blog</a>
+                  </li>
+                  <li class="n-item">
+                      <a href="index/about.html" class="n-link">About</a>
+                  </li>
+                  <li class="n-item">
+                      <a href="index/contact.php" class="n-link">Contact</a>
+                  </li>
+              </ul>
+              
+              <!-- Action Button -->
+              <div class="n-action">
+                  <a href="./index/login.php" class="n-btn-login">Log In</a>
+                  <a href="./index/signup.php" class="n-btn-signup">Create an Account</a>
+              </div>
 
-        <!-- NAV-Toggle | Pending -->
-        <div class="menu-toggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
+              <button class="close-menu" onclick="closeMenu()">
+                  <img src="assets/Icons/x-close.png" alt="" />
+              </button>
+          </nav>
+          
+      </div>
+
+
+
+      <button class="open-menu" onclick="toggleMenu()">
+          <img src="assets/Icons/align-justify.png" alt="" />
+      </button>
+
+  </div>
 
     <!-- COMPONENT / Landing Page -->
     <main>
@@ -497,4 +518,6 @@
       </div>
     </footer>
   </body>
+  <script src="./javascript/toggle.js"></script>
 </html>
+

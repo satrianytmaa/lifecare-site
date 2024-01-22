@@ -90,6 +90,14 @@
             align-items: center;
         }
 
+        .button-signup{
+            border-radius: 0.6em;
+            letter-spacing: 0.2px;
+            font-family: 'Roobert-Medium', sans-serif;
+            font-size: 16px;
+            color: #FFF;
+        }
+
         /* Responsive Media */
 
         @media screen and (max-width: 1180px) {
@@ -164,7 +172,7 @@
             </div> -->
 
             <!-- Form Sign Up -->
-            <form action="../process/process_signup.php" class="signup-form" method="POST" onsubmit="return validateForm()">
+            <form action="../process/process_signup.php" class="signup-form" method="POST">
                 <div class="form-wrap">
                     <label for="username">Username</label>
                     <input type="text" name="username" placeholder="Enter your Username" required />
@@ -174,20 +182,20 @@
                     <input type="text" name="full_name" placeholder="Enter your Fullname" required />
                 </div>
                 <div class="form-wrap">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" placeholder="Enter your Address..." />
+                </div>
+                <div class="form-wrap">
+                    <label for="email">Email </label>
+                    <input type="text" name="email" placeholder="Enter your Phone Email..." />
+                </div>
+                <div class="form-wrap">
                     <label for="phone_number">Phone Number</label>
                     <input type="number" name="phone_number" placeholder="Enter your Phone Number" required />
                 </div>
                 <div class="form-wrap">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your Password" required oninput="checkPasswordMatch()" />
-                </div>
-                <div class="form-wrap">
-                    <div class="wrapper-message">
-                        <label for="confirm_password">Confirm Password</label>
-                        <!-- Error Message -->
-                        <span class="error-password" id="password_match_error"></span>
-                    </div>
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter your Password" required oninput="checkPasswordMatch()" />
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" required/>
                 </div>
                 <button type="submit" class="button-primary button-signup">Create an Account</button>
             </form>
@@ -204,33 +212,33 @@
     </div>
     <!-- JavaScript -->
     <script>
-        function checkPasswordMatch() {
-            var password1 = document.getElementById("password").value;
-            var password2 = document.getElementById("confirm_password").value;
-            var errorSpan = document.getElementById("password_match_error");
+        // function checkPasswordMatch() {
+        //     var password1 = document.getElementById("password").value;
+        //     var password2 = document.getElementById("confirm_password").value;
+        //     var errorSpan = document.getElementById("password_match_error");
 
-            if (password1 !== password2) {
-                errorSpan.innerHTML = "Passwords do not match!";
-                errorSpan.style.color = "red"; // Set error message color to red
-            } else {
-                errorSpan.innerHTML = "Good to go!";
-                errorSpan.style.color = "green"; // Set success message color to green
-            }
-        }
+        //     if (password1 !== password2) {
+        //         errorSpan.innerHTML = "Passwords do not match!";
+        //         errorSpan.style.color = "red"; // Set error message color to red
+        //     } else {
+        //         errorSpan.innerHTML = "Good to go!";
+        //         errorSpan.style.color = "green"; // Set success message color to green
+        //     }
+        // }
 
-        function validateForm() {
-            var password1 = document.getElementById("password").value;
-            var password2 = document.getElementById("confirm_password").value;
+        // function validateForm() {
+        //     var password1 = document.getElementById("password").value;
+        //     var password2 = document.getElementById("confirm_password").value;
 
-            if (password1 !== password2) {
-                var errorSpan = document.getElementById("password_match_error");
-                errorSpan.innerHTML = "Passwords do not match!";
-                errorSpan.style.color = "red"; // Set error message color to red
-                return false;
-            }
+        //     if (password1 !== password2) {
+        //         var errorSpan = document.getElementById("password_match_error");
+        //         errorSpan.innerHTML = "Passwords do not match!";
+        //         errorSpan.style.color = "red"; // Set error message color to red
+        //         return false;
+        //     }
 
-            return true;
-        }
+        //     return true;
+        // }
     </script>
 </body>
 
