@@ -143,6 +143,7 @@ require '../../process/db.php';
                         <th>Clinic</th>
                         <th>Status</th>
                         <th>Date</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

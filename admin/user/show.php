@@ -118,4 +118,17 @@ $id = $_GET['id'];
 
 </body>
 
+<script>
+    function confirmDelete() {
+        var confirmation = confirm("Are you sure you want to delete this user?");
+
+        if (confirmation) {
+            // If the user confirms, redirect to the delete URL
+            window.location.href = "/lifecare-site/process/delete_user.php?id=<?php echo $data->id_user; ?>";
+        } else {
+            // If the user cancels, do nothing or handle accordingly
+        }
+    }
+</script>
+
 </html>
