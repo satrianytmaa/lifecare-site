@@ -34,7 +34,9 @@ require '../../process/db.php';
 
     <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
     <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
 
 
     <!-- Google Font -->
@@ -51,6 +53,17 @@ require '../../process/db.php';
     </script>
 
     <style>
+        .btn-create-outside{
+            padding: 1.4em 2.4em    ;
+            border: none;
+            background-color: #6A55EA;
+            color: #FFFFFF;
+            border-radius: 1em;
+            text-align: center;
+            font-family: "Roobert-Medium", sans-serif;
+            font-size: 0.9em;
+            transition: all 200ms ease-in-out;
+        }
     </style>
 
 
@@ -65,12 +78,26 @@ require '../../process/db.php';
 
 
     <div class="users-database container-enable">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <a class="bread" href="/lifecare-site/admin/vaccine/index.php">Vaccine</a>
+            <p>/</p>
+            <a class="bread current" href="/lifecare-site/admin/vaccine/create.php">Index</a>
+        </div>
 
         <!-- Header -->
         <div class="header">
             <div class="header-content">
                 <h4>Vaccine Database</h4>
                 <p>A list of all the vaccines in your account including their appointment number, vaccine type, and age.</p>
+            </div>
+
+            <div class="header-action">
+                <a  href="create.php">
+                    <button class="btn-create-outside">Add Vaccine</button>
+                </a>
             </div>
 
 

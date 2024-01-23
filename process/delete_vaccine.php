@@ -21,6 +21,6 @@ if ($res) {
     if ($data->role === 'admin') {
         header('location: /lifecare-site/admin/vaccine/index.php');
     } else {
-        header('location: /lifecare-site/users/index.php');
+        header('location: /lifecare-site/admin/vaccine/index.php');
     }
 }

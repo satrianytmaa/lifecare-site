@@ -41,6 +41,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 60%;
             height: 80vh;
             gap: 16em;
         }
@@ -50,6 +51,17 @@
             flex-direction: column;
             gap: 1.5em;
             margin-top: 2em;
+        }
+
+        .signup-content{
+            width: 100%;
+        }
+
+        .flex-wrap{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
         }
 
         .header {
@@ -164,6 +176,15 @@
                 margin: 1em 0;
             }
 
+            .flex{
+                flex-direction: column;
+                gap: 1em;
+            }
+            
+            .signup{
+                width: 100%;
+            }
+
         }
 
         /* Responsive Media */
@@ -171,6 +192,12 @@
 
         /* Responsive Media */
         @media screen and (max-width: 425px) {}
+
+        .flex{
+            display: flex;
+            gap: 3em;
+        }
+
     </style>
 </head>
 
@@ -202,38 +229,45 @@
 
             <!-- Form Sign Up -->
             <form action="../process/process_register.php" class="signup-form" method="POST">
-                <div class="form-wrap">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" placeholder="Enter your Username" required />
+                <div class="flex">
+                    <div class="flex-wrap">
+                        <div class="form-wrap">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" placeholder="Enter your Username" required />
+                        </div>
+                        <div class="form-wrap">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" name="full_name" placeholder="Enter your Fullname..." required />
+                        </div>
+                        <div class="form-wrap">
+                            <label for="address">Address</label>
+                            <input type="text" name="address" placeholder="Enter your Address..." />
+                        </div>
+                    </div>
+                    <div class="flex-wrap">
+                        <div class="form-wrap">
+                            <label for="email">Email </label>
+                            <input type="text" name="email" placeholder="Enter your Phone Email..." />
+                        </div>
+                        <div class="form-wrap">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="number" name="phone_number" placeholder="Enter your Phone Number" required />
+                        </div>
+                        <div class="form-wrap">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your Password" required />
+                        </div>
+                        <div class="form-wrap">
+                            <label for="role">Role</label>
+                            <!-- Create me a dropdown role = admin and user -->
+                            <select name="role" id="role">
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-wrap">
-                    <label for="full_name">Full Name</label>
-                    <input type="text" name="full_name" placeholder="Enter your Fullname..." required />
-                </div>
-                <div class="form-wrap">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" placeholder="Enter your Address..." />
-                </div>
-                <div class="form-wrap">
-                    <label for="email">Email </label>
-                    <input type="text" name="email" placeholder="Enter your Phone Email..." />
-                </div>
-                <div class="form-wrap">
-                    <label for="phone_number">Phone Number</label>
-                    <input type="number" name="phone_number" placeholder="Enter your Phone Number" required />
-                </div>
-                <div class="form-wrap">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your Password" required />
-                </div>
-                <div class="form-wrap">
-                    <label for="role">Role</label>
-                    <!-- Create me a dropdown role = admin and user -->
-                    <select name="role" id="role">
-                        <option value="admin">Admin</option>
-                        <option value="user">User</option>
-                    </select>
-                </div>
+                
                 <button type="submit" class="button-primary button-signup">Create</button>
             </form>
 

@@ -41,7 +41,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh;
             gap: 16em;
         }
 
@@ -76,8 +75,8 @@
         }
 
         .copyright-placement {
-            bottom: 2em;
-            left: 2em;
+            top: 2em;
+            right: 2em;
         }
 
         .error-password {

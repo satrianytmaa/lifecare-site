@@ -123,13 +123,6 @@ require '../../process/db.php';
                 <h4>Blog Database</h4>
                 <p>A list of all the Blog.</p>
             </div>
-
-            <!-- hanya role user yang bisa buat appoinment -->
-            <!-- <div class="header-action">
-                <a href="create.php">
-                    <button class="btn-add">Add Appointment</button>
-                </a>
-            </div> -->
         </div>
 
         <!-- Table -->

@@ -10,9 +10,10 @@ if (!isset($_SESSION['id_user'])) {
 // Access user information from the session
 $full_name = $_SESSION['full_name'];
 
-// Now you can use $full_name in your page
-?>
+require '../process/db.php';
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,160 +45,13 @@ $full_name = $_SESSION['full_name'];
 
     <!-- New Header V2 -->
     <link rel="stylesheet" href="../style/components/headerv2.css" />
+    <link rel="stylesheet" href="../style/admin/dashboard.css">
+    <link rel="stylesheet" href="../style/admin/index.css">
     
 
     <title>Get Started</title>
 
     <style>
-        body{
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .new-header{
-            padding: 2em 8em;
-            border-bottom: 2px solid rgba(228, 231, 235, 0.431)
-        }
-
-
-        .container-n{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3em;
-        }
-
-        .n-link, .n-btn-login, .n-btn-signup{
-            font-size: 18px;
-            color: #5c6a78;
-        }
-
-        .n-logo{
-            font-size: 21px;
-            color: #111826;
-        }
-
-        .n-bar{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .n-list{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 3em;
-        }
-
-        .n-action{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 3em;
-        }
-
-        .n-btn-login{
-            color: #5c6a78;
-        }
-
-        .n-btn-signup{
-            color: #FFFFFF;
-            background-color: #6A55EA;
-            padding: 0.6em 1em;
-            border-radius: 1em;
-        }
-
-        /* Menu Toggle */
-        .open-menu {
-            display: none;
-        }
-
-        .close-menu{
-            display: none;
-            position: absolute;
-            top: 4%;
-            right: 4%;
-        }
-
-        @media only screen and (max-width: 1280px) {
-
-            .new-header{
-                display: flex;
-                justify-content: space-between;
-                align-items: center ;
-            }
-            nav{
-                margin: 0;
-            }
-
-            .open-menu{
-                display: block;
-            }
-
-            .n-bar {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transform: translateX(100%);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #111826;
-                z-index: 1;
-            }
-
-            .n-list{
-                display: flex;
-                flex-direction: column;
-            }
-
-            .n-link, .n-btn-login, .n-btn-signup{
-                font-size: 18px;
-                color: #fff;
-            }
-
-            .n-action{
-                position: absolute;
-                bottom: 4%;
-                right: 4%;
-            }
-            
-            .n-bar.show {
-                transform: translateX(0);
-            }
-
-            .close-menu.show {
-                display: block;
-            }
-
-            .n-list li {
-                display: block;
-                margin-bottom: 1.6em;
-                color: #fff;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-        }
-
-        .n-logo img{
-            font-size: 2em;
-        }
-
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            background-color: #ffffff; /* Add a background color for the sticky navigation */
-            z-index: 100; /* Adjust the z-index as needed */
-        }
 
         .user-profile{
             display: flex;
@@ -205,6 +59,201 @@ $full_name = $_SESSION['full_name'];
             justify-content: center;
             align-items: center;
         }
+
+        .profile-name p{
+            font-size: 18px;
+            color: #5c6a78;
+        }
+
+        .content img{
+            width: 56px;
+            height: 56px;
+            margin-bottom: 1em;
+        }
+
+
+
+.table{
+    overflow-x: auto;
+    border-radius: 1em;
+    border: 2px solid #D9DADC;
+    margin: 3em 0;
+}
+
+.table table{
+    width: 100%;
+    border-collapse: collapse;
+    
+    border-radius: 1em;
+}
+
+.table table thead{
+    background-color: #F9FAFB;
+    border-radius: 1em;
+    color: #111827;
+}
+
+.table table thead th{
+    padding: 2em;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 2px solid #D9DADC;
+}
+
+.table table tbody tr{
+    border-bottom: 1px solid #D9DADC;
+    background-color: #FFF;
+}
+
+.table table tbody tr td{
+    padding: 2em;
+    font-size: 1em;
+    text-align: left;
+}
+
+.btn-normal a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.btn-normal a:hover{
+    color: #000;
+}
+
+.btn-normal{
+    background-color: #FFF;
+    border: 1.5px solid #D8DBDC;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em 2em;
+    border-radius: 0.4em;
+}
+
+
+.btn-delete{
+    background-color: #DF4939;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em 2em;
+    border-radius: 0.4em;
+    margin-right: 1em;
+}
+
+.btn-delete a{
+    color: #F9FAFB;
+}
+
+.action-btn{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.table-full-name{
+    color: #000;
+    font-weight: bold;
+}
+
+/* Customize the action button */
+
+/* Responsive Media */
+
+
+
+body{
+    background: #FCFCFC;
+}
+
+.header-content h4{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    color: #1d354f;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5c6a78;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.btn-add {
+    background-color: #6A55EA;
+    border: 1.5px solid #D8DBDC;
+    outline: none;
+    cursor: pointer;
+    padding: 1em 3em;
+    border-radius: 0.4em;
+
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.btn-add:hover {
+    background-color: #5C4CE3;
+}
+
+.user-action{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.btn-logout{
+    padding: 1.4em;
+    border: none;
+    background-color: #6A55EA;
+    color: #FFFFFF;
+    border-radius: 1em;
+    text-align: center;
+    font-family: "Roobert-Medium", sans-serif;
+    font-size: 0.9em;
+    transition: all 200ms ease-in-out;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .users-database {
+        padding: 0 1em;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
+    .header-action {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .table {
+        overflow-x: scroll;
+    }
+}
+
 
     </style>
 </head>
@@ -223,33 +272,38 @@ $full_name = $_SESSION['full_name'];
             <nav class="n-bar">
                 <ul class="n-list">
                     <li class="n-item">
-                        <a href="../index.html" class="n-link">Home</a>
+                        <a href="#" class="n-link">Home</a>
                     </li>
                     <li class="n-item">
-                        <a href="./vaccine.php" class="n-link">Healthcare</a>
+                        <a href="user/index.php" class="n-link">Users</a>
                     </li>
                     <li class="n-item">
-                        <a href="./blog.html" class="n-link">Blog</a>
+                        <a href="blog/index.php" class="n-link">Blog</a>
                     </li>
                     <li class="n-item">
-                        <a href="./about.html" class="n-link">About</a>
+                        <a href="clinic/index.php" class="n-link">Clinic</a>
                     </li>
                     <li class="n-item">
-                        <a href="./contact.php" class="n-link">Contact</a>
+                        <a href="vaccine/index.php" class="n-link">Vaccine</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="contact/index.php" class="n-link">Contact</a>
                     </li>
                 </ul>
                 
                 <!-- Action Button -->
-                <div class="user-profile">
-                    <img src="../assets/default/Pfp-1.png" alt="Profile" width="40px" />
-                    <div class="profile-name">
-                        <p>
-            
-                        <?php echo $full_name; ?>
-     
-                        </p>
-                
+                <div class="user-action">
+                    <div class="user-profile">
+                        <img src="../assets/default/Pfp-1.png" alt="Profile" width="40px" />
+                        <div class="profile-name">
+                            <p><?php echo $full_name; ?></p>
+                        </div>
                     </div>
+
+                    <form action="../process/process_logout.php" method="POST">
+                        <button class="btn-logout" type="submit">Logout</button>
+                    </form>
+
                 </div>
 
                 <button class="close-menu" onclick="closeMenu()">
@@ -265,6 +319,99 @@ $full_name = $_SESSION['full_name'];
             <img src="../assets/Icons/align-justify.png" alt="" />
         </button>
 
+    </div>
+
+    <div class="d-header container-enable-special">
+        <div class="d-header-content">
+            <h4>Welcome back, <?php echo $full_name; ?>!</h4>
+            <p>Take a look for the recent data.</p>
+        </div>
+    </div>
+
+    <div class="dashboard-content container-enable-special">
+        <div class="content-wrap">
+            <a href="#">
+                <div class="content">
+                    <img src="assets/user.svg" alt="Icon">
+                    <p>Registerd User</p>
+                    <h3>14</h3>
+                    <p class="small">Increase vs last month</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="content">
+                    <img src="assets/clinic.svg" alt="">
+                    <p>Registerd Clinic</p>
+                    <h3>37</h3>
+                    <p class="small">Increase vs last month</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="content">
+                    <img src="assets/vaccine.svg" alt="">
+                    <p>Registerd Vaccine</p>
+                    <h3>162</h3>
+                    <p class="small">Increase vs last month</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="recent-content container-enable-special">
+        <div class="rc-header">
+            <div class="rc-left">
+                <h4>Recent User</h4>
+                <p>Registered in the past of 24 hours</p>
+            </div>
+            <a href="#">View All</a>
+        </div>
+
+        <div class="rc-wrap">
+            <?php
+                $query = "SELECT * FROM user";
+                $res = $DB->query($query);
+            ?>
+            <!-- Table -->
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Username</th>
+                            <th>Full Name</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($data = $res->fetch_object()) { ?>
+                            <tr>
+                                <td><?php echo $data->id_user ?></td>
+                                <td class="table-full-name"><?php echo $data->username ?></td>
+                                <td class="table-full-name"><?php echo $data->full_name ?></td>
+                                <td><?php echo $data->role ?></td>
+                                <td class="action-btn">
+                                    <a href="show.php?id=<?php echo $data->id_user; ?>">
+                                        <button class="btn-normal">
+                                            Show
+                                        </button>
+                                    </a>
+                                    <a href="update.php?id=<?php echo $data->id_user; ?>">
+                                        <button class="btn-normal">
+                                            Edit
+                                        </button>
+                                    </a>
+                                    <button class="btn-delete" onclick="return confirmDelete()">
+                                        <a href="/lifecare-site/process/delete_user.php?id=<?php echo $data->id_user; ?>">Delete</a>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script>

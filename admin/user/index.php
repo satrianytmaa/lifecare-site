@@ -105,6 +105,18 @@ require '../../process/db.php';
                 overflow-x: scroll;
             }
         }
+
+        .btn-create-outside{
+            padding: 1.4em 2.4em    ;
+            border: none;
+            background-color: #6A55EA;
+            color: #FFFFFF;
+            border-radius: 1em;
+            text-align: center;
+            font-family: "Roobert-Medium", sans-serif;
+            font-size: 0.9em;
+            transition: all 200ms ease-in-out;
+        }
     </style>
 
 
@@ -136,8 +148,8 @@ require '../../process/db.php';
             </div>
 
             <div class="header-action">
-                <a class="btn-create-a" href="../register.php">
-                    <button>Add User</button>
+                <a  href="../register.php">
+                    <button class="btn-create-outside">Add User</button>
                 </a>
             </div>
         </div>
