@@ -63,9 +63,9 @@ $id = $_GET['id'];
         <div class="breadcrumbs">
             <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
             <p>/</p>
-            <a class="bread" href="/lifecare-site/admin/clinic/index.php">Vaccine</a>
+            <a class="bread" href="/lifecare-site/admin/vaccine/index.php">Vaccine</a>
             <p>/</p>
-            <a class="bread current" href="/lifecare-site/admin/clinic/create.php">Show</a>
+            <a class="bread current" href="/lifecare-site/admin/vaccine/show.php">Show</a>
         </div>
 
         <!-- Header -->
