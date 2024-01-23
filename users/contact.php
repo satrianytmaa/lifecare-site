@@ -114,25 +114,29 @@ $email = $_SESSION['email'];
 
 </div>
 
-   <div class="vaccine-form container-enable">
+<div class="vaccine-form container-enable">
       <div class="vaccine-form-content">
-         <img src=".././assets/images/Content/Badge Data.svg" alt="" />
+         <img src="../assets/images/Content/Badge Data.svg" alt="" />
          <h3>Let's chat. <br> Tell us about your problem</h3>
          <p>Holaa! Feel free to use the contact form to the right to reach out to us </p>
       </div>
 
-      <form class="component-form" method="POST" action="/lifecare-site/process/create_contact.php" target="hidden_iframe">
+      <form class="component-form" method="POST" action="../process/create_contact.php" target="hidden_iframe">
          <div class="from-wrap">
             <h4>Send us a message 🚀</h4>
          </div>
          <div class="form-wrap">
-            <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name." value="<?php echo $full_name; ?>" />
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name." required value="<?php echo $full_name ?>"/>
          </div>
          <div class="form-wrap">
-            <input type="email" id="email" name="email" placeholder="Enter your Email" value="<?php echo $email; ?>" />
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required value="<?php echo $email ?>" />
          </div>
          <div class="form-wrap">
-            <input type="text" id="subject" name="subject" placeholder="Enter Subject" required />
+            <select name="subject" id="subject">
+               <option value="healthcare">Healthcare</option>
+               <option value="consultation">Consultation</option>
+               <option value="other">Others</option>
+            </select>
          </div>
          <div class="form-wrap">
             <label for="message">Tell us about your problem!</label>
