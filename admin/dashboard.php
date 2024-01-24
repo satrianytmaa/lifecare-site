@@ -47,25 +47,24 @@ require '../process/db.php';
     <link rel="stylesheet" href="../style/components/headerv2.css" />
     <link rel="stylesheet" href="../style/admin/dashboard.css">
     <link rel="stylesheet" href="../style/admin/index.css">
-    
+
 
     <title>Get Started</title>
 
     <style>
-
-        .user-profile{
+        .user-profile {
             display: flex;
             gap: 1em;
             justify-content: center;
             align-items: center;
         }
 
-        .profile-name p{
+        .profile-name p {
             font-size: 18px;
             color: #5c6a78;
         }
 
-        .content img{
+        .content img {
             width: 56px;
             height: 56px;
             margin-bottom: 1em;
@@ -73,188 +72,186 @@ require '../process/db.php';
 
 
 
-.table{
-    overflow-x: auto;
-    border-radius: 1em;
-    border: 2px solid #D9DADC;
-    margin: 3em 0;
-}
+        .table {
+            overflow-x: auto;
+            border-radius: 1em;
+            border: 2px solid #D9DADC;
+            margin: 3em 0;
+        }
 
-.table table{
-    width: 100%;
-    border-collapse: collapse;
-    
-    border-radius: 1em;
-}
+        .table table {
+            width: 100%;
+            border-collapse: collapse;
 
-.table table thead{
-    background-color: #F9FAFB;
-    border-radius: 1em;
-    color: #111827;
-}
+            border-radius: 1em;
+        }
 
-.table table thead th{
-    padding: 2em;
-    font-size: 1em;
-    font-weight: 700;
-    text-align: left;
-    border-bottom: 2px solid #D9DADC;
-}
+        .table table thead {
+            background-color: #F9FAFB;
+            border-radius: 1em;
+            color: #111827;
+        }
 
-.table table tbody tr{
-    border-bottom: 1px solid #D9DADC;
-    background-color: #FFF;
-}
+        .table table thead th {
+            padding: 2em;
+            font-size: 1em;
+            font-weight: 700;
+            text-align: left;
+            border-bottom: 2px solid #D9DADC;
+        }
 
-.table table tbody tr td{
-    padding: 2em;
-    font-size: 1em;
-    text-align: left;
-}
+        .table table tbody tr {
+            border-bottom: 1px solid #D9DADC;
+            background-color: #FFF;
+        }
 
-.btn-normal a{
-    text-decoration: none;
-    color: #000;
-    font-size: 1em;
-    font-weight: 500;
-}
+        .table table tbody tr td {
+            padding: 2em;
+            font-size: 1em;
+            text-align: left;
+        }
 
-.btn-normal a:hover{
-    color: #000;
-}
+        .btn-normal a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1em;
+            font-weight: 500;
+        }
 
-.btn-normal{
-    background-color: #FFF;
-    border: 1.5px solid #D8DBDC;
-    outline: none;
-    cursor: pointer;
-    padding: 0.6em 2em;
-    border-radius: 0.4em;
-}
+        .btn-normal a:hover {
+            color: #000;
+        }
 
-
-.btn-delete{
-    background-color: #DF4939;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 0.6em 2em;
-    border-radius: 0.4em;
-    margin-right: 1em;
-}
-
-.btn-delete a{
-    color: #F9FAFB;
-}
-
-.action-btn{
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
-
-.table-full-name{
-    color: #000;
-    font-weight: bold;
-}
-
-/* Customize the action button */
-
-/* Responsive Media */
+        .btn-normal {
+            background-color: #FFF;
+            border: 1.5px solid #D8DBDC;
+            outline: none;
+            cursor: pointer;
+            padding: 0.6em 2em;
+            border-radius: 0.4em;
+        }
 
 
+        .btn-delete {
+            background-color: #DF4939;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0.6em 2em;
+            border-radius: 0.4em;
+            margin-right: 1em;
+        }
 
-body{
-    background: #FCFCFC;
-}
+        .btn-delete a {
+            color: #F9FAFB;
+        }
 
-.header-content h4{
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0.4em;
-    color: #1d354f;
-}
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
 
-p{
-    font-size: 1rem;
-    font-weight: 400;
-    color: #5c6a78;
-}
+        .table-full-name {
+            color: #000;
+            font-weight: bold;
+        }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+        /* Customize the action button */
 
-}
-
-
-.btn-add {
-    background-color: #6A55EA;
-    border: 1.5px solid #D8DBDC;
-    outline: none;
-    cursor: pointer;
-    padding: 1em 3em;
-    border-radius: 0.4em;
-
-    color: #FFFFFF;
-    font-weight: 500;
-}
-
-.btn-add:hover {
-    background-color: #5C4CE3;
-}
-
-.user-action{
-    display: flex;
-    align-items: center;
-    gap: 2em;
-}
-
-.btn-logout{
-    padding: 1.4em;
-    border: none;
-    background-color: #6A55EA;
-    color: #FFFFFF;
-    border-radius: 1em;
-    text-align: center;
-    font-family: "Roobert-Medium", sans-serif;
-    font-size: 0.9em;
-    transition: all 200ms ease-in-out;
-}
-
-/* Responsive */
-
-@media screen and (max-width: 768px) {
-    .users-database {
-        padding: 0 1em;
-    }
-
-    .header {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .header-content {
-        text-align: center;
-    }
-
-    .header-action {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .btn-add {
-        width: 100%;
-    }
-
-    .table {
-        overflow-x: scroll;
-    }
-}
+        /* Responsive Media */
 
 
+
+        body {
+            background: #FCFCFC;
+        }
+
+        .header-content h4 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.4em;
+            color: #1d354f;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #5c6a78;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+
+        .btn-add {
+            background-color: #6A55EA;
+            border: 1.5px solid #D8DBDC;
+            outline: none;
+            cursor: pointer;
+            padding: 1em 3em;
+            border-radius: 0.4em;
+
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .btn-add:hover {
+            background-color: #5C4CE3;
+        }
+
+        .user-action {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+        }
+
+        .btn-logout {
+            padding: 1.4em;
+            border: none;
+            background-color: #6A55EA;
+            color: #FFFFFF;
+            border-radius: 1em;
+            text-align: center;
+            font-family: "Roobert-Medium", sans-serif;
+            font-size: 0.9em;
+            transition: all 200ms ease-in-out;
+        }
+
+        /* Responsive */
+
+        @media screen and (max-width: 768px) {
+            .users-database {
+                padding: 0 1em;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .header-content {
+                text-align: center;
+            }
+
+            .header-action {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .btn-add {
+                width: 100%;
+            }
+
+            .table {
+                overflow-x: scroll;
+            }
+        }
     </style>
 </head>
 
@@ -267,7 +264,7 @@ p{
             <div class="n-logo">
                 <img src="../assets/Icons/logo/logo-new-md.svg" alt="">
             </div>
-    
+
             <!-- Navigation -->
             <nav class="n-bar">
                 <ul class="n-list">
@@ -290,7 +287,7 @@ p{
                         <a href="contact/index.php" class="n-link">Contact</a>
                     </li>
                 </ul>
-                
+
                 <!-- Action Button -->
                 <div class="user-action">
                     <div class="user-profile">
@@ -310,7 +307,7 @@ p{
                     <img src="../assets/Icons/x-close.png" alt="" />
                 </button>
             </nav>
-            
+
         </div>
 
 
@@ -334,7 +331,16 @@ p{
                 <div class="content">
                     <img src="assets/user.svg" alt="Icon">
                     <p>Registerd User</p>
-                    <h3>14</h3>
+                    <?php
+                    // menghitung total data user 
+                    $query = "SELECT COUNT(*) AS jumlah_pengguna FROM user";
+                    $res = $DB->query($query);
+
+                    // ekstrak nilai  jumlah_pengguna jika ada tampilkan total data user, jika tidak tampilkan 0
+                    $jumlah_pengguna = ($res) ? $res->fetch_assoc()['jumlah_pengguna'] : 0;
+                    ?>
+
+                    <h3><?php echo $jumlah_pengguna; ?></h3>
                     <p class="small">Increase vs last month</p>
                 </div>
             </a>
@@ -342,7 +348,16 @@ p{
                 <div class="content">
                     <img src="assets/clinic.svg" alt="">
                     <p>Registerd Clinic</p>
-                    <h3>37</h3>
+                    <?php
+                    // menghitung total data clinic
+                    $query = "SELECT COUNT(*) AS jumlah_clinic FROM clinic";
+                    $res = $DB->query($query);
+
+                    // ekstrak nilai  jumlah_clinic jika ada tampilkan total data clinic, jika tidak tampilkan 0
+                    $jumlah_clinic = ($res) ? $res->fetch_assoc()['jumlah_clinic'] : 0;
+                    ?>
+
+                    <h3><?php echo $jumlah_clinic; ?></h3>
                     <p class="small">Increase vs last month</p>
                 </div>
             </a>
@@ -350,7 +365,16 @@ p{
                 <div class="content">
                     <img src="assets/vaccine.svg" alt="">
                     <p>Registerd Vaccine</p>
-                    <h3>162</h3>
+                    <?php
+                    // menghitung total data vaccine
+                    $query = "SELECT COUNT(*) AS jumlah_vaccine FROM vaccine";
+                    $res = $DB->query($query);
+
+                    // ekstrak nilai  jumlah_clinic jika ada tampilkan total data clinic, jika tidak tampilkan 0
+                    $jumlah_vaccine = ($res) ? $res->fetch_assoc()['jumlah_vaccine'] : 0;
+                    ?>
+
+                    <h3><?php echo $jumlah_vaccine; ?></h3>
                     <p class="small">Increase vs last month</p>
                 </div>
             </a>
@@ -368,8 +392,8 @@ p{
 
         <div class="rc-wrap">
             <?php
-                $query = "SELECT * FROM user";
-                $res = $DB->query($query);
+            $query = "SELECT * FROM user";
+            $res = $DB->query($query);
             ?>
             <!-- Table -->
             <div class="table">
@@ -433,7 +457,7 @@ p{
         }
 
         // Add an event listener to close the menu when clicking outside or pressing the close button
-        document.addEventListener('click', function (event) {
+        document.addEventListener('click', function(event) {
             var navbar = document.querySelector('.navbar');
             var toggleButton = document.querySelector('.mobile-toggle');
 
@@ -441,11 +465,8 @@ p{
                 closeMenu(); // Call closeMenu function instead of directly removing 'show' class
             }
         });
-
-
-
     </script>
-    
+
 </body>
 
 </html>
