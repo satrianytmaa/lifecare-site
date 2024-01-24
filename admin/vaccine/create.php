@@ -109,6 +109,13 @@ require '../../process/db.php';
                 </div>
                 <input type="text" name="dose_vaccine" id="dose_vaccine" placeholder="Enter the Dose...">
             </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="name_clinic">Clinic</label>
+                    <p>Initial dose that recommended for the vaccine.</p>
+                </div>
+                <input type="text" name="name_clinic" id="name_clinic" placeholder="Enter the Clinic...">
+            </div>
             <div class="create-action">
                 <button class="btn-cancel">Cancel</button>
                 <button class="btn-create" type="submit">Save</button>
