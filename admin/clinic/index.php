@@ -47,10 +47,53 @@ require '../../process/db.php';
     <title>Clinics Tables</title>
 
     <script>
-        function confirmDelete() {
-            return confirm("Are you sure you want to delete this user?");
+        function openModal(id) {
+            document.getElementById('confirmationModal').style.display = 'block';
+            // Set the clinic ID in a hidden input field within the modal
+            document.getElementById('clinicIdInput').value = id;
         }
+
+        function closeModal() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        }
+
+        function confirmDelete() {
+            // Get the clinic ID from the hidden input field
+            var clinicId = document.getElementById('clinicIdInput').value;
+            
+            // Add logic to perform deletion using clinicId
+            var deleteLink = document.getElementById('deleteLink');
+            deleteLink.href = "/lifecare-site/process/delete_clinic.php?id=" + clinicId;
+            deleteLink.click(); // Trigger the click on the hidden link
+            closeModal(); // Close the modal after deletion
+        }
+
+        // function openCustomAlert(message) {
+        //     document.getElementById('customAlertMessage').innerText = message;
+        //     document.getElementById('customAlertModal').style.display = 'block';
+
+        //     // Automatically close the modal after 3 seconds (adjust the time as needed)
+        //     setTimeout(function() {
+        //         closeCustomAlert();
+        //     }, 3000);
+        // }
+
+        // function closeCustomAlert() {
+        //     var modal = document.getElementById('customAlertModal');
+        //     modal.classList.add('fade-out');
+
+        //     // Delay the actual hiding of the modal to match the transition duration
+        //     setTimeout(function() {
+        //         modal.style.display = 'none';
+        //         modal.classList.remove('fade-out');
+        //     }, 500); // Adjust the duration to match the transition duration
+        // }
+
+
+
+
     </script>
+
 
     <style>
         .header {
@@ -105,6 +148,46 @@ require '../../process/db.php';
                 overflow-x: scroll;
             }
         }
+
+        /* Modal */
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+
     </style>
 
 
@@ -115,6 +198,27 @@ require '../../process/db.php';
     $query = "SELECT * FROM clinic";
     $res = $DB->query($query);
     ?>
+
+    <!-- Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Are you sure you want to delete this clinic?</p>
+            <button onclick="confirmDelete()">Yes, Delete</button>
+            <button onclick="closeModal()">No, Cancel</button>
+            <!-- Hidden input to store clinic ID -->
+            <input type="hidden" id="clinicIdInput" value="">
+        </div>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <!-- <div id="customAlertModal" class="modal">
+        <div class="modal-content">
+            <p id="customAlertMessage"></p>
+        </div>
+    </div> -->
+
+
 
 
     <!-- Users Database -->
@@ -170,9 +274,12 @@ require '../../process/db.php';
                                         Edit
                                     </button>
                                 </a>
-                                <button class="btn-delete" onclick="return confirmDelete()">
+                                <button class="btn-delete" onclick="openModal(<?php echo $data->id_clinic; ?>)">Delete</button>
+                                <a id="deleteLink" style="display: none;" href="/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_clinic; ?>"></a>
+
+                                <!-- <button class="btn-delete" onclick="return confirmDelete()">
                                     <a href="/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_clinic; ?>">Delete</a>
-                                </button>
+                                </button> -->
 
                             </td>
                         </tr>
