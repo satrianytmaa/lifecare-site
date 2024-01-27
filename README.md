@@ -6,8 +6,6 @@
 4. Ni Putu Sri Angelina Putri (220030110)
 5. I Putu Attia Pradiva (220030596)
 
----
-
 # Lifecare Site
 
 ## Project Overview
