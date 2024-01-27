@@ -1,4 +1,4 @@
-# Nama Kelompok
+## Nama Kelompok
 
 1. I Putu Aditya Putra (220030127)
 2. I Gede Ksatria Puspa Nayottama (220030160)
@@ -6,16 +6,71 @@
 4. Ni Putu Sri Angelina Putri (220030110)
 5. I Putu Attia Pradiva (220030596)
 
-# connect db ke proses php
+---
 
-1. di /admin/process/db.php ubah sesuai kebutuhan
-2. import file lifecare_db.sql ke HeidiSQL
-3. di browser gunakan url http://localhost/lifecare-site/admin/register.php untuk ke register admin
-4. karena belum ada dashboard admin jadi stlh submit ke halaman index
+# Lifecare Site
 
-# CRUD admin/clinic
+## Project Overview
 
-1. create data clinic di http://localhost/lifecare-site/admin/clinic/create.php
-2. setelah create langsung direct to show
-3. utk ke index bisa di http://localhost/lifecare-site/admin/clinic/index.php
-4. di index klik update utk mengubah data, show utk menampilkan data, delete utk menghapus data
+This project is a healthcare management system designed to facilitate the administration of user, clinic, vaccine, and contact data. It provides a seamless experience for both administrators and regular users.
+
+## Features
+
+- **User Authentication:**
+  - Users can register as either administrators or regular users.
+  - Secure authentication for user accounts.
+
+- **Admin Dashboard:**
+  - Manage user accounts, clinics, vaccines, and contact data.
+  - Approve, edit, add, or delete data with ease.
+
+- **User Registration:**
+  - Users can register for vaccination.
+  - Choose vaccine type and preferred vaccination location.
+
+- **Contact Page:**
+  - Users can contact administrators.
+  - Admins can review and approve or reject messages.
+
+## Technologies Used
+
+- **Frontend:**
+  - HTML
+  - CSS
+  - JavaScript
+
+- **Backend:**
+  - PHP
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/satrianytmaa/lifecare-site.git
+   ```
+
+2. Set up the database:
+
+   - Create a new database and import the provided SQL file.
+
+3. Configure the database connection:
+
+   - Update the database connection settings in `config.php`.
+
+4. Run the application:
+
+   - Start a local development server or deploy to your preferred hosting environment.
+
+## Credits
+
+- Design and illustrations: Figma
+- Other assets: Figma
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+Special thanks to the [Web Programming Class] for the valuable learning experience.
