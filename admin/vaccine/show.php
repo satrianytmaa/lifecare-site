@@ -49,12 +49,15 @@ $id = $_GET['id'];
 
 <body>
     <?php
-    $query = "SELECT * FROM vaccine WHERE id_vaccine= $id ";
+    $query = "SELECT vaccine.id_vaccine,vaccine.name_vaccine, vaccine.manufacturer, vaccine.dose_vaccine, clinic.name_clinic
+    FROM vaccine
+    INNER JOIN clinic ON clinic.id_clinic = vaccine.id_clinic
+    WHERE vaccine.id_vaccine = $id";
     $res = $DB->query($query);
     $data = $res->fetch_object();
     ?>
 
-    
+
 
 
     <div class="show-database user-show container-enable">
@@ -81,21 +84,28 @@ $id = $_GET['id'];
             <div class="form-wrap">
                 <div class="form-headline">
                     <label for="name">Name</label>
-                    <p>Name of the clinic.</p>
+                    <p>Name of the vaccine.</p>
                 </div>
                 <input type="text" name="name" id="name" value="<?php echo $data->name_vaccine ?>" readonly>
             </div>
             <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="name">Clinic</label>
+                    <p>Name of the clinic.</p>
+                </div>
+                <input type="text" name="name" id="name" value="<?php echo $data->name_clinic ?>" readonly>
+            </div>
+            <div class="form-wrap">
                 <div class="form-headliner">
-                    <label for="manufacturer">Manuvacturer</label>
+                    <label for="manufacturer">Manufacturer</label>
                     <p>Input the location of the manufacturer.</p>
                 </div>
                 <input type="text" name="manufacturer" id="manufacturer" value="<?php echo $data->manufacturer ?>" readonly>
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="email">Email</label>
-                    <p>Email of the clinic.</p>
+                    <label for="email">Vaccine Dose</label>
+                    <p>Dose of the vaccine.</p>
                 </div>
                 <input type="text" name="email" id="email" value="<?php echo $data->dose_vaccine ?>" readonly>
             </div>
@@ -104,7 +114,7 @@ $id = $_GET['id'];
                 <a href="update.php?id=<?php echo $data->id_vaccine; ?>" class="btn-create-a">Edit</a>
 
             </div>
-    </form>
+        </form>
     </div>
 
 

@@ -1,4 +1,5 @@
 <?php
+require '../process/db.php';
 session_start();
 
 // Check if the user is logged in
@@ -57,59 +58,59 @@ $full_name = $_SESSION['full_name'];
 
 <body>
     <!-- New Header V2 -->
-  <div class="new-header sticky-nav">
+    <div class="new-header sticky-nav">
 
-    <div class="container-n">
-        <!-- Logo -->
-        <div class="n-logo">
-            <img src="../assets/Icons/logo/logo-new-md.svg" alt="">
-        </div>
-
-        <!-- Navigation -->
-        <nav class="n-bar">
-            <ul class="n-list">
-                <li class="n-item">
-                    <a href="./index.php" class="n-link">Home</a>
-                </li>
-                <li class="n-item">
-                    <a href="./vaccine.php" class="n-link">Healthcare</a>
-                </li>
-                <li class="n-item">
-                    <a href="./blog.php" class="n-link">Blog</a>
-                </li>
-                <li class="n-item">
-                    <a href="./about.php" class="n-link">About</a>
-                </li>
-                <li class="n-item">
-                    <a href="./contact.php" class="n-link">Contact</a>
-                </li>
-            </ul>
-            
-            <!-- Action Button -->
-            <div class="user-profile">
-                <img src=".././assets/default/Pfp-1.png" alt="Profile" />
-                <div class="profile-name">
-                <p>
-        
-                <?php echo $full_name; ?>
-        
-                </p>
-        
-                </div>
+        <div class="container-n">
+            <!-- Logo -->
+            <div class="n-logo">
+                <img src="../assets/Icons/logo/logo-new-md.svg" alt="">
             </div>
 
-            <button class="close-menu" onclick="closeMenu()">
-                <img src="../assets/Icons/x-close.png" alt="" />
-            </button>
-        </nav>
-        
-    </div>
+            <!-- Navigation -->
+            <nav class="n-bar">
+                <ul class="n-list">
+                    <li class="n-item">
+                        <a href="./index.php" class="n-link">Home</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./vaccine.php" class="n-link">Healthcare</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./blog.php" class="n-link">Blog</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./about.php" class="n-link">About</a>
+                    </li>
+                    <li class="n-item">
+                        <a href="./contact.php" class="n-link">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Action Button -->
+                <div class="user-profile">
+                    <img src=".././assets/default/Pfp-1.png" alt="Profile" />
+                    <div class="profile-name">
+                        <p>
+
+                            <?php echo $full_name; ?>
+
+                        </p>
+
+                    </div>
+                </div>
+
+                <button class="close-menu" onclick="closeMenu()">
+                    <img src="../assets/Icons/x-close.png" alt="" />
+                </button>
+            </nav>
+
+        </div>
 
 
 
-    <button class="open-menu" onclick="toggleMenu()">
-        <img src="../assets/Icons/align-justify.png" alt="" />
-    </button>
+        <button class="open-menu" onclick="toggleMenu()">
+            <img src="../assets/Icons/align-justify.png" alt="" />
+        </button>
 
     </div>
 
@@ -151,8 +152,13 @@ $full_name = $_SESSION['full_name'];
             </div>
         </div>
 
+        <!-- select clinic -->
+        <?php
+        $query = "SELECT * FROM clinic";
+        $clinic = $DB->query($query);
+        ?>
         <!-- CONTENT => Form -->
-        <form class="vaccine-form container-enable" method="POST" action="/lifecare-site/process/process_vaccine.php">
+        <form class="vaccine-form container-enable" method="POST" action="/lifecare-site/process/create_vaccine.php">
             <div class="vaccine-form-content">
                 <h3>Register online for your vaccinitation</h3>
                 <p>
@@ -163,22 +169,27 @@ $full_name = $_SESSION['full_name'];
             <div class="vaccine-form-form">
                 <div class="component-form">
                     <div class="form-wrap">
-                        <label for="name">Full Name</label>
-                        <input type="text" name="name" placeholder="Enter your fullname..." value="<?php echo $full_name; ?>"/>
+                        <label for="name_vaccine">Name Vaccine</label>
+                        <input type="text" name="name_vaccine" placeholder="Enter Name Vaccine..." />
+                    </div>
+                    <div>
+                        <label for="clinic">Name Clinic</label>
+                        <select name="clinic" id="clinic">
+                            <?php while ($data = $clinic->fetch_object()) {
+                                echo '<option value="' . $data->id_clinic . '">' . $data->name_clinic . '</option>';
+                            } ?>
+                        </select>
                     </div>
                     <div class="form-wrap">
-                        <label for="app">Appointment Number</label>
-                        <input type="text" name="app" placeholder="Enter your fullname..." />
+                        <label for="manufacturer">Manufacturer</label>
+                        <input type="text" name="manufacturer" placeholder="Enter Manufacturer..." />
                     </div>
                     <div class="form-wrap">
-                        <label for="id_card">ID Card</label>
-                        <input type="text" name="id_card" placeholder="Enter your id card..." />
+                        <label for="dose_vaccine">Dose Vaccine</label>
+                        <input type="text" name="dose_vaccine" placeholder="Enter Dose Vaccine..." />
                     </div>
-                    <div class="form-wrap">
-                        <label for="number">Mobile Number</label>
-                        <input type="number" name="number" placeholder="Enter your number..." />
-                    </div>
-                    <button class="button-primary"><a href="#">Register now</a></button>
+
+                    <button class="button-primary">Register now</button>
                 </div>
             </div>
         </form>

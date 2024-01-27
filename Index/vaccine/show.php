@@ -87,22 +87,24 @@ $id = $_GET['id'];
     ?>
 
     <?php
-    $query = "SELECT * FROM appointment WHERE id_appointment= $data->id_appointment ";
+    $query = "SELECT * FROM clinic WHERE id_clinic= $data->id_clinic ";
     $res = $DB->query($query);
-    $appointment = $res->fetch_object();
+    $clinic = $res->fetch_object();
     ?>
 
     <div class="user-database user-show container-enable">
         <!-- Header -->
         <div class="header">
-            <h4>Vaccine Detail of <?php echo $appointment->number  ?> </h4>
+            <h4>Vaccine Detail</h4>
         </div>
 
         <div class="user-data">
             <h5>Id : <?php echo $data->id_vaccine ?></h5>
-            <h5>Appointment Number : <?php echo $appointment->number ?></h5>
-            <h5>Vaccine Type : <?php echo $data->name_vaccine ?></h5>
-            <h5>Age : <?php echo $data->age ?></h5>
+            <h5>Vaccine Name : <?php echo $data->name_vaccine ?></h5>
+            <h5>Clinic Name : <?php echo $data->name_vaccine ?></h5>
+            <h5>Clinic Name : <?php echo $clinic->name_clinic ?></h5>
+            <h5>Manufacturer : <?php echo $data->manufacturer ?></h5>
+            <h5>Dose Vaccine : <?php echo $data->dose_vaccine ?></h5>
         </div>
 
         <div class="action-button">
@@ -112,7 +114,7 @@ $id = $_GET['id'];
                 </button>
             </a>
             <button class="btn-delete" onclick="return confirmDelete()">
-                <a href="/../lifecare-site/process/delete_vaccine.php?id<?php echo $data->id_vaccine ?>">Delete</a>
+                <a href="/../lifecare-site/process/delete_vaccine.php?id=<?php echo $id ?>">Delete</a>
             </button>
         </div>
     </div>

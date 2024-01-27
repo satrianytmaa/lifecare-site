@@ -1,7 +1,10 @@
 <?php
 require '../../process/db.php';
-
+session_start();
 $id = $_GET['id'];
+
+$_SESSION['id_vaccine'] = $id;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +46,7 @@ $id = $_GET['id'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <title>Clinics Tables - Detail</title>
+    <title>Vaccine Update </title>
 
 </head>
 
@@ -53,8 +56,12 @@ $id = $_GET['id'];
     $res = $DB->query($query);
     $data = $res->fetch_object();
     ?>
+    <?php
+    $query_clinic = "SELECT * FROM clinic";
+    $res_clinic = $DB->query($query_clinic);
+    $clinic = $res_clinic->fetch_object();
+    ?>
 
-    
 
 
     <div class="show-database user-show container-enable">
@@ -80,31 +87,45 @@ $id = $_GET['id'];
         <form method="POST" action="/lifecare-site/process/update_vaccine.php">
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="name">Name</label>
+                    <label for="name_vaccine">Name</label>
                     <p>Name of the vaccine.</p>
                 </div>
-                <input type="text" name="name" id="name" value="<?php echo $data->name_vaccine ?>">
+                <input type="text" name="name_vaccine" id="name_vaccine" value="<?php echo $data->name_vaccine ?>">
+            </div>
+            <div class="form-wrap">
+                <label for="clinic">Clinic</label>
+                <select name="clinic" id="clinic">
+
+                    <?php
+
+                    while ($clinic = $res_clinic->fetch_object()) {
+                        $selected = ($data->id_clinic == $clinic->id_clinic) ? 'selected' : '';
+                        echo '<option value="' . $clinic->id_clinic . '" ' . $selected . '>' . $clinic->name_clinic . '</option>';
+                    }
+                    ?>
+
+                </select>
             </div>
             <div class="form-wrap">
                 <div class="form-headliner">
-                    <label for="manufacturer">Manuvacturer</label>
+                    <label for="manufacturer">Manufacturer</label>
                     <p>Location of the manufacturer.</p>
                 </div>
                 <input type="text" name="manufacturer" id="manufacturer" value="<?php echo $data->manufacturer ?>">
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="dose">Dose</label>
+                    <label for="dose_vaccine">Dose</label>
                     <p>Dose recommended for the vaccine.</p>
                 </div>
-                <input type="text" name="dose" id="dose" value="<?php echo $data->dose_vaccine ?>">
+                <input type="text" name="dose_vaccine" id="dose_vaccine " value="<?php echo $data->dose_vaccine ?>">
             </div>
             <div class="create-action">
                 <a class="btn-cancel-a" href="/lifecare-site/process/delete_vaccine.php?id=<?php echo $data->id_vaccine; ?>" onclick="return confirmDelete()">Delete</a>
                 <button class="btn-create" type="submit">Update</button>
 
             </div>
-    </form>
+        </form>
     </div>
 
 

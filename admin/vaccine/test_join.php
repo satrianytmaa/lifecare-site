@@ -1,9 +1,9 @@
 <?php
 require '../../process/db.php';
 
-$sql = "SELECT vaccine.*, clinic.name_clinic
+$sql = "SELECT vaccine.id_vaccine,vaccine.name_vaccine, vaccine.manufacturer, vaccine.dose_vaccine, clinic.name_clinic
         FROM vaccine
-        INNER JOIN clinic ON vaccine.id_clinic = id_clinic";
+        INNER JOIN clinic ON vaccine.id_clinic = clinic.id_clinic";
 
 $res = $DB->query($sql);
 ?>
@@ -32,14 +32,18 @@ $res = $DB->query($sql);
             </tr>
         </thead>
         <tbody>
-            <?php while ($row = $res->fetch(PDO::FETCH_ASSOC)) : ?>
+            <?php //while ($row = $res->fetch(PDO::FETCH_ASSOC)) : 
+            ?>
+            <?php while ($row = $res->fetch_object()) { ?>
                 <tr>
-                    <td><?= $row['id_vaccine'] ?></td>
-                    <td><?= $row['name_vaccine'] ?></td>
-                    <td><?= $row['name_clinic'] ?></td>
+                    <td><?= $row->id_vaccine ?></td>
+                    <td><?= $row->name_vaccine ?></td>
+                    <td><?= $row->dose_vaccine ?></td>
+                    <td><?= $row->name_clinic ?></td>
+
                     <!-- Add more cells as needed -->
                 </tr>
-            <?php endwhile; ?>
+            <?php } ?>
         </tbody>
     </table>
 

@@ -53,8 +53,8 @@ require '../../process/db.php';
     </script>
 
     <style>
-        .btn-create-outside{
-            padding: 1.4em 2.4em    ;
+        .btn-create-outside {
+            padding: 1.4em 2.4em;
             border: none;
             background-color: #6A55EA;
             color: #FFFFFF;
@@ -72,8 +72,12 @@ require '../../process/db.php';
 <body>
 
     <?php
-    $query = "SELECT * FROM vaccine";
+    $query = "SELECT vaccine.id_vaccine,vaccine.name_vaccine, vaccine.manufacturer, vaccine.dose_vaccine, clinic.name_clinic
+    FROM vaccine
+    INNER JOIN clinic ON vaccine.id_clinic = clinic.id_clinic";
     $res = $DB->query($query);
+
+
     ?>
 
 
@@ -95,7 +99,7 @@ require '../../process/db.php';
             </div>
 
             <div class="header-action">
-                <a  href="create.php">
+                <a href="create.php">
                     <button class="btn-create-outside">Add Vaccine</button>
                 </a>
             </div>
@@ -110,6 +114,7 @@ require '../../process/db.php';
                     <tr>
                         <th>No</th>
                         <th>Name of the Vaccine</th>
+                        <th>Clinic</th>
                         <th>Manufacture</th>
                         <th>Dose</th>
                         <th>Action</th>
@@ -117,14 +122,10 @@ require '../../process/db.php';
                 </thead>
                 <tbody>
                     <?php while ($data = $res->fetch_object()) { ?>
-                        <?php
-                        $query_app = "SELECT * FROM vaccine WHERE id_vaccine = $data->id_vaccine";
-                        $res_app = $DB->query($query_app);
-                        $appointment = $res_app->fetch_object();
-                        ?>
                         <tr>
                             <td><?php echo $data->id_vaccine ?></td>
-                            <td><?php echo $appointment->name_vaccine ?></td>
+                            <td><?php echo $data->name_vaccine ?></td>
+                            <td><?php echo $data->name_clinic ?></td>
                             <td><?php echo $data->manufacturer ?></td>
                             <td><?php echo $data->dose_vaccine ?></td>
                             <td class="action-btn">

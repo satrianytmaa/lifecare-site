@@ -24,24 +24,38 @@ $_SESSION['id_vaccine'] = $id;
     ?>
 
     <?php
-    $query_appointment = "SELECT * FROM appointment WHERE id_appointment= $data->id_appointment";
-    $res_appointment = $DB->query($query_appointment);
-    $appointment = $res_appointment->fetch_object();
+    $query_clinic = "SELECT * FROM clinic";
+    $res_clinic = $DB->query($query_clinic);
+    $clinic = $res_clinic->fetch_object();
     ?>
 
     <form method="POST" action="/lifecare-site/process/update_vaccine.php">
         <div>
-            <label for="appointment">Appointment Number</label>
-            <input type="text" name="appointment" id="appointment" value="<?php echo $appointment->number; ?>">
+            <label for="name_vaccine">Name Vaccine</label>
+            <input type="text" name="name_vaccine" id="name_vaccine" value="<?php echo $data->name_vaccine; ?>">
+        </div>
+        <div>
+            <label for="clinic">Clinic</label>
+            <select name="clinic" id="clinic">
+
+                <?php
+
+                while ($clinic = $res_clinic->fetch_object()) {
+                    $selected = ($data->id_clinic == $clinic->id_clinic) ? 'selected' : '';
+                    echo '<option value="' . $clinic->id_clinic . '" ' . $selected . '>' . $clinic->name_clinic . '</option>';
+                }
+                ?>
+
+            </select>
         </div>
 
         <div>
-            <label for="vaccine">Vaccine Type</label>
-            <input type="text" name="vaccine" id="vaccine" value="<?php echo $data->name_vaccine; ?>">
+            <label for="manufacturer">Manufacturer</label>
+            <input type="text" name="manufacturer" id="manufacturer" value="<?php echo $data->manufacturer; ?>">
         </div>
         <div>
-            <label for="age">Age</label>
-            <input type="text" name="age" id="age" value="<?php echo $data->age; ?>">
+            <label for="dose_vaccine">Dose Vaccine</label>
+            <input type="text" name="dose_vaccine" id="dose_vaccine" value="<?php echo $data->dose_vaccine; ?>">
         </div>
         <button type="submit">Save</button>
     </form>
