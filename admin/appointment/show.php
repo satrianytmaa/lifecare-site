@@ -80,24 +80,18 @@ $id = $_GET['id'];
 </head>
 
 <body>
+
+
     <?php
-    $query = "SELECT * FROM appointment WHERE id_appointment= $id ";
+    $query = "SELECT appointment.id_appointment, appointment.number, appointment.status, appointment.date_and_time, user.full_name, clinic.name_clinic, vaccine.name_vaccine
+    FROM appointment
+    INNER JOIN user ON appointment.id_user = user.id_user
+    INNER JOIN clinic ON appointment.id_clinic = clinic.id_clinic
+    INNER JOIN vaccine ON appointment.id_vaccine = vaccine.id_vaccine
+    WHERE appointment.id_appointment = $id";
     $res = $DB->query($query);
     $data = $res->fetch_object();
     ?>
-
-    <?php
-    $query = "SELECT * FROM user WHERE id_user = $data->id_user ";
-    $res = $DB->query($query);
-    $patient = $res->fetch_object();
-    ?>
-
-    <?php
-    $query = "SELECT * FROM clinic WHERE id_clinic= $data->id_clinic ";
-    $res = $DB->query($query);
-    $clinic = $res->fetch_object();
-    ?>
-
 
     <div class="user-database user-show container-enable">
         <!-- Header -->
@@ -108,9 +102,10 @@ $id = $_GET['id'];
 
         <div class="user-data">
             <h5>Id : <?php echo $data->id_appointment ?></h5>
-            <h5>Full Name : <?php echo $patient->full_name ?></h5>
+            <h5>Full Name : <?php echo $data->full_name ?></h5>
             <h5>Status : <?php echo $data->number ?></h5>
-            <h5>Clinic : <?php echo $clinic->name_clinic ?></h5>
+            <h5>Clinic : <?php echo $data->name_clinic ?></h5>
+            <h5>Vaccine : <?php echo $data->name_vaccine ?></h5>
             <h5>Status : <?php echo $data->status ?></h5>
             <h5>Date : <?php echo $data->date_and_time ?></h5>
         </div>

@@ -109,7 +109,11 @@ require '../../process/db.php';
 
 <body>
     <?php
-    $query = "SELECT * FROM appointment";
+    $query = "SELECT appointment.id_appointment, appointment.number, appointment.status, appointment.date_and_time, user.full_name, clinic.name_clinic, vaccine.name_vaccine
+    FROM appointment
+    INNER JOIN user ON appointment.id_user = user.id_user
+    INNER JOIN clinic ON appointment.id_clinic = clinic.id_clinic
+    INNER JOIN vaccine ON appointment.id_vaccine = vaccine.id_vaccine";
     $res = $DB->query($query);
     ?>
 
@@ -141,6 +145,7 @@ require '../../process/db.php';
                         <th>Full Name</th>
                         <th>Number</th>
                         <th>Clinic</th>
+                        <th>Vaccine</th>
                         <th>Status</th>
                         <th>Date</th>
                         <th>Action</th>
@@ -151,20 +156,21 @@ require '../../process/db.php';
 
                     <?php while ($data = $res->fetch_object()) { ?>
                         <?php
-                        $query_patient = "SELECT * FROM user WHERE id_user = $data->id_user";
-                        $res_patient = $DB->query($query_patient);
-                        $patient = $res_patient->fetch_object();
+                        // $query_patient = "SELECT * FROM user WHERE id_user = $data->id_user";
+                        // $res_patient = $DB->query($query_patient);
+                        // $patient = $res_patient->fetch_object();
                         ?>
                         <?php
-                        $query_clinic = "SELECT * FROM clinic WHERE id_clinic = $data->id_clinic";
-                        $res_clinic = $DB->query($query_clinic);
-                        $clinic = $res_clinic->fetch_object();
+                        // $query_clinic = "SELECT * FROM clinic WHERE id_clinic = $data->id_clinic";
+                        // $res_clinic = $DB->query($query_clinic);
+                        // $clinic = $res_clinic->fetch_object();
                         ?>
                         <tr>
                             <td><?php echo $data->id_appointment ?></td>
-                            <td><?php echo $patient->full_name ?></td>
+                            <td><?php echo $data->full_name ?></td>
                             <td><?php echo $data->number ?></td>
-                            <td><?php echo $clinic->name_clinic ?></td>
+                            <td><?php echo $data->name_clinic ?></td>
+                            <td><?php echo $data->name_vaccine ?></td>
                             <td><?php echo $data->status ?></td>
                             <td><?php echo $data->date_and_time ?></td>
                             <td>
