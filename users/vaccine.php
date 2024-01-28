@@ -180,15 +180,15 @@ $phone_number = $_SESSION['phone_number'];
                 <div class="component-form">
                     <div class="form-wrap">
                         <label for="name">Name</label>
-                        <input type="text" name="name" value="<?php echo $full_name; ?>"/>
+                        <input type="text" name="name" value="<?php echo $full_name; ?>" />
                     </div>
                     <div class="form-wrap">
                         <label for="name">Phone Number</label>
-                        <input type="text" name="name" value="<?php echo $phone_number; ?>"/>
+                        <input type="text" name="name" value="<?php echo $phone_number; ?>" />
                     </div>
                     <div class="form-wrap">
-                        <label for="name_vaccine">Name Vaccine</label>
-                        <select class="dropdown-select" name="clinic" id="clinic">
+                        <label for="vaccine">Name Vaccine</label>
+                        <select class="dropdown-select" name="vaccine" id="vaccine">
                             <?php while ($data = $vaccine->fetch_object()) {
                                 echo '<option value="' . $data->id_vaccine . '">' . $data->name_vaccine . '</option>';
                             } ?>
@@ -209,10 +209,10 @@ $phone_number = $_SESSION['phone_number'];
         </form>
 
         <form method="POST" action="/lifecare-site/process/create_appointment.php">
-        <?php
-        $query = "SELECT * FROM clinic";
-        $clinic = $DB->query($query);
-        ?>
+            <?php
+            $query = "SELECT * FROM clinic";
+            $clinic = $DB->query($query);
+            ?>
             <div>
                 <label for="name">Full Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter full_name..." value="<?php echo $full_name; ?>">
