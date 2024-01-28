@@ -178,7 +178,7 @@ require '../../process/db.php';
                                         Show
                                     </button>
                                 </a>
-                                <a href="process_approve.php?id=<?php echo $data->id_appointment; ?>">
+                                <a href="/lifecare-site/process/process_approve.php?id=<?php echo $data->id_appointment; ?>">
                                     <button class="btn-normal">
                                         Approve
                                     </button>
