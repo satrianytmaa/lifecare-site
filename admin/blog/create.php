@@ -1,6 +1,21 @@
 <?php
 require '../../process/db.php';
 ?>
+
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['id_user'])) {
+    header("location: http://localhost/lifecare-site/index/login.php");
+    exit();
+}
+
+// Access user information from the session
+$full_name = $_SESSION['full_name'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,16 +114,16 @@ require '../../process/db.php';
             <div class="form-wrap">
                 <div class="form-headline">
                     <label for="date">Date</label>
-                    <p>date of the blog.</p>
+                    <p>Date of the blog.</p>
                 </div>
-                <input type="text" name="date" id="date" placeholder="Enter the date...">
+                <input type="date" name="date" id="date" placeholder="Enter the date...">
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="user_id">user</label>
-                    <p>user of the blog.</p>
+                    <label for="user_id">Publisher</label>
+                    <p>Publisher of the blog.</p>
                 </div>
-                <input type="text" name="user_id" id="user_id" placeholder="Enter the user...">
+                <input type="text" name="user_id" id="user_id" placeholder="Enter the user..." value="<?php echo $full_name; ?>" readonly>
             </div>
             <div class="create-action">
                 <button class="btn-cancel">Cancel</button>

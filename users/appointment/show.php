@@ -148,6 +148,10 @@ $id = $_GET['id'];
             background-color: #E33E3E;
         }
 
+        .btn-delete a{
+            color: #FFF;
+        }
+
 
     </style>
 
@@ -185,18 +189,13 @@ $id = $_GET['id'];
                 <div class="clinic"><?php echo $clinic->name_clinic ?></div>
                 
                 <div class="card-wrap">
-                    <div class="status"><?php echo $data->status ?></div>
+                    <div class="status">Status: <?php echo $data->status ?></div>
     
                     <div class="date"><?php echo $data->date_and_time ?></div>
                 </div>
         </div>
 
         <div class="action-button">
-            <a href="update.php?id=<?php echo $data->id_appointment; ?>">
-                <button class="btn-normal">
-                    Edit
-                </button>
-            </a>
             <button class="btn-delete" onclick="return confirmDelete()">
                 <a href="/lifecare-site/process/delete_appointment.php?id=<?php echo $data->id_appointment; ?>">Delete</a>
             </button>

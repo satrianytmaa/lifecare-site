@@ -66,6 +66,17 @@ $full_name = $_SESSION['full_name'];
       background-color: #F8F6FF;
       padding: 3em 0;
     }
+
+    .wrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      margin-right: 2em;
+    }
+
+
+
   </style>
 </head>
 
@@ -103,15 +114,21 @@ $full_name = $_SESSION['full_name'];
                 
                 <!-- Action Button -->
                 <div class="user-profile">
-                    <img src=".././assets/default/Pfp-1.png" alt="Profile" />
-                    <div class="profile-name">
-                      <p>
-            
-                      <?php echo $full_name; ?>
-            
-                      </p>
-            
+                    <div class="wrap">
+                      <img src=".././assets/default/Pfp-1.png" alt="Profile" />
+                      <div class="profile-name">
+                        <p>
+              
+                        <?php echo $full_name; ?>
+              
+                        </p>
+              
+                      </div>
                     </div>
+
+                    <form action="../process/process_logout.php" method="POST">
+                        <button class="btn-logout" type="submit">Logout</button>
+                    </form>
                   </div>
 
                 <button class="close-menu" onclick="closeMenu()">

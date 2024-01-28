@@ -102,7 +102,7 @@ $id = $_GET['id'];
         <div class="header">
             <div class="header-content">
                 <h4>Detail of <?php echo $data->number ?></h4>
-                <p>Detail information of the Blog.</p>
+                <p>Detail information of the Appointment.</p>
             </div>
         </div>
 
@@ -110,43 +110,43 @@ $id = $_GET['id'];
         <form method="POST" action="/lifecare-site/process/create_blog.php">
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="Content">Content</label>
-                    <p>Content of the Blog.</p>
+                    <label for="Content">Number</label>
+                    <p>Id number of the Appointment.</p>
                 </div>
                 <input type="text" name="content" id="content" value="<?php echo $data->id_appointment ?>" readonly>
             </div>
             <div class="form-wrap">
                 <div class="form-headliner">
-                    <label for="category">Category</label>
-                    <p>.</p>
+                    <label for="category">Full Name</label>
+                    <p>Patient name of the appointment.</p>
                 </div>
-                <input type="text" name="category" id="category" value="<?php echo $patient->full_name ?>" readonly>
+                <input type="text" name="category" id="category" value="<?php echo $data->full_name ?>" readonly>
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="date">date</label>
-                    <p>date of the Blog.</p>
+                    <label for="date">Appointment Number</label>
+                    <p>Code of the Appointment Number.</p>
                 </div>
                 <input type="text" name="date" id="date" value="<?php echo $data->number ?>" readonly>
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="user_id">User</label>
-                    <p>user of the Blog.</p>
+                    <label for="user_id">Clinic Name</label>
+                    <p>Location of the clinic.</p>
                 </div>
-                <input type="text" name="user_id" id="user_id" value="<?php echo $clinic->name_clinic ?>" readonly>
+                <input type="text" name="user_id" id="user_id" value="<?php echo $data->name_clinic ?>" readonly>
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="user_id">User</label>
-                    <p>user of the Blog.</p>
+                    <label for="user_id">Status</label>
+                    <p>Status of the appointment.</p>
                 </div>
                 <input type="text" name="user_id" id="user_id" value="<?php echo $data->status ?>" readonly>
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="user_id">User</label>
-                    <p>user of the Blog.</p>
+                    <label for="user_id">Date</label>
+                    <p>Date and time registered.</p>
                 </div>
                 <input type="text" name="user_id" id="user_id" value="<?php echo $data->date_and_time ?>" readonly>
             </div>

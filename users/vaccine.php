@@ -55,6 +55,16 @@ $phone_number = $_SESSION['phone_number'];
 
     <!-- New Header V2 -->
     <link rel="stylesheet" href="../style/components/headerv2.css" />
+
+    <style>
+        .wrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      margin-right: 2em;
+    }
+    </style>
 </head>
 
 <body>
@@ -87,18 +97,23 @@ $phone_number = $_SESSION['phone_number'];
                     </li>
                 </ul>
 
-                <!-- Action Button -->
                 <div class="user-profile">
-                    <img src=".././assets/default/Pfp-1.png" alt="Profile" />
-                    <div class="profile-name">
+                    <div class="wrap">
+                      <img src=".././assets/default/Pfp-1.png" alt="Profile" />
+                      <div class="profile-name">
                         <p>
-
-                            <?php echo $full_name; ?>
-
+              
+                        <?php echo $full_name; ?>
+              
                         </p>
-
+              
+                      </div>
                     </div>
-                </div>
+
+                    <form action="../process/process_logout.php" method="POST">
+                        <button class="btn-logout" type="submit">Logout</button>
+                    </form>
+                  </div>
 
                 <button class="close-menu" onclick="closeMenu()">
                     <img src="../assets/Icons/x-close.png" alt="" />
@@ -188,7 +203,11 @@ $phone_number = $_SESSION['phone_number'];
                     </div>
                     <div class="form-wrap">
                         <label for="vaccine">Name Vaccine</label>
+<<<<<<< HEAD
                         <select class="dropdown-select" name="vaccine" id="vaccine">
+=======
+                        <select class="dropdown-select" name="vaccine" id="clinic">
+>>>>>>> 6521575100676a14dc69f90e82b8789b320ac73d
                             <?php while ($data = $vaccine->fetch_object()) {
                                 echo '<option value="' . $data->id_vaccine . '">' . $data->name_vaccine . '</option>';
                             } ?>
@@ -208,6 +227,7 @@ $phone_number = $_SESSION['phone_number'];
             </div>
         </form>
 
+<<<<<<< HEAD
         <form method="POST" action="/lifecare-site/process/create_appointment.php">
             <?php
             $query = "SELECT * FROM clinic";
@@ -228,6 +248,8 @@ $phone_number = $_SESSION['phone_number'];
             <button type="submit">Save</button>
         </form>
 
+=======
+>>>>>>> 6521575100676a14dc69f90e82b8789b320ac73d
         <!-- CONTENT => Reason -->
         <div class="vaccine-reason container-enable">
             <div class="vaccine-reason-content">
