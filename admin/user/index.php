@@ -137,7 +137,7 @@ require '../../process/db.php';
             <p>/</p>
             <a class="bread" href="/lifecare-site/admin/user/index.php">User</a>
             <p>/</p>
-            <a class="bread current" href="/lifecare-site/admin/user/create.php">Index</a>
+            <a class="bread current" href="/lifecare-site/admin/register.php">Index</a>
         </div>
 
         <!-- Header -->

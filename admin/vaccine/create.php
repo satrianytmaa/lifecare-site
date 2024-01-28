@@ -42,7 +42,7 @@ require '../../process/db.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    
+
 
     <title>Vaccines Tables</title>
 
@@ -64,7 +64,7 @@ require '../../process/db.php';
     $query_clinic = "SELECT * FROM clinic";
     $res_clinic = $DB->query($query_clinic);
     ?>
-    
+
 
 
     <div class="create-database container-enable">
@@ -129,7 +129,7 @@ require '../../process/db.php';
                 <button class="btn-cancel">Cancel</button>
                 <button class="btn-create" type="submit">Save</button>
             </div>
-    </form>
+        </form>
     </div>
 </body>
 
