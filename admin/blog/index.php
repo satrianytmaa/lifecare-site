@@ -37,8 +37,7 @@ require '../../process/db.php';
     <link rel="stylesheet" href="../../style/admin/create.css">
     <link rel="stylesheet" href="../../style/admin/index.css">
     <link rel="stylesheet" href="../../style/admin/show.css">
-
-
+    <link rel="stylesheet" href="../../style/admin/modal.css">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -249,6 +248,7 @@ require '../../process/db.php';
                         <th>Category</th>
                         <th>Date</th>
                         <th>User</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

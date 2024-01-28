@@ -186,7 +186,7 @@
             </form>
 
 
-            <p>Already have an account? <a href="login.php">Log In</a></p>
+            <p>Doesn't have account? <a href="signup.php">Sign Up</a> here.</p>
         </div>
 
         <!-- Sign Up Image -->

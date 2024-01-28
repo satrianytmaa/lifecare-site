@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../style/components/support.css" />
     <link rel="stylesheet" href="../style/components/blog.css" />
     <link rel="stylesheet" href="../style/components/footer.css" />
+    <link rel="stylesheet" href="../style/components/signup.css" />
 
     <!-- Base Config -->
     <link rel="stylesheet" href="../style/base_font.css" />
@@ -36,112 +37,6 @@
 
     <title>Get Started</title>
 
-    <style>
-        .signup {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16em;
-        }
-
-        .signup-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5em;
-            margin-top: 2em;
-        }
-
-        .header {
-            margin-bottom: 2em;
-        }
-
-        .header h3 {
-            margin-bottom: 0.5em;
-        }
-
-        .button-signup {
-            margin: 2em 0;
-        }
-
-        .logo-placement,
-        .copyright-placement {
-            /* Make the logo stick on the corner left without disturbing other element */
-            position: absolute;
-        }
-
-        .logo-placement {
-            top: 2em;
-            left: 2em;
-        }
-
-        .copyright-placement {
-            top: 2em;
-            right: 2em;
-        }
-
-        .error-password {
-            font-size: 0.8em;
-        }
-
-        .wrapper-message {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .button-signup{
-            border-radius: 0.6em;
-            letter-spacing: 0.2px;
-            font-family: 'Roobert-Medium', sans-serif;
-            font-size: 16px;
-            color: #FFF;
-        }
-
-        /* Responsive Media */
-
-        @media screen and (max-width: 1180px) {
-            .signup {
-                gap: 4em;
-            }
-        }
-
-        @media screen and (max-width: 1024px) {
-
-            /* Create the responsive */
-            .signup {
-                flex-direction: column;
-                gap: 0;
-                padding: 2em;
-            }
-
-            .signup-img {
-                display: none;
-            }
-
-            .signup-content {
-                width: 100%;
-            }
-
-            .signup-form {
-                margin-top: 0;
-            }
-
-            .header {
-                margin-bottom: 1em;
-            }
-
-            .button-signup {
-                margin: 1em 0;
-            }
-
-        }
-
-        /* Responsive Media */
-        @media screen and (max-width: 768px) {}
-
-        /* Responsive Media */
-        @media screen and (max-width: 425px) {}
-    </style>
 </head>
 
 <body>
@@ -155,42 +50,41 @@
     <p class="copyright-placement">Copyright of @Lifecare.io All Reserved 2024</p>
 
     <!-- Sign Up Form -->
-    <div class="signup container-enable">
+    <div class="signup container-enable-special-special">
 
         <div class="signup-content">
 
             <!-- Header -->
             <div class="header">
                 <h3>Create an Account</h3>
-                <p>Fill the form with the required information in order to join with us</p>
+                <p>Fill the form with the required information.</p>
             </div>
-
-            <!-- Button Google Sign Up -->
-            <!-- <div class="google-button">
-                <button>Sign Up with Google</button>
-            </div> -->
 
             <!-- Form Sign Up -->
             <form action="../process/process_signup.php" class="signup-form" method="POST">
-                <div class="form-wrap">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" placeholder="Enter your Username" required />
-                </div>
-                <div class="form-wrap">
-                    <label for="full_name">Full Name</label>
-                    <input type="text" name="full_name" placeholder="Enter your Fullname" required />
+                <div class="form-flex">
+                    <div class="form-wrap">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" placeholder="Enter your Username" required />
+                    </div>
+                    <div class="form-wrap">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" name="full_name" placeholder="Enter your Fullname" required />
+                    </div>
                 </div>
                 <div class="form-wrap">
                     <label for="address">Address</label>
                     <input type="text" name="address" placeholder="Enter your Address..." />
                 </div>
-                <div class="form-wrap">
-                    <label for="email">Email </label>
-                    <input type="text" name="email" placeholder="Enter your Phone Email..." />
-                </div>
-                <div class="form-wrap">
-                    <label for="phone_number">Phone Number</label>
-                    <input type="number" name="phone_number" placeholder="Enter your Phone Number" required />
+                <div class="form-flex">
+                    <div class="form-wrap">
+                        <label for="email">Email </label>
+                        <input type="text" name="email" placeholder="Enter your Phone Email..." />
+                    </div>
+                    <div class="form-wrap">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="number" name="phone_number" placeholder="Enter your Phone Number" required />
+                    </div>
                 </div>
                 <div class="form-wrap">
                     <label for="password">Password</label>
@@ -200,7 +94,7 @@
             </form>
 
 
-            <p>Already have an account? <a href="#">Log In</a></p>
+            <p>Already have an account? <a href="login.php">Log In</a></p>
         </div>
 
         <!-- Sign Up Image -->

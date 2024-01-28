@@ -34,7 +34,7 @@ if ($res) {
     if ($data->role === 'admin') {
         header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
     } else {
-        header('location: /lifecare-site/Index/appointment/show.php?id=' . $id);
+        header('location: /lifecare-site/status/appointment/show.php?id=' . $id);
     }
 
     // header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);

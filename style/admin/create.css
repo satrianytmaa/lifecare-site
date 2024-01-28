@@ -87,7 +87,6 @@ input{
 }
 
 
-
 .btn-create:hover{
     background-color: #5A48CD;
     color: #FFFFFF;
@@ -96,6 +95,11 @@ input{
 .btn-cancel:hover{
     background-color: #EC6D62;
     color: #FFFFFF;
+}
+
+.breadcrumbs{
+    display: flex;
+    gap: 1em;
 }
 
 .bread{
@@ -138,6 +142,7 @@ input{
     .create-action{
         flex-direction: column;
         gap: 1em;
+        justify-content: left;
     }
 
     .btn-create{

@@ -133,7 +133,6 @@ require '../../process/db.php';
     <div class="users-database container-enable">
         <!-- Breadcrumbs -->
         <div class="breadcrumbs">
-            <div class="breadcrumbs">
             <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
             <p>/</p>
             <a class="bread" href="/lifecare-site/admin/user/index.php">User</a>

@@ -10,6 +10,7 @@ if (!isset($_SESSION['id_user'])) {
 
 // Access user information from the session
 $full_name = $_SESSION['full_name'];
+$phone_number = $_SESSION['phone_number'];
 
 // Now you can use $full_name in your page
 ?>
@@ -152,13 +153,18 @@ $full_name = $_SESSION['full_name'];
             </div>
         </div>
 
-        <!-- select clinic -->
+        <!-- Select Clinic -->
         <?php
         $query = "SELECT * FROM clinic";
         $clinic = $DB->query($query);
         ?>
+
+        <?php
+        $query = "SELECT * FROM vaccine";
+        $vaccine = $DB->query($query);
+        ?>
         <!-- CONTENT => Form -->
-        <form class="vaccine-form container-enable" method="POST" action="/lifecare-site/process/create_vaccine.php">
+        <form class="vaccine-form container-enable" method="POST" action="/lifecare-site/process/create_appointment.php">
             <div class="vaccine-form-content">
                 <h3>Register online for your vaccinitation</h3>
                 <p>
@@ -169,29 +175,53 @@ $full_name = $_SESSION['full_name'];
             <div class="vaccine-form-form">
                 <div class="component-form">
                     <div class="form-wrap">
-                        <label for="name_vaccine">Name Vaccine</label>
-                        <input type="text" name="name_vaccine" placeholder="Enter Name Vaccine..." />
+                        <label for="name">Name</label>
+                        <input type="text" name="name" value="<?php echo $full_name; ?>"/>
                     </div>
-                    <div>
+                    <div class="form-wrap">
+                        <label for="name">Phone Number</label>
+                        <input type="text" name="name" value="<?php echo $phone_number; ?>"/>
+                    </div>
+                    <div class="form-wrap">
+                        <label for="name_vaccine">Name Vaccine</label>
+                        <select class="dropdown-select" name="clinic" id="clinic">
+                            <?php while ($data = $vaccine->fetch_object()) {
+                                echo '<option value="' . $data->id_vaccine . '">' . $data->name_vaccine . '</option>';
+                            } ?>
+                        </select>
+                    </div>
+                    <div class="form-wrap">
                         <label for="clinic">Name Clinic</label>
-                        <select name="clinic" id="clinic">
+                        <select class="dropdown-select" name="clinic" id="clinic">
                             <?php while ($data = $clinic->fetch_object()) {
                                 echo '<option value="' . $data->id_clinic . '">' . $data->name_clinic . '</option>';
                             } ?>
                         </select>
                     </div>
-                    <div class="form-wrap">
-                        <label for="manufacturer">Manufacturer</label>
-                        <input type="text" name="manufacturer" placeholder="Enter Manufacturer..." />
-                    </div>
-                    <div class="form-wrap">
-                        <label for="dose_vaccine">Dose Vaccine</label>
-                        <input type="text" name="dose_vaccine" placeholder="Enter Dose Vaccine..." />
-                    </div>
 
                     <button class="button-primary">Register now</button>
                 </div>
             </div>
+        </form>
+
+        <form method="POST" action="/lifecare-site/process/create_appointment.php">
+        <?php
+        $query = "SELECT * FROM clinic";
+        $clinic = $DB->query($query);
+        ?>
+            <div>
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter full_name..." value="<?php echo $full_name; ?>">
+            </div>
+            <div>
+                <label for="clinic">Clinic</label>
+                <select name="clinic" id="clinic">
+                    <?php while ($data = $clinic->fetch_object()) {
+                        echo '<option value="' . $data->id_clinic . '">' . $data->name_clinic . '</option>';
+                    } ?>
+                </select>
+            </div>
+            <button type="submit">Save</button>
         </form>
 
         <!-- CONTENT => Reason -->

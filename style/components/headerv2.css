@@ -1,3 +1,93 @@
+body {
+    background: #FCFCFC;
+}
+
+.header-content h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    color: #1d354f;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5c6a78;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.btn-add {
+    background-color: #6A55EA;
+    border: 1.5px solid #D8DBDC;
+    outline: none;
+    cursor: pointer;
+    padding: 1em 3em;
+    border-radius: 0.4em;
+
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.btn-add:hover {
+    background-color: #5C4CE3;
+}
+
+.user-action {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.btn-logout {
+    padding: 1.4em;
+    border: none;
+    background-color: #6A55EA;
+    color: #FFFFFF;
+    border-radius: 1em;
+    text-align: center;
+    font-family: "Roobert-Medium", sans-serif;
+    font-size: 0.9em;
+    transition: all 200ms ease-in-out;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .users-database {
+        padding: 0 1em;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
+    .header-action {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .table {
+        overflow-x: scroll;
+    }
+}
+
 .new-header{
     position: sticky;
     top: 0;
