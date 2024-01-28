@@ -8,8 +8,12 @@
   - Kata Sandi: travis
 
 - **Akun User:**
+
   - Nama Pengguna: Viktor
   - Kata Sandi: viktor
+
+- **Import Database:**
+  - Import 'lifecare_db.sql' pada PHPMYADMIN.
 
 ### Proses 1: Registrasi Pengguna
 
