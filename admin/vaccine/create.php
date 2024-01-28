@@ -60,6 +60,10 @@ require '../../process/db.php';
     <?php
     $query = "SELECT * FROM vaccine";
     $res = $DB->query($query);
+
+    $query_clinic = "SELECT * FROM clinic";
+    $res_clinic = $DB->query($query_clinic);
+    $clinic = $res_clinic->fetch_object();
     ?>
     
 
@@ -110,11 +114,18 @@ require '../../process/db.php';
                 <input type="text" name="dose_vaccine" id="dose_vaccine" placeholder="Enter the Dose...">
             </div>
             <div class="form-wrap">
-                <div class="form-headline">
-                    <label for="name_clinic">Clinic</label>
-                    <p>Initial dose that recommended for the vaccine.</p>
-                </div>
-                <input type="text" name="name_clinic" id="name_clinic" placeholder="Enter the Clinic...">
+                <label for="clinic">Clinic</label>
+                <select name="clinic" id="clinic">
+
+                    <?php
+
+                    while ($clinic = $res_clinic->fetch_object()) {
+                        $selected = ($data->id_clinic == $clinic->id_clinic) ? 'selected' : '';
+                        echo '<option value="' . $clinic->id_clinic . '" ' . $selected . '>' . $clinic->name_clinic . '</option>';
+                    }
+                    ?>
+
+                </select>
             </div>
             <div class="create-action">
                 <button class="btn-cancel">Cancel</button>

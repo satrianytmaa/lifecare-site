@@ -64,6 +64,7 @@ require '../../process/db.php';
             font-size: 0.9em;
             transition: all 200ms ease-in-out;
         }
+
     </style>
 
 

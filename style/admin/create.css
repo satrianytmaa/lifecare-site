@@ -98,11 +98,6 @@ input{
     color: #FFFFFF;
 }
 
-.breadcrumbs{
-    display: flex;
-    gap: 1em;
-}
-
 .bread{
     color: #5c6a78;
 }
