@@ -30,8 +30,12 @@ $id = $_GET['id'];
     <link rel="stylesheet" href="../../style/contact_page.css" />
     <link rel="stylesheet" href="../../style/contact_responsive.css" />
 
-    <!-- Responsive -->
+    <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
+    <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
+    <link rel="stylesheet" href="../../style/admin/modal.css">
 
 
     <!-- Google Font -->
@@ -98,33 +102,75 @@ $id = $_GET['id'];
     $clinic = $res->fetch_object();
     ?>
 
+    <div class="show-database user-show container-enable">
 
-    <div class="user-database user-show container-enable">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <a class="bread" href="/lifecare-site/admin/appointment/index.php">Appointment</a>
+            <p>/</p>
+            <a class="bread current" href="/lifecare-site/admin/appointment/show.php">Show</a>
+        </div>
+
         <!-- Header -->
         <div class="header">
-            <h4>Detail Information of <?php echo $data->number ?></h4>
-            <p>A list of all the appointment in your account including their patient, clinic, satus and date.</p>
+            <div class="header-content">
+                <h4>Detail of <?php echo $data->number ?></h4>
+                <p>Detail information of the Blog.</p>
+            </div>
         </div>
 
-        <div class="user-data">
-            <h5>Id : <?php echo $data->id_appointment ?></h5>
-            <h5>Full Name : <?php echo $patient->full_name ?></h5>
-            <h5>Status : <?php echo $data->number ?></h5>
-            <h5>Clinic : <?php echo $clinic->name_clinic ?></h5>
-            <h5>Status : <?php echo $data->status ?></h5>
-            <h5>Date : <?php echo $data->date_and_time ?></h5>
-        </div>
+        <!-- Form Show -->
+        <form method="POST" action="/lifecare-site/process/create_blog.php">
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="Content">Content</label>
+                    <p>Content of the Blog.</p>
+                </div>
+                <input type="text" name="content" id="content" value="<?php echo $data->id_appointment ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headliner">
+                    <label for="category">Category</label>
+                    <p>.</p>
+                </div>
+                <input type="text" name="category" id="category" value="<?php echo $patient->full_name ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="date">date</label>
+                    <p>date of the Blog.</p>
+                </div>
+                <input type="text" name="date" id="date" value="<?php echo $data->number ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="user_id">User</label>
+                    <p>user of the Blog.</p>
+                </div>
+                <input type="text" name="user_id" id="user_id" value="<?php echo $clinic->name_clinic ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="user_id">User</label>
+                    <p>user of the Blog.</p>
+                </div>
+                <input type="text" name="user_id" id="user_id" value="<?php echo $data->status ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="user_id">User</label>
+                    <p>user of the Blog.</p>
+                </div>
+                <input type="text" name="user_id" id="user_id" value="<?php echo $data->date_and_time ?>" readonly>
+            </div>
+            <div class="create-action">
+                <a class="btn-cancel-a" href="/lifecare-site/process/delete_blog.php?id=<?php echo $data->id_blog; ?>" onclick="return confirmDelete()">Delete</a>
+                <a href="update.php?id=<?php echo $data->id_blog; ?>" class="btn-create-a">Edit</a>
 
-        <div class="action-button">
-            <a href="update.php?id=<?php echo $data->id_appointment; ?>">
-                <button class="btn-normal">
-                    Edit
-                </button>
-            </a>
-            <button class="btn-delete" onclick="return confirmDelete()">
-                <a href="/lifecare-site/process/delete_appointment.php?id=<?php echo $data->id_appointment; ?>">Delete</a>
-            </button>
-        </div>
+            </div>
+        </form>
     </div>
 
 

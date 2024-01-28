@@ -165,6 +165,10 @@ $phone_number = $_SESSION['phone_number'];
         ?>
         <!-- CONTENT => Form -->
         <form class="vaccine-form container-enable" method="POST" action="/lifecare-site/process/create_appointment.php">
+            <?php
+            $query = "SELECT * FROM clinic";
+            $clinic = $DB->query($query);
+            ?>
             <div class="vaccine-form-content">
                 <h3>Register online for your vaccinitation</h3>
                 <p>
