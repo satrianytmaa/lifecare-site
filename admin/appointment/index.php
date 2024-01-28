@@ -34,6 +34,10 @@ require '../../process/db.php';
 
     <!-- Admin Stylesheet -->
     <link rel="stylesheet" href="../../style/admin/admin_default.css" />
+    <link rel="stylesheet" href="../../style/admin/create.css">
+    <link rel="stylesheet" href="../../style/admin/index.css">
+    <link rel="stylesheet" href="../../style/admin/show.css">
+    <link rel="stylesheet" href="../../style/admin/modal.css">
 
 
     <!-- Google Font -->
@@ -141,13 +145,11 @@ require '../../process/db.php';
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Full Name</th>
-                        <th>Number</th>
+                        <th>#</th>
+                        <th>Patient Name</th>
                         <th>Clinic</th>
                         <th>Vaccine</th>
                         <th>Status</th>
-                        <th>Date</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -166,13 +168,13 @@ require '../../process/db.php';
                         // $clinic = $res_clinic->fetch_object();
                         ?>
                         <tr>
+
                             <td><?php echo $data->id_appointment ?></td>
                             <td><?php echo $data->full_name ?></td>
                             <td><?php echo $data->number ?></td>
                             <td><?php echo $data->name_clinic ?></td>
                             <td><?php echo $data->name_vaccine ?></td>
                             <td><?php echo $data->status ?></td>
-                            <td><?php echo $data->date_and_time ?></td>
                             <td>
                                 <a href="show.php?id=<?php echo $data->id_appointment; ?>">
                                     <button class="btn-normal">

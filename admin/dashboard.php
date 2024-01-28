@@ -286,6 +286,9 @@ require '../process/db.php';
                     <li class="n-item">
                         <a href="contact/index.php" class="n-link">Contact</a>
                     </li>
+                    <li class="n-item">
+                        <a href="appointment/index.php" class="n-link">Appointment</a>
+                    </li>
                 </ul>
 
                 <!-- Action Button -->
