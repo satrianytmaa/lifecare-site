@@ -249,6 +249,7 @@ require '../../process/db.php';
                         <th>Category</th>
                         <th>Date</th>
                         <th>User</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
