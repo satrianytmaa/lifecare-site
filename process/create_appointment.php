@@ -9,7 +9,7 @@ $data = $select_name->fetch_object();
 $patient = $data->id_user;
 // $patient = $_POST['patient'];
 $clinic = $_POST['clinic'];
-$status = $_POST['status'];
+// $status = $_POST['status'];
 $dateTime = new DateTime();
 
 function incrementNumber($number)
@@ -25,7 +25,6 @@ if ($appointment_data === null || $appointment_data->number === null || $appoint
 } else {
     $newNumber = incrementNumber($appointment_data->number);
 }
-// saat create status otomatis daftar
 $query = "INSERT INTO appointment(date_and_time,id_user,id_clinic,status,number) VALUES ('" . $dateTime->format('Y-m-d H:i:s') . "','" . $patient . "','" . $clinic . "', 'daftar', '" . $newNumber . "')";
 $res = $DB->query($query);
 

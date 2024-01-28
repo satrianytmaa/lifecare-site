@@ -59,7 +59,7 @@ $_SESSION['id_vaccine'] = $id;
     <?php
     $query_clinic = "SELECT * FROM clinic";
     $res_clinic = $DB->query($query_clinic);
-    $clinic = $res_clinic->fetch_object();
+    // $clinic = $res_clinic->fetch_object();
     ?>
 
 
