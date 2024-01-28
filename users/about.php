@@ -91,16 +91,22 @@ $full_name = $_SESSION['full_name'];
             
             <!-- Action Button -->
             <div class="user-profile">
-                <img src=".././assets/default/Pfp-1.png" alt="Profile" />
-                <div class="profile-name">
-                  <p>
-        
-                  <?php echo $full_name; ?>
-        
-                  </p>
-        
-                </div>
-              </div>
+                    <div class="wrap">
+                      <img src=".././assets/default/Pfp-1.png" alt="Profile" />
+                      <div class="profile-name">
+                        <p>
+              
+                        <?php echo $full_name; ?>
+              
+                        </p>
+              
+                      </div>
+                    </div>
+
+                    <form action="../process/process_logout.php" method="POST">
+                        <button class="btn-logout" type="submit">Logout</button>
+                    </form>
+                  </div>
 
             <button class="close-menu" onclick="closeMenu()">
                 <img src="../assets/Icons/x-close.png" alt="" />

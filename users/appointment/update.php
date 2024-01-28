@@ -118,8 +118,7 @@ $_SESSION['id_appointment'] = $id;
             </select>
             </div>
             <div class="create-action">
-                <a class="btn-cancel-a" href="/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_clinic; ?>" onclick="return confirmDelete()">Delete</a>
-                <button class="btn-create" type="submit">Update</button>
+                <a class="btn-cancel-a" href="/lifecare-site/process/delete_appointment.php?id=<?php echo $data->id_appointment; ?>" onclick="return confirmDelete()">Delete</a>
 
             </div>
         </form>

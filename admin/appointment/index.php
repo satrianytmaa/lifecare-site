@@ -147,8 +147,7 @@ require '../../process/db.php';
                     <tr>
                         <th>#</th>
                         <th>Patient Name</th>
-                        <th>Clinic</th>
-                        <th>Vaccine</th>
+                        <th>Appointment Number</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -172,8 +171,6 @@ require '../../process/db.php';
                             <td><?php echo $data->id_appointment ?></td>
                             <td><?php echo $data->full_name ?></td>
                             <td><?php echo $data->number ?></td>
-                            <td><?php echo $data->name_clinic ?></td>
-                            <td><?php echo $data->name_vaccine ?></td>
                             <td><?php echo $data->status ?></td>
                             <td>
                                 <a href="show.php?id=<?php echo $data->id_appointment; ?>">
@@ -181,12 +178,16 @@ require '../../process/db.php';
                                         Show
                                     </button>
                                 </a>
-                                <a href="update.php?id=<?php echo $data->id_appointment; ?>">
+                                <a href="process_approve.php?id=<?php echo $data->id_appointment; ?>">
                                     <button class="btn-normal">
-                                        Update
-                                    </button></a>
-                                <button class="btn-delete" onclick="return confirmDelete()"><a href="/lifecare-site/process/delete_appointment.php?id=<?php echo $data->id_appointment; ?>">Delete</a></button>
+                                        Approve
+                                    </button>
+                                </a>
+                                <button class="btn-delete" onclick="return confirmDelete()">
+                                    <a href="/lifecare-site/process/delete_appointment.php?id=<?php echo $data->id_appointment; ?>">Delete</a>
+                                </button>
                             </td>
+
                         </tr>
                     <?php } ?>
                 </tbody>
