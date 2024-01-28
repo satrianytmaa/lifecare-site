@@ -15,14 +15,17 @@ This project is a healthcare management system designed to facilitate the admini
 ## Features
 
 - **User Authentication:**
+
   - Users can register as either administrators or regular users.
   - Secure authentication for user accounts.
 
 - **Admin Dashboard:**
+
   - Manage user accounts, clinics, vaccines, and contact data.
   - Approve, edit, add, or delete data with ease.
 
 - **User Registration:**
+
   - Users can register for vaccination.
   - Choose vaccine type and preferred vaccination location.
 
@@ -33,6 +36,7 @@ This project is a healthcare management system designed to facilitate the admini
 ## Technologies Used
 
 - **Frontend:**
+
   - HTML
   - CSS
   - JavaScript
