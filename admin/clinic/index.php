@@ -37,6 +37,7 @@ require '../../process/db.php';
     <link rel="stylesheet" href="../../style/admin/create.css">
     <link rel="stylesheet" href="../../style/admin/index.css">
     <link rel="stylesheet" href="../../style/admin/show.css">
+    <link rel="stylesheet" href="../../style/admin/modal.css">
 
 
     <!-- Google Font -->
@@ -46,53 +47,7 @@ require '../../process/db.php';
 
     <title>Clinics Tables</title>
 
-    <script>
-        function openModal(id) {
-            document.getElementById('confirmationModal').style.display = 'block';
-            // Set the clinic ID in a hidden input field within the modal
-            document.getElementById('clinicIdInput').value = id;
-        }
-
-        function closeModal() {
-            document.getElementById('confirmationModal').style.display = 'none';
-        }
-
-        function confirmDelete() {
-            // Get the clinic ID from the hidden input field
-            var clinicId = document.getElementById('clinicIdInput').value;
-            
-            // Add logic to perform deletion using clinicId
-            var deleteLink = document.getElementById('deleteLink');
-            deleteLink.href = "/lifecare-site/process/delete_clinic.php?id=" + clinicId;
-            deleteLink.click(); // Trigger the click on the hidden link
-            closeModal(); // Close the modal after deletion
-        }
-
-        // function openCustomAlert(message) {
-        //     document.getElementById('customAlertMessage').innerText = message;
-        //     document.getElementById('customAlertModal').style.display = 'block';
-
-        //     // Automatically close the modal after 3 seconds (adjust the time as needed)
-        //     setTimeout(function() {
-        //         closeCustomAlert();
-        //     }, 3000);
-        // }
-
-        // function closeCustomAlert() {
-        //     var modal = document.getElementById('customAlertModal');
-        //     modal.classList.add('fade-out');
-
-        //     // Delay the actual hiding of the modal to match the transition duration
-        //     setTimeout(function() {
-        //         modal.style.display = 'none';
-        //         modal.classList.remove('fade-out');
-        //     }, 500); // Adjust the duration to match the transition duration
-        // }
-
-
-
-
-    </script>
+    <script src="../../javascript/modal.js"></script>
 
 
     <style>
@@ -118,75 +73,7 @@ require '../../process/db.php';
             background-color: #5C4CE3;
         }
 
-        /* Responsive */
-
-        @media screen and (max-width: 768px) {
-            .users-database {
-                padding: 0 1em;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 1em;
-            }
-
-            .header-content {
-                text-align: center;
-            }
-
-            .header-action {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-
-            .btn-add {
-                width: 100%;
-            }
-
-            .table {
-                overflow-x: scroll;
-            }
-        }
-
-        /* Modal */
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 60%;
-            text-align: center;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-
+        
 
     </style>
 
@@ -203,22 +90,18 @@ require '../../process/db.php';
     <div id="confirmationModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <p>Are you sure you want to delete this clinic?</p>
-            <button onclick="confirmDelete()">Yes, Delete</button>
-            <button onclick="closeModal()">No, Cancel</button>
+            <div class="modal-dialog">
+                <h4>Delete data</h4>
+                <p>Are you sure you want to delete this data from the database? All of your data will be permanently removed. This action cannot be undone.</p>
+            </div>
+            <div class="modal-action">
+                <button class="modal-no" onclick="closeModal()">No, Cancel</button>
+                <button class="modal-yes" onclick="confirmDelete()">Yes, Delete</button>
+            </div>
             <!-- Hidden input to store clinic ID -->
             <input type="hidden" id="clinicIdInput" value="">
         </div>
     </div>
-
-    <!-- Custom Alert Modal -->
-    <!-- <div id="customAlertModal" class="modal">
-        <div class="modal-content">
-            <p id="customAlertMessage"></p>
-        </div>
-    </div> -->
-
-
 
 
     <!-- Users Database -->
@@ -251,7 +134,8 @@ require '../../process/db.php';
             <table>
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th>#</th>
+                        <th>Tag</th>
                         <th>Clinic Name</th>
                         <th>Email</th>
                         <th>Action</th>
@@ -261,6 +145,7 @@ require '../../process/db.php';
                     <?php while ($data = $res->fetch_object()) { ?>
                         <tr>
                             <td><?php echo $data->id_clinic ?></td>
+                            <td><?php echo $data->tag ?></td>
                             <td class="table-full-name"><?php echo $data->name_clinic ?></td>
                             <td><?php echo $data->email_clinic ?></td>
                             <td class="action-btn">

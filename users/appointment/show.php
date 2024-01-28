@@ -42,39 +42,113 @@ $id = $_GET['id'];
     <title> Appointment - Detail</title>
 
     <style>
-        .user-show .header {
-            margin-bottom: 2em;
-        }
 
-        .user-show .header h4 {
+        .header h4{
             font-size: 1.5em;
             font-weight: 600;
             margin-bottom: 0.5em;
         }
 
-        .user-show .header p {
+        .header p{
             font-size: 1em;
             font-weight: 400;
             color: #6E7191;
         }
 
-        .user-show .user-data {
-            background-color: #F6F8FB;
-            padding: 1em;
+        .card-ui{
+            background-color: #F8F2EB;
+            color: #FFFFFF;
+            padding: 2em;
+            border: 2px solid #E9E9E9;
             border-radius: 1em;
+            margin: 2em 0;
         }
 
-        .user-show .user-data h5 {
+        .card-ui .number{
             font-size: 1em;
             font-weight: 600;
+            color: #6E7191;
             margin-bottom: 0.5em;
+            color: #1D354F;
+            opacity: 0.6;
         }
 
-        .user-show .user-data p {
+        .card-ui .fullname{
+            font-size: 3em;
+            font-weight: 700;
+            color: #1D354F;
+            margin: 0.4em 0;
+        }
+
+        .card-ui .clinic{
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #1D354F;
+        }
+
+        .card-ui .status{
+            font-size: 1em;
+            font-weight: 600;
+            color: #1D354F;
+            background-color: #FDB86B;
+            padding: 0.6em 2em;
+            border-radius: 0.4em;
+        }
+
+        .card-wrap{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3em;
+            align-items: center;
+        }
+
+        .card-ui .date{
             font-size: 1em;
             font-weight: 400;
-            color: #6E7191;
+            color: #1D354F;
+            opacity: 0.6;
         }
+
+        .action-button{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .action-button .btn-normal{
+            background-color: #6A55EA;
+            border: 1.5px solid #D8DBDC;
+            outline: none;
+            cursor: pointer;
+            padding: 1em 3em;
+            border-radius: 0.4em;
+
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .action-button .btn-normal:hover{
+            background-color: #5C4CE3;
+        }
+
+        .action-button .btn-delete{
+            background-color: #FF4D4D;
+            border: 1.5px solid #D8DBDC;
+            outline: none;
+            cursor: pointer;
+            padding: 1em 3em;
+            border-radius: 0.4em;
+
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .action-button .btn-delete:hover{
+            background-color: #E33E3E;
+        }
+
+
     </style>
 
 </head>
@@ -105,13 +179,16 @@ $id = $_GET['id'];
             <p>A list of all the appointment in your account including their name, number, clinic,status, and date.</p>
         </div>
 
-        <div class="user-data">
-            <h5>Id : <?php echo $data->id_appointment ?></h5>
-            <h5>Full Name : <?php echo $patient->full_name ?></h5>
-            <h5>Number : <?php echo $data->number ?></h5>
-            <h5>Clinic : <?php echo $clinic->name_clinic ?></h5>
-            <h5>Status : <?php echo $data->status ?></h5>
-            <h5>Date : <?php echo $data->date_and_time ?></h5>
+        <div class="card-ui">
+                <div class="number"><?php echo $data->number ?></div>
+                <div class="fullname"><?php echo $patient->full_name ?></div>
+                <div class="clinic"><?php echo $clinic->name_clinic ?></div>
+                
+                <div class="card-wrap">
+                    <div class="status"><?php echo $data->status ?></div>
+    
+                    <div class="date"><?php echo $data->date_and_time ?></div>
+                </div>
         </div>
 
         <div class="action-button">

@@ -26,7 +26,7 @@ if ($appointment_data === null || $appointment_data->number === null || $appoint
     $newNumber = incrementNumber($appointment_data->number);
 }
 
-$query = "INSERT INTO appointment(date_and_time,id_user,id_clinic,status,number) VALUES ('" . $dateTime->format('Y-m-d H:i:s') . "','" . $patient . "','" . $clinic . "', '" . $status . "', '" . $newNumber . "')";
+$query = "INSERT INTO appointment(date_and_time,id_user,id_clinic,status,number) VALUES ('" . $dateTime->format('Y-m-d H:i:s') . "','" . $patient . "','" . $clinic . "', 'Daftar', '" . $newNumber . "')";
 $res = $DB->query($query);
 
 if ($res) {
@@ -48,7 +48,7 @@ if ($res) {
     if ($data->role === 'admin') {
         header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
     } else {
-        header('location: /lifecare-site/Index/appointment/show.php?id=' . $id);
+        header('location: /lifecare-site/users/appointment/show.php?id=' . $id);
     }
     // header('location: /lifecare-site/admin/appointment/show.php?id=' . $id);
 }

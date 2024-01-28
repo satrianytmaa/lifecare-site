@@ -63,7 +63,6 @@ require '../../process/db.php';
 
     $query_clinic = "SELECT * FROM clinic";
     $res_clinic = $DB->query($query_clinic);
-    $clinic = $res_clinic->fetch_object();
     ?>
     
 
@@ -120,7 +119,6 @@ require '../../process/db.php';
                     <?php
 
                     while ($clinic = $res_clinic->fetch_object()) {
-                        $selected = ($data->id_clinic == $clinic->id_clinic) ? 'selected' : '';
                         echo '<option value="' . $clinic->id_clinic . '" ' . $selected . '>' . $clinic->name_clinic . '</option>';
                     }
                     ?>

@@ -25,7 +25,7 @@ if ($res) {
     if ($data->role === 'admin') {
         header('location: /lifecare-site/admin/vaccine/show.php?id=' . $id);
     } else {
-        header('location: /lifecare-site/Index/vaccine/show.php?id=' . $id);
+        header('location: /lifecare-site/users/vaccine/show.php?id=' . $id);
     }
 }
 
