@@ -46,6 +46,19 @@ require '../../process/db.php';
 
     <title>Vaccines Tables</title>
 
+    <style>
+        .dropdown-select{
+            width: 60%;
+            border-radius: 8px;
+            border: 1px solid #f2f2f2;
+            background-color: #f9f9f9;
+            padding: 16px 16px;
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    </style>
+
     <script>
         function confirmDelete() {
             return confirm("Are you sure you want to delete this vaccine?");
@@ -114,7 +127,7 @@ require '../../process/db.php';
             </div>
             <div class="form-wrap">
                 <label for="clinic">Clinic</label>
-                <select name="clinic" id="clinic">
+                <select class="dropdown-select" name="clinic" id="clinic">
 
                     <?php
 

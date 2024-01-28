@@ -152,6 +152,20 @@ $id = $_GET['id'];
             color: #FFF;
         }
 
+        .go-back{
+            font-size: 1em;
+            font-weight: 400;
+            color: #6E7191;
+            margin-bottom: 4em;
+            color: #FFF;
+            text-decoration: none;
+            padding: 0.8em 2em;
+            background-color: #6A55EA;  
+            border-radius: 0.8em;
+        }
+
+
+
 
     </style>
 
@@ -177,6 +191,13 @@ $id = $_GET['id'];
     ?>
 
     <div class="user-database user-show container-enable">
+
+        <a class="go-back" href="../index.php">Go back.</a>
+
+        <br>
+        <br>
+        <br>
+        <br>
         <!-- Header -->
         <div class="header">
             <h4>Detail Information of <?php echo $patient->full_name ?></h4>

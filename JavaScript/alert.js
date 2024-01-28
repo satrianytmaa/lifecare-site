@@ -67,13 +67,13 @@
         modal.style.display = "block";
 
         // Redirect ke halaman form setelah menampilkan modal
-        window.location.href = "/lifecare-site/index/contact.php";
+        window.location.href = "/lifecare-site/users/contact.php";
     });
 
     // Event listener untuk buttonAlert di modal
     document.getElementById("buttonAlertModal").addEventListener("click", function() {
         // Redirect ke halaman form setelah menutup modal
-        window.location.href = "/lifecare-site/index/contact.php";
+        window.location.href = "/lifecare-site/users/contact.php";
     });
 
     document.getElementsByClassName("close")[0].addEventListener("click", function() {

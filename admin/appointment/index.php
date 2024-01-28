@@ -125,6 +125,15 @@ require '../../process/db.php';
     <!-- Users Database -->
     <div class="users-database container-enable">
 
+         <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <a class="bread" href="/lifecare-site/admin/appointment/index.php">Appointment</a>
+            <p>/</p>
+            <a class="bread current" href="/lifecare-site/admin/appointment/create.php">Index</a>
+        </div>
+
         <!-- Header -->
         <div class="header">
             <div class="header-content">
