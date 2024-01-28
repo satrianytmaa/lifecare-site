@@ -7,9 +7,9 @@ $name = $_POST['name'];
 $select_name = $DB->query("SELECT * FROM user WHERE LOWER(full_name) LIKE LOWER('%$name%') ORDER BY id_user DESC LIMIT 1 ");
 $data = $select_name->fetch_object();
 $patient = $data->id_user;
-// $patient = $_POST['patient'];
+$vaccine = $_POST['vaccine'];
 $clinic = $_POST['clinic'];
-$status = $_POST['status'];
+// $status = $_POST['status'];
 $dateTime = new DateTime();
 
 function incrementNumber($number)
@@ -26,7 +26,7 @@ if ($appointment_data === null || $appointment_data->number === null || $appoint
     $newNumber = incrementNumber($appointment_data->number);
 }
 
-$query = "INSERT INTO appointment(date_and_time,id_user,id_clinic,status,number) VALUES ('" . $dateTime->format('Y-m-d H:i:s') . "','" . $patient . "','" . $clinic . "', 'Daftar', '" . $newNumber . "')";
+$query = "INSERT INTO appointment(date_and_time,id_user,id_clinic,id_vaccine,status,number) VALUES ('" . $dateTime->format('Y-m-d H:i:s') . "','" . $patient . "','" . $clinic . "','" . $vaccine . "', 'Daftar', '" . $newNumber . "')";
 
 $res = $DB->query($query);
 

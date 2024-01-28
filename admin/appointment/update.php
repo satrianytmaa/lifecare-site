@@ -35,6 +35,11 @@ $_SESSION['id_appointment'] = $id;
     // $clinic = $res->fetch_object();
     ?>
 
+    <?php
+    $query = "SELECT * FROM vaccine";
+    $res_vaccine = $DB->query($query);
+    ?>
+
     <form method="POST" action="/lifecare-site/process/update_appointment.php">
         <div>
             <div>
@@ -51,6 +56,20 @@ $_SESSION['id_appointment'] = $id;
                 while ($clinic = $res_clinic->fetch_object()) {
                     $selected = ($data->id_clinic == $clinic->id_clinic) ? 'selected' : '';
                     echo '<option value="' . $clinic->id_clinic . '" ' . $selected . '>' . $clinic->name_clinic . '</option>';
+                }
+                ?>
+
+            </select>
+        </div>
+        <div>
+            <label for="vaccine">Vaccine</label>
+            <select name="vaccine" id="vaccine">
+
+                <?php
+
+                while ($vaccine = $res_vaccine->fetch_object()) {
+                    $selected = ($data->id_vaccine == $vaccine->id_vaccine) ? 'selected' : '';
+                    echo '<option value="' .  $vaccine->id_vaccine . '" ' . $selected . '>' . $vaccine->name_vaccine . '</option>';
                 }
                 ?>
 

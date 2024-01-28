@@ -10,12 +10,12 @@
 
 <body>
     <?php
-    $query = "SELECT * FROM patient";
-    $patient = $DB->query($query);
-    ?>
-    <?php
     $query = "SELECT * FROM clinic";
     $clinic = $DB->query($query);
+    ?>
+    <?php
+    $query = "SELECT * FROM vaccine";
+    $vaccine = $DB->query($query);
     ?>
     <form method="POST" action="/lifecare-site/process/create_appointment.php">
         <div>
@@ -31,8 +31,12 @@
             </select>
         </div>
         <div>
-            <label for="status">Status</label>
-            <input type="text" name="status" id="status" placeholder="Enter status...">
+            <label for="vaccine">Vaccine</label>
+            <select name="vaccine" id="vaccine">
+                <?php while ($data = $vaccine->fetch_object()) {
+                    echo '<option value="' . $data->id_vaccine . '">' . $data->name_vaccine . '</option>';
+                } ?>
+            </select>
         </div>
         <button type="submit">Save</button>
     </form>

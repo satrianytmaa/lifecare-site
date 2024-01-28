@@ -84,35 +84,20 @@ $id = $_GET['id'];
 </head>
 
 <body>
+
+
     <?php
-    $query = "SELECT * FROM appointment WHERE id_appointment= $id ";
+    $query = "SELECT appointment.id_appointment, appointment.number, appointment.status, appointment.date_and_time, user.full_name, clinic.name_clinic, vaccine.name_vaccine
+    FROM appointment
+    INNER JOIN user ON appointment.id_user = user.id_user
+    INNER JOIN clinic ON appointment.id_clinic = clinic.id_clinic
+    INNER JOIN vaccine ON appointment.id_vaccine = vaccine.id_vaccine
+    WHERE appointment.id_appointment = $id";
     $res = $DB->query($query);
     $data = $res->fetch_object();
     ?>
 
-    <?php
-    $query = "SELECT * FROM user WHERE id_user = $data->id_user ";
-    $res = $DB->query($query);
-    $patient = $res->fetch_object();
-    ?>
-
-    <?php
-    $query = "SELECT * FROM clinic WHERE id_clinic= $data->id_clinic ";
-    $res = $DB->query($query);
-    $clinic = $res->fetch_object();
-    ?>
-
-    <div class="show-database user-show container-enable">
-
-        <!-- Breadcrumbs -->
-        <div class="breadcrumbs">
-            <a class="bread" href="/lifecare-site/admin/dashboard.php">Dashboard</a>
-            <p>/</p>
-            <a class="bread" href="/lifecare-site/admin/appointment/index.php">Appointment</a>
-            <p>/</p>
-            <a class="bread current" href="/lifecare-site/admin/appointment/show.php">Show</a>
-        </div>
-
+    <div class="user-database user-show container-enable">
         <!-- Header -->
         <div class="header">
             <div class="header-content">
@@ -168,7 +153,6 @@ $id = $_GET['id'];
             <div class="create-action">
                 <a class="btn-cancel-a" href="/lifecare-site/process/delete_blog.php?id=<?php echo $data->id_blog; ?>" onclick="return confirmDelete()">Delete</a>
                 <a href="update.php?id=<?php echo $data->id_blog; ?>" class="btn-create-a">Edit</a>
-
             </div>
         </form>
     </div>
