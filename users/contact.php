@@ -53,7 +53,20 @@ $email = $_SESSION['email'];
    <!-- New Header V2 -->
    <link rel="stylesheet" href="../style/components/headerv2.css" />
 
-   <title>Get Started</title>
+   <title>Contact</title>
+
+   <style>
+      .dropdown-select{
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #f2f2f2;
+            background-color: #f9f9f9;
+            padding: 16px 16px;
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+        }
+   </style>
 </head>
 
 <body>
@@ -132,7 +145,7 @@ $email = $_SESSION['email'];
             <input type="email" id="email" name="email" placeholder="Enter your Email" required value="<?php echo $email ?>" />
          </div>
          <div class="form-wrap">
-            <select name="subject" id="subject">
+            <select class="dropdown-select" name="subject" id="subject">
                <option value="healthcare">Healthcare</option>
                <option value="consultation">Consultation</option>
                <option value="other">Others</option>
