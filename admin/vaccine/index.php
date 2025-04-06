@@ -73,7 +73,7 @@ require '../../process/db.php';
 <body>
 
     <?php
-    $query = "SELECT vaccine.id_vaccine,vaccine.name_vaccine, vaccine.manufacturer, vaccine.dose_vaccine, clinic.name_clinic
+    $query = "SELECT vaccine.id_vaccine,vaccine.name_vaccine, vaccine.manufacturer, vaccine.dose_vaccine, vaccine.price, clinic.name_clinic
     FROM vaccine
     INNER JOIN clinic ON vaccine.id_clinic = clinic.id_clinic";
     $res = $DB->query($query);
@@ -118,6 +118,7 @@ require '../../process/db.php';
                         <th>Clinic</th>
                         <th>Manufacture</th>
                         <th>Dose</th>
+                        <th>Price</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -129,6 +130,7 @@ require '../../process/db.php';
                             <td><?php echo $data->name_clinic ?></td>
                             <td><?php echo $data->manufacturer ?></td>
                             <td><?php echo $data->dose_vaccine ?></td>
+                            <td><?php echo $data->price ?></td>
                             <td class="action-btn">
                                 <a href="show.php?id=<?php echo $data->id_vaccine; ?>">
                                     <button class="btn-normal">

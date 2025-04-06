@@ -118,7 +118,14 @@ $_SESSION['id_vaccine'] = $id;
                     <label for="dose_vaccine">Dose</label>
                     <p>Dose recommended for the vaccine.</p>
                 </div>
-                <input type="text" name="dose_vaccine" id="dose_vaccine " value="<?php echo $data->dose_vaccine ?>">
+                <input type="number" name="dose_vaccine" id="dose_vaccine " value="<?php echo $data->dose_vaccine ?>">
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="price">Price</label>
+                    <p>Price recommended for the vaccine.</p>
+                </div>
+                <input type="number" name="price" id="price " value="<?php echo $data->price ?>">
             </div>
             <div class="create-action">
                 <a class="btn-cancel-a" href="/lifecare-site/process/delete_vaccine.php?id=<?php echo $data->id_vaccine; ?>" onclick="return confirmDelete()">Delete</a>

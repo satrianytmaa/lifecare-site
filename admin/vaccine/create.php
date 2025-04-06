@@ -123,7 +123,17 @@ require '../../process/db.php';
                     <label for="dose_vaccine">Dose</label>
                     <p>Initial dose that recommended for the vaccine.</p>
                 </div>
-                <input type="text" name="dose_vaccine" id="dose_vaccine" placeholder="Enter the Dose...">
+                <input type="number" name="dose_vaccine" id="dose_vaccine" placeholder="Enter the Dose...">
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="price">Price</label>
+                    <p>Enter the price tag for the vaccine.</p>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="margin-right: 1em;">$</span>
+                    <input type="number" name="price" id="price" step="0.01" min="0" placeholder="Enter the Price..." required>
+                </div>
             </div>
             <div class="form-wrap">
                 <label for="clinic">Clinic</label>

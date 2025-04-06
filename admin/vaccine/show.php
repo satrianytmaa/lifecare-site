@@ -49,7 +49,7 @@ $id = $_GET['id'];
 
 <body>
     <?php
-    $query = "SELECT vaccine.id_vaccine,vaccine.name_vaccine, vaccine.manufacturer, vaccine.dose_vaccine, clinic.name_clinic
+    $query = "SELECT vaccine.id_vaccine,vaccine.name_vaccine, vaccine.manufacturer, vaccine.dose_vaccine, vaccine.price, clinic.name_clinic
     FROM vaccine
     INNER JOIN clinic ON clinic.id_clinic = vaccine.id_clinic
     WHERE vaccine.id_vaccine = $id";
@@ -104,10 +104,17 @@ $id = $_GET['id'];
             </div>
             <div class="form-wrap">
                 <div class="form-headline">
-                    <label for="email">Vaccine Dose</label>
+                    <label for="dose">Vaccine Dose</label>
                     <p>Dose of the vaccine.</p>
                 </div>
-                <input type="text" name="email" id="email" value="<?php echo $data->dose_vaccine ?>" readonly>
+                <input type="number" name="dose" id="dose" value="<?php echo $data->dose_vaccine ?>" readonly>
+            </div>
+            <div class="form-wrap">
+                <div class="form-headline">
+                    <label for="price">Vaccine Price</label>
+                    <p>Price of the vaccine.</p>
+                </div>
+                <input type="number" name="price" id="price" value="<?php echo $data->price ?>" readonly>
             </div>
             <div class="create-action">
                 <a class="btn-cancel-a" href="/lifecare-site/process/delete_vaccine.php?id=<?php echo $data->id_vaccine; ?>" onclick="return confirmDelete()">Delete</a>

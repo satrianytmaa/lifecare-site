@@ -9,8 +9,9 @@ $clinic = $_POST['clinic'];
 $name_vaccine = $_POST['name_vaccine'];
 $manufacturer = $_POST['manufacturer'];
 $dose_vaccine = $_POST['dose_vaccine'];
+$price = $_POST['price'];
 
-$query = "INSERT INTO vaccine(name_vaccine, manufacturer, dose_vaccine, id_clinic) VALUES ('" . $name_vaccine . "','" . $manufacturer . "','" . $dose_vaccine . "','" . $clinic . "')";
+$query = "INSERT INTO vaccine(name_vaccine, manufacturer, dose_vaccine, price, id_clinic) VALUES ('" . $name_vaccine . "','" . $manufacturer . "','" . $dose_vaccine . "','" . $price . "','" . $clinic . "')";
 
 $res = $DB->query($query);
 
