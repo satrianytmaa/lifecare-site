@@ -1,0 +1,15 @@
+{
+    "name": "vlucas/valitron",
+    "autoload": {
+        "psr-4": {
+            "Vlucas\\Valitron\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Satria Nayottama",
+            "email": "58533412+satrianytmaa@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

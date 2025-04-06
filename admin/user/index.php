@@ -128,7 +128,6 @@ require '../../process/db.php';
     $res = $DB->query($query);
     ?>
 
-
     <!-- Users Database -->
     <div class="users-database container-enable">
         <!-- Breadcrumbs -->

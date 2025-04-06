@@ -138,6 +138,14 @@
             border: 1px solid #6A55EA;
         }
 
+        .button-fix{
+            border-radius: 0.4em;
+            padding: 16px 24px;
+            color: white;
+            font-family: 'Roobert-Medium', sans-serif;
+            font-size: 18px;
+        }
+
 
         /* Responsive Media */
 
@@ -268,15 +276,11 @@
                     </div>
                 </div>
                 
-                <button type="submit" class="button-primary button-signup">Create</button>
+                <button type="submit" class="button-primary button-signup button-fix">Create</button>
             </form>
 
         </div>
     </div>
-    <!-- JavaScript -->
-    <script>
-
-    </script>
 </body>
 
 </html>

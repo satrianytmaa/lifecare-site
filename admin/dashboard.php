@@ -49,6 +49,9 @@ require '../process/db.php';
     <link rel="stylesheet" href="../style/admin/index.css">
 
 
+    
+
+
     <title>Get Started</title>
 
     <style>
@@ -75,7 +78,7 @@ require '../process/db.php';
         .table {
             overflow-x: auto;
             border-radius: 1em;
-            border: 2px solid #D9DADC;
+            border: 2px solid rgba(228, 231, 235, 0.431);
             margin: 3em 0;
         }
 
@@ -97,11 +100,11 @@ require '../process/db.php';
             font-size: 1em;
             font-weight: 700;
             text-align: left;
-            border-bottom: 2px solid #D9DADC;
+            border-bottom: 2px solid rgba(228, 231, 235, 0.500);
         }
 
         .table table tbody tr {
-            border-bottom: 1px solid #D9DADC;
+            border-bottom: 1px solid rgba(228, 231, 235, 0.500);
             background-color: #FFF;
         }
 
@@ -275,9 +278,6 @@ require '../process/db.php';
                         <a href="user/index.php" class="n-link">Users</a>
                     </li>
                     <li class="n-item">
-                        <a href="blog/index.php" class="n-link">Blog</a>
-                    </li>
-                    <li class="n-item">
                         <a href="clinic/index.php" class="n-link">Clinic</a>
                     </li>
                     <li class="n-item">
@@ -418,12 +418,12 @@ require '../process/db.php';
                                 <td class="table-full-name"><?php echo $data->full_name ?></td>
                                 <td><?php echo $data->role ?></td>
                                 <td class="action-btn">
-                                    <a href="show.php?id=<?php echo $data->id_user; ?>">
+                                    <a href="user/show.php?id=<?php echo $data->id_user; ?>">
                                         <button class="btn-normal">
                                             Show
                                         </button>
                                     </a>
-                                    <a href="update.php?id=<?php echo $data->id_user; ?>">
+                                    <a href="user/update.php?id=<?php echo $data->id_user; ?>">
                                         <button class="btn-normal">
                                             Edit
                                         </button>
@@ -433,7 +433,7 @@ require '../process/db.php';
                                     </button>
 
                                 </td>
-                            </tr>
+                            </tr>   
                         <?php } ?>
                     </tbody>
                 </table>
@@ -441,34 +441,9 @@ require '../process/db.php';
         </div>
     </div>
 
-    <script>
-        // Update the toggleMenu function
-        function toggleMenu() {
-            var navbar = document.querySelector('.n-bar');
-            var close = document.querySelector('.close-menu');
-            navbar.classList.toggle('show');
-            close.classList.toggle('show');
+    <script src="../javascript/toggle.js"></script>
 
-        }
 
-        // Add the closeMenu function
-        function closeMenu() {
-            var navbar = document.querySelector('.n-bar');
-            var close = document.querySelector('.close-menu');
-            navbar.classList.remove('show');
-            close.classList.remove('show'); // Remove 'show' class from close button as well
-        }
-
-        // Add an event listener to close the menu when clicking outside or pressing the close button
-        document.addEventListener('click', function(event) {
-            var navbar = document.querySelector('.navbar');
-            var toggleButton = document.querySelector('.mobile-toggle');
-
-            if (event.target !== navbar && event.target !== toggleButton && !navbar.contains(event.target)) {
-                closeMenu(); // Call closeMenu function instead of directly removing 'show' class
-            }
-        });
-    </script>
 
 </body>
 

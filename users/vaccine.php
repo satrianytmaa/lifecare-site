@@ -57,12 +57,24 @@ $phone_number = $_SESSION['phone_number'];
     <link rel="stylesheet" href="../style/components/headerv2.css" />
 
     <style>
-        .wrap{
+    .wrap{
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1em;
       margin-right: 2em;
+    }
+
+    .button-fix{
+        border-radius: 0.4em;
+        padding: 16px 24px;
+        color: white;
+        font-family: 'Roobert-Medium', sans-serif;
+        font-size: 18px;
+    }
+
+    .clinic-decs, .vaccine-decs{
+        padding: 0.6em 0;
     }
     </style>
 </head>
@@ -203,6 +215,7 @@ $phone_number = $_SESSION['phone_number'];
                     </div>
                     <div class="form-wrap">
                         <label for="vaccine">Name Vaccine</label>
+                        <p class="vaccine-decs">Choose your vaccine type</p>
                         <select class="dropdown-select" name="vaccine" id="vaccine">
                             <?php while ($data = $vaccine->fetch_object()) {
                                 echo '<option value="' . $data->id_vaccine . '">' . $data->name_vaccine . '</option>';
@@ -211,6 +224,7 @@ $phone_number = $_SESSION['phone_number'];
                     </div>
                     <div class="form-wrap">
                         <label for="clinic">Name Clinic</label>
+                        <p class="clinic-decs">Choose your the clinic</p>
                         <select class="dropdown-select" name="clinic" id="clinic">
                             <?php while ($data = $clinic->fetch_object()) {
                                 echo '<option value="' . $data->id_clinic . '">' . $data->name_clinic . '</option>';
@@ -218,7 +232,7 @@ $phone_number = $_SESSION['phone_number'];
                         </select>
                     </div>
 
-                    <button class="button-primary">Register now</button>
+                    <button class="button-primary button-fix">Register now</button>
                 </div>
             </div>
         </form>

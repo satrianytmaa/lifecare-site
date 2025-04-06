@@ -56,24 +56,32 @@ $email = $_SESSION['email'];
    <title>Contact</title>
 
    <style>
-      .dropdown-select{
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid #f2f2f2;
-            background-color: #f9f9f9;
-            padding: 16px 16px;
-            font-family: "Inter", sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-        }
+   .dropdown-select{
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #f2f2f2;
+      background-color: #f9f9f9;
+      padding: 16px 16px;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+   }
 
-        .wrap{
+   .wrap{
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1em;
       margin-right: 2em;
     }
+
+   .button-fix{
+      border-radius: 0.4em;
+      padding: 16px 24px;
+      color: white;
+      font-family: 'Roobert-Medium', sans-serif;
+      font-size: 18px;
+   }
    </style>
 </head>
 
@@ -170,7 +178,7 @@ $email = $_SESSION['email'];
             <label for="message">Tell us about your problem!</label>
             <textarea id="message" name="problem" cols="30" rows="10" required></textarea>
          </div>
-         <button id="buttonAlert" class="button-primary" disabled>Send</button>
+         <button id="buttonAlert" class="button-primary button-fix" disabled>Send</button>
       </form>
    </div>
    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>

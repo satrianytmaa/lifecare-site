@@ -1,43 +1,64 @@
-// Update the toggleMenu function
-function toggleMenu() {
-    var navbar = document.querySelector('.n-bar');
-    var close = document.querySelector('.close-menu');
-    navbar.classList.toggle('show');
-    close.classList.toggle('show');
+// Kelas Menu untuk mengelola tampilan menu
+class Menu {
+    constructor(navbarSelector, closeButtonSelector) {
+        this.navbar = document.querySelector(navbarSelector);
+        this.closeButton = document.querySelector(closeButtonSelector);
+    }
 
+    // Fungsi untuk toggle menu
+    toggle() {
+        this.navbar.classList.toggle('show');
+        this.closeButton.classList.toggle('show');
+    }
+
+    // Fungsi untuk menutup menu
+    close() {
+        this.navbar.classList.remove('show');
+        this.closeButton.classList.remove('show');
+    }
 }
 
-// Add the closeMenu function
-function closeMenu() {
-    var navbar = document.querySelector('.n-bar');
-    var close = document.querySelector('.close-menu');
-    navbar.classList.remove('show');
-    close.classList.remove('show'); // Remove 'show' class from close button as well
+// Kelas turunan NavbarMenu yang menambahkan fitur close ketika klik di luar menu
+class NavbarMenu extends Menu {
+    constructor(navbarSelector, closeButtonSelector, toggleButtonSelector) {
+        super(navbarSelector, closeButtonSelector);
+        this.toggleButton = document.querySelector(toggleButtonSelector);
+        
+        // Menambahkan event listener untuk toggle button
+        this.toggleButton.addEventListener('click', () => this.toggle());
+        
+        // Menambahkan event listener untuk close menu ketika klik di luar menu
+        document.addEventListener('click', (event) => this.handleClickOutside(event));
+    }
+
+    // Menangani klik di luar menu untuk menutup menu
+    handleClickOutside(event) {
+        if (event.target !== this.navbar && event.target !== this.toggleButton && !this.navbar.contains(event.target)) {
+            this.close(); // Memanggil fungsi close dari kelas Menu
+        }
+    }
 }
 
-// Add an event listener to close the menu when clicking outside or pressing the close button
-document.addEventListener('click', function (event) {
-    var navbar = document.querySelector('.navbar');
-    var toggleButton = document.querySelector('.mobile-toggle');
-
-    if (event.target !== navbar && event.target !== toggleButton && !navbar.contains(event.target)) {
-        closeMenu(); // Call closeMenu function instead of directly removing 'show' class
+// Kelas untuk aktifkan menu sesuai dengan halaman yang sedang aktif
+class ActiveMenu {
+    constructor() {
+        this.setActiveMenu();
     }
-});
 
+    // Menentukan menu yang aktif berdasarkan halaman yang sedang dibuka
+    setActiveMenu() {
+        document.addEventListener('DOMContentLoaded', () => {
+            var currentPage = window.location.pathname.split('/').pop();
+            currentPage = currentPage.replace('.php', '');
 
-// Active Menu
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Get the current page filename
-    var currentPage = window.location.pathname.split('/').pop();
-
-    // Remove the ".php" extension if present
-    currentPage = currentPage.replace('.php', '');
-
-    // Find the corresponding navigation item and add the "active" class
-    var activeNavItem = document.getElementById(currentPage);
-    if (activeNavItem) {
-        activeNavItem.classList.add('active');
+            var activeNavItem = document.getElementById(currentPage);
+            if (activeNavItem) {
+                activeNavItem.classList.add('active');
+            }
+        });
     }
-});
+}
+
+
+const navbarMenu = new NavbarMenu('.n-bar', '.close-menu', '.mobile-toggle');
+const activeMenu = new ActiveMenu();

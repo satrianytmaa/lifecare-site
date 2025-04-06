@@ -38,6 +38,16 @@
 
     <!-- New Header V2 -->
     <link rel="stylesheet" href="../style/components/headerv2.css" />
+
+    <style>
+    .button-fix{
+        border-radius: 0.4em;
+        padding: 16px 24px;
+        color: white;
+        font-family: 'Roobert-Medium', sans-serif;
+        font-size: 18px;
+    }
+    </style>
 </head>
 
 <body>
@@ -131,7 +141,7 @@
                     your vaccine regis number
                 </p>
             </div>
-            <form class="vaccine-form-form" method="POST" action="/lifecare-site/process/process_vaccine.php">
+            <form class="vaccine-form-form" method="POST" action="/lifecare-site/index/signup.php">
                 <div class="component-form">
                     <div class="form-wrap">
                         <label for="appointment">Appointment Number</label>
@@ -145,7 +155,7 @@
                         <label for="number">age</label>
                         <input type="number" name="number" placeholder="Enter your number..." />
                     </div>
-                    <button class="button-primary">Register now</button>
+                    <button class="button-primary button-fix">Register now</button>
                 </div>
             </form>
         </div>

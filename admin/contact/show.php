@@ -78,6 +78,28 @@ $id = $_GET['id'];
             font-weight: 400;
             color: #6E7191;
         }
+
+        .text-area {
+            height: 200px;
+            padding: 1em;
+            word-wrap: break-word;  /* Breaks long words */
+            overflow-wrap: break-word; /* Alternative for better wrapping */
+        }
+
+        .text-area {
+            width: 60%;
+            margin-top: 8px;
+            padding: 16px 16px;
+            border: none;
+            background-color: #f9f9f9;
+            border: 1px solid #f2f2f2;
+
+            border-radius: 8px;
+
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+        }
     </style>
 
 </head>
@@ -159,7 +181,10 @@ $id = $_GET['id'];
                 <label for="problem">Problem</label>
                 <p>User's problem in contact form.</p>
             </div>
-            <input type="textarea" name="problem" id="problem" value="<?php echo $row->problem ?>" readonly>
+            <textarea readonly class="text-area" name="" id="">
+                <?php echo $row->problem ?>
+            </textarea>
+    
         </div>
         <div class="create-action">
             <a class="btn-cancel-a" href="/lifecare-site/process/delete_clinic.php?id=<?php echo $data->id_contact; ?>" onclick="return confirmDelete()">Delete</a>

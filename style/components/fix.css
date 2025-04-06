@@ -1,56 +1,74 @@
+.user-profile {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-name p {
+    font-size: 18px;
+    color: #5c6a78;
+}
+
+.content img {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1em;
+}
 
 
-.users-database .table{
+
+.table {
     overflow-x: auto;
     border-radius: 1em;
-    border: 2px solid rgba(228, 231, 235, 0.500);
+    border: 2px solid #D9DADC;
     margin: 3em 0;
 }
 
-.users-database .table table{
+.table table {
     width: 100%;
     border-collapse: collapse;
-    
+
     border-radius: 1em;
 }
 
-.users-database .table table thead{
+.table table thead {
     background-color: #F9FAFB;
     border-radius: 1em;
     color: #111827;
 }
 
-.users-database .table table thead th{
+.table table thead th {
     padding: 2em;
     font-size: 1em;
     font-weight: 700;
     text-align: left;
-    border-bottom: 2px solid rgba(228, 231, 235, 0.500);
+    border-bottom: 2px solid #D9DADC;
 }
 
-.users-database .table table tbody tr{
-    border-bottom: 1px solid rgba(228, 231, 235, 0.500);
+.table table tbody tr {
+    border-bottom: 1px solid #D9DADC;
     background-color: #FFF;
 }
 
-.users-database .table table tbody tr td{
+.table table tbody tr td {
     padding: 2em;
     font-size: 1em;
     text-align: left;
 }
 
-.btn-normal a{
+.btn-normal a {
     text-decoration: none;
     color: #000;
     font-size: 1em;
     font-weight: 500;
 }
 
-.btn-normal a:hover{
+.btn-normal a:hover {
     color: #000;
 }
 
-.btn-normal{
+.btn-normal {
     background-color: #FFF;
     border: 1.5px solid #D8DBDC;
     outline: none;
@@ -60,9 +78,8 @@
 }
 
 
-.btn-delete{
+.btn-delete {
     background-color: #DF4939;
-    color: #F9FAFB;
     border: none;
     outline: none;
     cursor: pointer;
@@ -71,17 +88,17 @@
     margin-right: 1em;
 }
 
-.btn-delete a{
+.btn-delete a {
     color: #F9FAFB;
 }
 
-.action-btn{
+.action-btn {
     display: flex;
     align-items: center;
     gap: 1em;
 }
 
-.table-full-name{
+.table-full-name {
     color: #000;
     font-weight: bold;
 }
@@ -92,18 +109,18 @@
 
 
 
-body{
+body {
     background: #FCFCFC;
 }
 
-.header-content h4{
+.header-content h4 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.4em;
     color: #1d354f;
 }
 
-p{
+p {
     font-size: 1rem;
     font-weight: 400;
     color: #5c6a78;
@@ -133,6 +150,24 @@ p{
     background-color: #5C4CE3;
 }
 
+.user-action {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.btn-logout {
+    padding: 1.4em;
+    border: none;
+    background-color: #6A55EA;
+    color: #FFFFFF;
+    border-radius: 1em;
+    text-align: center;
+    font-family: "Roobert-Medium", sans-serif;
+    font-size: 0.9em;
+    transition: all 200ms ease-in-out;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 768px) {
@@ -146,13 +181,13 @@ p{
     }
 
     .header-content {
-        text-align: left;
+        text-align: center;
     }
 
     .header-action {
         width: 100%;
         display: flex;
-        justify-content: left;
+        justify-content: center;
     }
 
     .btn-add {

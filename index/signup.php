@@ -90,49 +90,12 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your Password" required/>
                 </div>
-                <button type="submit" class="button-primary button-signup">Create an Account</button>
+                <button type="submit" class="button-primary button-signup">Login</button>
             </form>
-
-
             <p>Already have an account? <a href="login.php">Log In</a></p>
         </div>
 
-        <!-- Sign Up Image -->
-        <div class="signup-img">
-            <img src="../assets/images/Content/Vaccine.png" alt="Sign Up">
-        </div>
-
     </div>
-    <!-- JavaScript -->
-    <script>
-        // function checkPasswordMatch() {
-        //     var password1 = document.getElementById("password").value;
-        //     var password2 = document.getElementById("confirm_password").value;
-        //     var errorSpan = document.getElementById("password_match_error");
-
-        //     if (password1 !== password2) {
-        //         errorSpan.innerHTML = "Passwords do not match!";
-        //         errorSpan.style.color = "red"; // Set error message color to red
-        //     } else {
-        //         errorSpan.innerHTML = "Good to go!";
-        //         errorSpan.style.color = "green"; // Set success message color to green
-        //     }
-        // }
-
-        // function validateForm() {
-        //     var password1 = document.getElementById("password").value;
-        //     var password2 = document.getElementById("confirm_password").value;
-
-        //     if (password1 !== password2) {
-        //         var errorSpan = document.getElementById("password_match_error");
-        //         errorSpan.innerHTML = "Passwords do not match!";
-        //         errorSpan.style.color = "red"; // Set error message color to red
-        //         return false;
-        //     }
-
-        //     return true;
-        // }
-    </script>
 </body>
 
 </html>

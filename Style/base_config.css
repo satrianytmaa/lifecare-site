@@ -49,9 +49,12 @@ img{
 .button-primary{
 	padding: 16px 24px;
 	background: var(--cl-brand);
-	border-radius: 1em;
+	border-radius: 0.4em;
 	border: none;
 	transition: all 120ms ease-in-out;
+	color: white;
+	font-family: 'Roobert-Medium', sans-serif;
+	font-size: 18px;
 }
 
 .button-primary:hover{
