@@ -56,7 +56,7 @@ $id = $_GET['id'];
         }
 
         .card-ui{
-            background-color: #F8F2EB;
+            background-color: #E1F2EE;
             color: #FFFFFF;
             padding: 2em;
             border: 2px solid #E9E9E9;
@@ -89,8 +89,8 @@ $id = $_GET['id'];
         .card-ui .status{
             font-size: 1em;
             font-weight: 600;
-            color: #1D354F;
-            background-color: #FDB86B;
+            color: #FFF;
+            background-color: #2E8F70;
             padding: 0.6em 2em;
             border-radius: 0.4em;
         }
@@ -273,14 +273,6 @@ $id = $_GET['id'];
                 
                 <div class="card-wrap">
                     <div class="status">Status: <?php echo $data->status ?></div>
-    
-                    <?php if ($data->status !== 'Paid') : ?>
-                        <div class="action-button">
-                            <a href="/lifecare-site/users/appointment/payment.php?id=<?php echo $data->id_appointment; ?>" class="btn-pay">
-                                Pay Now
-                            </a>
-                        </div>
-                    <?php endif; ?>
 
                 </div>
         </div>
